@@ -1,0 +1,15 @@
+{
+    "name": "splatnet3-types",
+    "version": "0.0.0",
+    "type": "module",
+    "exports": {
+        "./splatnet3": "./dist/splatnet3.js",
+        "./splatoon3ink": "./dist/splatoon3ink.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "devDependencies": {
+        "typescript": "^4.8.4"
+    }
+}
