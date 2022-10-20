@@ -1,4 +1,4 @@
-import { BankaraMatchMode, DragonMatchType, FestDragonCert, Judgement, JudgementKnockout, Species, TricolourRole } from '../enum.js';
+import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, DragonMatchType, FestDragonCert, Judgement, JudgementKnockout, Species, TricolourRole } from '../enum.js';
 import { Colour, CurrentPlayer, Fest_app, Image, Nameplate, NodeList, VsMode, VsRule, XPower } from './common.js';
 import { Brand, ClothingGear, HeadGear, ShoesGear } from './gear.js';
 import { SpecialWeapon, Weapon } from './weapon.js';
@@ -56,7 +56,7 @@ export interface BankaraMatchChallenge {
     loseCount: number;
     maxWinCount: number;
     maxLoseCount: number;
-    state: 'SUCCEEDED' | 'FAILED';
+    state: BankaraMatchChallengeState | keyof typeof BankaraMatchChallengeState;
     isPromo: boolean;
     isUdemaeUp: boolean;
     udemaeAfter: string;
@@ -100,7 +100,7 @@ export interface VsHistoryDetail {
 
 export interface Award {
     name: string;
-    rank: 'GOLD' | 'SILVER';
+    rank: AwardRank;
 }
 
 export interface VsPlayer {

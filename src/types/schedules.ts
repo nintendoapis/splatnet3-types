@@ -61,7 +61,7 @@ export interface BankaraMatchSetting {
     __typename: 'BankaraMatchSetting';
     vsStages: Pick<VsStage, 'id' | 'vsStageId' | 'name' | 'image'>[];
     vsRule: Pick<VsRule, 'id' | 'rule' | 'name'>;
-    mode: BankaraMatchMode | BankaraMatchMode[keyof BankaraMatchMode];
+    mode: BankaraMatchMode | keyof typeof BankaraMatchMode;
 }
 
 export interface XMatchSetting {

@@ -25,7 +25,7 @@ export interface CurrentPlayer {
     nameId: string;
     nameplate: Nameplate;
     userIcon: Pick<Image, 'url'>;
-    species: Species | Species[keyof Species];
+    species: Species | keyof typeof Species;
     weapon: Weapon_currentPlayer;
     headGear: Pick<HeadGear, '__isGear' | 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;
     clothingGear: Pick<ClothingGear, '__isGear' | 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;
@@ -91,4 +91,6 @@ export interface XPower {
     lastXPower: unknown;
 }
 
-export type UserError = unknown;
+export interface UserError {
+    code: number;
+}

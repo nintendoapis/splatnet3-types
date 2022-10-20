@@ -1,4 +1,4 @@
-import { CoopGradePointDiff, Species } from '../enum.js';
+import { CoopGradePointDiff, CoopMode, CoopRule, Species } from '../enum.js';
 import { Image, Nameplate, NodeList } from './common.js';
 import { ClothingGear, HeadGear, ShoesGear } from './gear.js';
 import { SpecialWeapon } from './weapon.js';
@@ -19,7 +19,7 @@ export interface CoopSupplyWeapon {
 export interface CoopHistoryDetail {
     __typename: 'CoopHistoryDetail';
     id: string;
-    rule: 'REGULAR';
+    rule: CoopRule | keyof typeof CoopRule;
     weapons: CoopSupplyWeapon[];
     nextHistoryDetail: Pick<CoopHistoryDetail, 'id'> | null;
     previousHistoryDetail: Pick<CoopHistoryDetail, 'id'> | null;
@@ -27,7 +27,7 @@ export interface CoopHistoryDetail {
     coopStage: Pick<CoopStage, 'id' | 'name' | 'image'>;
     afterGrade: CoopGrade;
     afterGradePoint: number;
-    gradePointDiff: CoopGradePointDiff | CoopGradePointDiff[keyof CoopGradePointDiff];
+    gradePointDiff: CoopGradePointDiff | keyof typeof CoopGradePointDiff;
     bossResult: CoopBossResult | null;
     myResult: CoopPlayerResult;
     memberResults: CoopPlayerResult[];
@@ -69,7 +69,7 @@ export interface CoopPlayer {
     nameplate: Nameplate;
     uniform: CoopUniform;
     isMyself: boolean;
-    species: Species | Species[keyof Species];
+    species: Species | keyof typeof Species;
 }
 
 export interface CoopUniform {
@@ -155,8 +155,8 @@ export interface CoopPointCard {
 export interface CoopHistoryGroup {
     startTime: string;
     endTime: string;
-    mode: 'REGULAR';
-    rule: 'REGULAR';
+    mode: CoopMode | keyof typeof CoopMode;
+    rule: CoopRule | keyof typeof CoopRule;
     highestResult: CoopGroupHighestResult;
     historyDetails: NodeList<CoopHistoryDetail_record>;
 }

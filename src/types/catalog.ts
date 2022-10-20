@@ -1,3 +1,4 @@
+import { CatalogRewardState } from '../enum.js';
 import { Image } from './common.js';
 import { GearPower } from './gear.js';
 
@@ -32,12 +33,6 @@ export interface CatalogReward {
     currentPoint: number;
     state: CatalogRewardState | keyof typeof CatalogRewardState;
     item: CatalogItem;
-}
-
-enum CatalogRewardState {
-    ACCEPTED = 'ACCEPTED',
-    INPROGRESS = 'INPROGRESS',
-    UNREACHED = 'UNREACHED',
 }
 
 export interface CatalogItem {

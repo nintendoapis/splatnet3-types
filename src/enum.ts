@@ -62,6 +62,9 @@ export enum CoopRule {
     REGULAR = 'REGULAR',
     BIG_RUN = 'BIG_RUN',
 }
+export enum CoopBigRunState {
+    SCHEDULED = 'SCHEDULED',
+}
 
 export enum FriendOnlineState {
     OFFLINE = 'OFFLINE',
@@ -79,4 +82,36 @@ export enum FriendOnlineState {
 export enum BankaraMatchMode {
     CHALLENGE = 'CHALLENGE',
     OPEN = 'OPEN',
+}
+export enum BankaraMatchChallengeState {
+    SUCCEEDED = 'SUCCEEDED',
+    FAILED = 'FAILED',
+}
+
+export enum AwardRank {
+    GOLD = 'GOLD',
+    SILVER = 'SILVER',
+}
+
+export enum CatalogRewardState {
+    ACCEPTED = 'ACCEPTED',
+    INPROGRESS = 'INPROGRESS',
+    UNREACHED = 'UNREACHED',
+}
+
+export enum ChallengeState {
+    SUPPORTABLE = 'SUPPORTABLE',
+}
+
+export enum HeroProgressCommentSpeaker {
+    /** Callie */
+    AORI = 'AORI',
+    /** Marie */
+    HOTARU = 'HOTARU',
+}
+export enum HeroSupplyWeaponCategory {
+    MAIN = 'MAIN',
+    SUB = 'SUB',
+    SPECIAL = 'SPECIAL',
+    NONE = 'NONE',
 }

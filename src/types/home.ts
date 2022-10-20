@@ -1,4 +1,4 @@
-import { FestState } from '../enum.js';
+import { CoopBigRunState, FestState } from '../enum.js';
 import { CurrentPlayer, Fest_app, Image, NodeListWithCount } from './common.js';
 import { Friend } from './friends.js';
 import { PlayHistory, XMatchMax } from './history.js';
@@ -51,7 +51,7 @@ type HomeFooterMessage = FooterBigRunMessage | FooterFestMessage | FooterSeasonM
 
 interface FooterBigRunMessage {
     __typename: 'FooterBigRunMessage';
-    bigRunState: 'SCHEDULED' | unknown;
+    bigRunState: CoopBigRunState;
 }
 interface FooterFestMessage {
     __typename: 'FooterFestMessage';

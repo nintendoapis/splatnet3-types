@@ -1,3 +1,4 @@
+import { ChallengeState } from '../enum.js';
 import { Image, NodeList } from './common.js';
 import { ClothingGear, HeadGear, ShoesGear } from './gear.js';
 
@@ -12,17 +13,13 @@ export interface ChallengeJourney {
     reward: GearReward;
     challengeCount: number;
     supportedCount: number;
-    state: ChallengeState | ChallengeState[keyof ChallengeState];
+    state: ChallengeState | keyof typeof ChallengeState;
     challenges: Challenge[];
 }
 
 export interface GearReward {
     id: string;
     gear: Pick<HeadGear | ClothingGear | ShoesGear, '__typename' | 'name' | 'image'>;
-}
-
-enum ChallengeState {
-    SUPPORTABLE = 'SUPPORTABLE',
 }
 
 export interface Challenge {

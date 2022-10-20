@@ -23,6 +23,8 @@ export * from './types/schedules.js';
 export * from './types/stage.js';
 export * from './types/weapon.js';
 
+export * from './enum.js';
+
 export {
     GraphQLRequest,
     GraphQLResponse,

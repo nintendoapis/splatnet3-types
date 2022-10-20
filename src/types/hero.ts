@@ -1,3 +1,4 @@
+import { HeroProgressCommentSpeaker, HeroSupplyWeaponCategory } from '../enum.js';
 import { DownloadImage, Image } from './common.js';
 
 /** fbee1a882371d4e3becec345636d7d1c HeroHistoryQuery */
@@ -24,8 +25,7 @@ export interface HeroSite {
     siteName: string;
     image: Pick<Image, 'url'>;
     progressComment: string;
-    /** "AORI" = Callie, "HOTARU" = Marie */
-    progressCommentSpeaker: 'AORI' | 'HOTARU';
+    progressCommentSpeaker: HeroProgressCommentSpeaker | keyof typeof HeroProgressCommentSpeaker;
     reward: WallpaperReward | null;
     clearedStages: HeroStage[];
 }
@@ -41,7 +41,7 @@ export interface HeroStage {
 
 export interface HeroSupplyWeapon {
     name: string;
-    category: 'MAIN' | 'SUB' | 'SPECIAL' | 'NONE';
+    category: HeroSupplyWeaponCategory | keyof typeof HeroSupplyWeaponCategory;
     image: Pick<Image, 'url'>;
 }
 

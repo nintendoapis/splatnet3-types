@@ -12,7 +12,7 @@ export interface Fest {
     startTime: string;
     endTime: string;
     midtermTime: string;
-    state: FestState | FestState[keyof FestState];
+    state: FestState | keyof typeof FestState;
     image: Pick<Image, 'url'>;
     teams: FestTeam[];
     playerResult: FestPlayerResult | null;
@@ -31,7 +31,7 @@ export interface FestTeam {
     myVoteState: FestVoteState | null;
     preVotes: NodeListTotal | null;
     votes: NodeListTotal | null;
-    role: FestTeamRole | FestTeamRole[keyof FestTeamRole] | null;
+    role: FestTeamRole | keyof typeof FestTeamRole | null;
     result: FestTeamResult;
 }
 
@@ -154,10 +154,7 @@ export type DetailFestVotingStatusRefetchVariables = DetailVotingStatusVariables
 /** 44c76790b68ca0f3da87f2a3452de986 FestRecordQuery */
 export interface FestRecordResult {
     festRecords: NodeList<Fest_record>;
-    currentPlayer: {
-        name: string;
-        userIcon: Pick<Image, 'url'>;
-    };
+    currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
 }
 
 type Fest_record = Pick<Fest, 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image'> & {
