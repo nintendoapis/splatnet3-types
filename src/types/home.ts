@@ -51,11 +51,11 @@ type HomeFooterMessage = FooterBigRunMessage | FooterFestMessage | FooterSeasonM
 
 interface FooterBigRunMessage {
     __typename: 'FooterBigRunMessage';
-    bigRunState: CoopBigRunState;
+    bigRunState: CoopBigRunState | keyof typeof CoopBigRunState;
 }
 interface FooterFestMessage {
     __typename: 'FooterFestMessage';
-    festState: FestState;
+    festState: FestState | keyof typeof FestState;
     festTitle: string;
 }
 interface FooterSeasonMessage {

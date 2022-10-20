@@ -136,7 +136,7 @@ type Fest_votingStatus = Pick<Fest, '__typename' | 'id' | 'lang'> & {
     undecidedVotes: NodeList<FestVote> | null;
 };
 
-type FestTeam_votingStatus = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color'> & {
+type FestTeam_votingStatus = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color' | 'myVoteState'> & {
     preVotes: NodeList<FestVote> | null;
     votes: NodeList<FestVote> | null;
 };

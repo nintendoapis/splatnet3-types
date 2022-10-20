@@ -100,7 +100,7 @@ export interface VsHistoryDetail {
 
 export interface Award {
     name: string;
-    rank: AwardRank;
+    rank: AwardRank | keyof typeof AwardRank;
 }
 
 export interface VsPlayer {
