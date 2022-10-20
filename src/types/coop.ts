@@ -132,9 +132,9 @@ export interface CoopGrade {
     name: string;
 }
 
-type HeadGear_coopResult = Pick<HeadGear, '__typename' | 'name' | 'image'>;
-type ClothingGear_coopResult = Pick<ClothingGear, '__typename' | 'name' | 'image'>;
-type ShoesGear_coopResult = Pick<ShoesGear, '__typename' | 'name' | 'image'>;
+export type HeadGear_coopResult = Pick<HeadGear, '__typename' | 'name' | 'image'>;
+export type ClothingGear_coopResult = Pick<ClothingGear, '__typename' | 'name' | 'image'>;
+export type ShoesGear_coopResult = Pick<ShoesGear, '__typename' | 'name' | 'image'>;
 
 export interface CoopScale {
     gold: number;
@@ -167,17 +167,17 @@ export interface CoopGroupHighestResult {
     jobScore: number;
 }
 
-type CoopHistoryDetail_record = Pick<CoopHistoryDetail, 'id' | 'weapons' | 'nextHistoryDetail' | 'previousHistoryDetail' | 'resultWave' | 'afterGrade' | 'afterGradePoint' | 'gradePointDiff' | 'bossResult'> & {
+export type CoopHistoryDetail_record = Pick<CoopHistoryDetail, 'id' | 'weapons' | 'nextHistoryDetail' | 'previousHistoryDetail' | 'resultWave' | 'afterGrade' | 'afterGradePoint' | 'gradePointDiff' | 'bossResult'> & {
     coopStage: Pick<CoopStage, 'id' | 'name'>;
     myResult: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>;
     memberResults: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>[];
     waveResults: Pick<CoopWaveResult, 'waveNumber'>[];
 };
 
-type CoopHistoryGroup_onlyFirst = Pick<CoopHistoryGroup, never> & {
+export type CoopHistoryGroup_onlyFirst = Pick<CoopHistoryGroup, never> & {
     historyDetails: NodeList<CoopHistoryDetail_onlyFirst>;
 };
-type CoopHistoryDetail_onlyFirst = Pick<CoopHistoryDetail, 'id'>;
+export type CoopHistoryDetail_onlyFirst = Pick<CoopHistoryDetail, 'id'>;
 
 /** a5692cf290ffb26f14f0f7b6e5023b07 RefetchableCoopHistory_CoopResultQuery */
 export type RefetchableCoopHistory_CoopResult = CoopHistoryResult;

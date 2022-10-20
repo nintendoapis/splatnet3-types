@@ -11,10 +11,10 @@ export type VsResult_latest = Pick<VsResult, 'historyGroupsOnlyFirst'> & {
     summary: Pick<VsHistorySummary, 'assistAverage' | 'deathAverage' | 'killAverage' | 'lose' | 'perUnitTimeMinute' | 'specialAverage' | 'win'>;
     historyGroups: NodeList<VsHistoryGroup_latest>;
 };
-type VsHistoryGroup_latest = Pick<VsHistoryGroup, never> & {
+export type VsHistoryGroup_latest = Pick<VsHistoryGroup, never> & {
     historyDetails: NodeList<VsHistoryDetail_latest>;
 };
-type VsHistoryDetail_latest = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'vsStage' | 'judgement' | 'knockout' | 'udemae' | 'leagueMatch' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+export type VsHistoryDetail_latest = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'vsStage' | 'judgement' | 'knockout' | 'udemae' | 'leagueMatch' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
     vsRule: Pick<VsRule, 'id' | 'name'>;
     player: Pick<VsPlayer, 'weapon' | 'id' | 'festGrade'>;
     myTeam: VsTeam_latest;

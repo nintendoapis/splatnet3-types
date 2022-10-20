@@ -50,7 +50,7 @@ export interface WeaponCategoryUtilRatio {
     weapons: WeaponUtilRatio_category[];
 }
 
-type WeaponUtilRatio_category = Pick<WeaponUtilRatio, 'utilRatio'> & {
+export type WeaponUtilRatio_category = Pick<WeaponUtilRatio, 'utilRatio'> & {
     weapon: Pick<Weapon, 'id' | 'weaponId' | 'weaponCategory' | 'name' | 'image'>;
 };
 

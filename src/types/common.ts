@@ -32,7 +32,7 @@ export interface CurrentPlayer {
     shoesGear: Pick<ShoesGear, '__isGear' | 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;
 }
 
-type Weapon_currentPlayer = Pick<Weapon, 'id' | 'name' | 'image'> & {
+export type Weapon_currentPlayer = Pick<Weapon, 'id' | 'name' | 'image'> & {
     subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
 };
@@ -58,7 +58,7 @@ export interface DownloadImage {
 }
 
 export interface Nameplate {
-    badges: (Badge_Nameplate | null)[];
+    badges: (Pick<Badge, 'id' | 'image'> | null)[];
     background: NameplateBackground;
 }
 
@@ -73,7 +73,6 @@ export interface Badge {
     image: Pick<Image, 'url'>;
     description: string;
 }
-type Badge_Nameplate = Pick<Badge, 'id' | 'image'>;
 
 export interface VsRule {
     name: string;

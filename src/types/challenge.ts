@@ -46,7 +46,7 @@ export interface ChallengeHome {
     challengeJourneys: NodeList<ChallengeJourney_home>;
 }
 
-type ChallengeJourney_home = Pick<ChallengeJourney, 'id' | 'name' | 'subName' | 'challengeCount' | 'supportedCount' | 'state' | 'image'>;
+export type ChallengeJourney_home = Pick<ChallengeJourney, 'id' | 'name' | 'subName' | 'challengeCount' | 'supportedCount' | 'state' | 'image'>;
 
 /** bc71fc0264f3f72256724b069f7a4097 JourneyQuery */
 export interface JourneyResult {
@@ -54,7 +54,7 @@ export interface JourneyResult {
     journey: ChallengeJourney_journey;
 }
 
-type ChallengeJourney_journey = Pick<ChallengeJourney, '__typename' | 'id' | 'name' | 'subName' | 'desc' | 'gratitude' | 'image' | 'reward' | 'state'> & {
+export type ChallengeJourney_journey = Pick<ChallengeJourney, '__typename' | 'id' | 'name' | 'subName' | 'desc' | 'gratitude' | 'image' | 'reward' | 'state'> & {
     challenges: Pick<Challenge, 'id' | 'isSupported' | 'challengeNumber' | 'name' | 'image' | 'goalPoint'>[];
 };
 
@@ -74,7 +74,7 @@ export interface JourneyChallengeDetailResult {
     journey: ChallengeJourney_challenges;
 }
 
-type ChallengeJourney_challenges = Pick<ChallengeJourney, '__typename' | 'id' | 'subName' | 'challenges'>;
+export type ChallengeJourney_challenges = Pick<ChallengeJourney, '__typename' | 'id' | 'subName' | 'challenges'>;
 
 /** 38e58b84376a2ad49ddbe4061b948455 JourneyChallengeDetailQuery variables */
 export interface JourneyChallengeDetailVariables {

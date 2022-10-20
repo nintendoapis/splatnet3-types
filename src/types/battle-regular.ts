@@ -7,13 +7,13 @@ export interface RegularBattleHistoriesResult {
     regularBattleHistories: VsResult_regular;
 }
 
-type VsResult_regular = Pick<VsResult_latest, 'summary' | 'historyGroupsOnlyFirst'> & {
+export type VsResult_regular = Pick<VsResult_latest, 'summary' | 'historyGroupsOnlyFirst'> & {
     historyGroups: NodeList<VsHistoryGroup_regular>;
 };
-type VsHistoryGroup_regular = Pick<VsHistoryGroup, never> & {
+export type VsHistoryGroup_regular = Pick<VsHistoryGroup, never> & {
     historyDetails: NodeList<VsHistoryDetail_regular>;
 };
-type VsHistoryDetail_regular = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'playedTime' | 'vsStage' | 'judgement' | 'knockout' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+export type VsHistoryDetail_regular = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'playedTime' | 'vsStage' | 'judgement' | 'knockout' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
     vsRule: Pick<VsRule, 'id' | 'name'>;
     player: Pick<VsPlayer, 'weapon' | 'id' | 'festGrade'>;
     myTeam: VsTeam_latest;

@@ -66,7 +66,7 @@ export interface FestRankingHolder {
     nameplate: Nameplate;
 }
 
-type Weapon_festRankingHolder = Pick<Weapon, 'id' | 'name' | 'image'> & {
+export type Weapon_festRankingHolder = Pick<Weapon, 'id' | 'name' | 'image'> & {
     subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
     image3d: Pick<Image, 'url'>;
@@ -92,10 +92,10 @@ export interface DetailFestRecordDetailResult {
     currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
 }
 
-type Fest_detail = Pick<Fest, '__typename' | 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image' | 'playerResult' | 'myTeam' | 'isVotable' | 'undecidedVotes'> & {
+export type Fest_detail = Pick<Fest, '__typename' | 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image' | 'playerResult' | 'myTeam' | 'isVotable' | 'undecidedVotes'> & {
     teams: FestTeam_detail[];
 };
-type FestTeam_detail = Pick<FestTeam, 'id' | 'teamName' | 'color' | 'image' | 'myVoteState' | 'preVotes' | 'votes' | 'role'> & {
+export type FestTeam_detail = Pick<FestTeam, 'id' | 'teamName' | 'color' | 'image' | 'myVoteState' | 'preVotes' | 'votes' | 'role'> & {
     result: Pick<FestTeamResult, '__typename' | 'isWinner' | 'horagaiRatio' | 'isHoragaiRatioTop' | 'voteRatio' | 'isVoteRatioTop' | 'regularContributionRatio' | 'isRegularContributionRatioTop' | 'challengeContributionRatio' | 'isChallengeContributionRatioTop'> | null;
 };
 
@@ -114,10 +114,10 @@ export interface DetailRankingResult {
     fest: Fest_ranking;
 }
 
-type Fest_ranking = Pick<Fest, '__typename' | 'id' | 'lang'> & {
+export type Fest_ranking = Pick<Fest, '__typename' | 'id' | 'lang'> & {
     teams: FestTeam_ranking[];
 };
-type FestTeam_ranking = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color'> & {
+export type FestTeam_ranking = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color'> & {
     result: Pick<FestTeamResult, 'rankingHolders'> | null;
 };
 
@@ -131,12 +131,12 @@ export interface DetailVotingStatusResult {
     fest: Fest_votingStatus;
 }
 
-type Fest_votingStatus = Pick<Fest, '__typename' | 'id' | 'lang'> & {
+export type Fest_votingStatus = Pick<Fest, '__typename' | 'id' | 'lang'> & {
     teams: FestTeam_votingStatus[];
     undecidedVotes: NodeList<FestVote> | null;
 };
 
-type FestTeam_votingStatus = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color' | 'myVoteState'> & {
+export type FestTeam_votingStatus = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color' | 'myVoteState'> & {
     preVotes: NodeList<FestVote> | null;
     votes: NodeList<FestVote> | null;
 };
@@ -157,13 +157,13 @@ export interface FestRecordResult {
     currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
 }
 
-type Fest_record = Pick<Fest, 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image'> & {
+export type Fest_record = Pick<Fest, 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image'> & {
     playerResult: Pick<FestPlayerResult, 'grade'> | null;
     teams: FestTeam_record[];
     myTeam: Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color'> | null;
 };
 
-type FestTeam_record = Pick<FestTeam, 'id' | 'teamName'> & {
+export type FestTeam_record = Pick<FestTeam, 'id' | 'teamName'> & {
     result: Pick<FestTeamResult, 'isWinner'> | null;
 };
 

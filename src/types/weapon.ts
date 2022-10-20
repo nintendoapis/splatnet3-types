@@ -57,7 +57,7 @@ export interface WeaponRecordResult {
 /** 23c9b2b4ad878c2d91a68859be928dea WeaponRecordsRefetchQuery */
 export type WeaponRecordsRefetchResult = WeaponRecordResult;
 
-type Weapon_records = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image' | 'stats'> & {
+export type Weapon_records = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image' | 'stats'> & {
     weaponCategory: Pick<WeaponCategory, 'id' | 'weaponCategoryId'>;
     subWeapon: Pick<SubWeapon, 'id' | 'subWeaponId' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'specialWeaponId' | 'name' | 'image'>;

@@ -25,6 +25,6 @@ export interface StageRecordResult {
 /** fe965bef54377d20e9133087cc6cdf3f StageRecordsRefetchQuery */
 export type StageRecordsRefetchResult = StageRecordResult;
 
-type VsStage_records = Pick<VsStage, 'id' | 'stageId' | 'vsStageId' | 'name' | 'image' | 'stats'> & {
+export type VsStage_records = Pick<VsStage, 'id' | 'stageId' | 'vsStageId' | 'name' | 'image' | 'stats'> & {
     originalImage: Pick<Image, 'url'>;
 };

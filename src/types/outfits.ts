@@ -38,22 +38,22 @@ export interface MyOutfit {
     controlOptionHandheld: PlayControlOption;
 }
 
-type ShoesGear_outfits = Pick<ShoesGear, '__typename' | '__isGear' | 'shoesGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
+export type ShoesGear_outfits = Pick<ShoesGear, '__typename' | '__isGear' | 'shoesGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
     primaryGearPower: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>;
     additionalGearPowers: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>[];
     brand: Pick<Brand, '__typename' | 'id' | 'name' | 'image'>;
 };
-type ClothingGear_outfits = Pick<ClothingGear, '__typename' | '__isGear' | 'clothingGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
+export type ClothingGear_outfits = Pick<ClothingGear, '__typename' | '__isGear' | 'clothingGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
     primaryGearPower: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>;
     additionalGearPowers: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>[];
     brand: Pick<Brand, '__typename' | 'id' | 'name' | 'image'>;
 };
-type HeadGear_outfits = Pick<HeadGear, '__typename' | '__isGear' | 'headGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
+export type HeadGear_outfits = Pick<HeadGear, '__typename' | '__isGear' | 'headGearId' | 'name' | 'rarity' | 'image' | 'stats'> & {
     primaryGearPower: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>;
     additionalGearPowers: Pick<GearPower, '__typename' | 'gearPowerId' | 'name' | 'image' | 'power'>[];
     brand: Pick<Brand, '__typename' | 'id' | 'name' | 'image'>;
 };
-type Weapon_outfits = Pick<Weapon, '__typename' | 'id' | 'weaponId' | 'name' | 'image'> & {
+export type Weapon_outfits = Pick<Weapon, '__typename' | 'id' | 'weaponId' | 'name' | 'image'> & {
     weaponCategory: Pick<WeaponCategory, '__typename' | 'id' | 'name' | 'image'>;
     subWeapon: Pick<SubWeapon, '__typename' | 'id' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, '__typename' | 'id' | 'name' | 'image'>;
@@ -68,26 +68,26 @@ export interface PlayControlOption {
     cameraSpeedStick: number;
 }
 
-type CurrentPlayer_outfits = Pick<CurrentPlayer, never> & {
+export type CurrentPlayer_outfits = Pick<CurrentPlayer, never> & {
     shoesGear: ShoesGear_outfitsCurrentPlayer;
     clothingGear: ClothingGear_outfitsCurrentPlayer;
     headGear: HeadGear_outfitsCurrentPlayer;
     weapon: Weapon_outfitsCurrentPlayer;
 };
 
-type ShoesGear_outfitsCurrentPlayer = Pick<ShoesGear, 'shoesGearId' | 'name' | 'image'> & {
+export type ShoesGear_outfitsCurrentPlayer = Pick<ShoesGear, 'shoesGearId' | 'name' | 'image'> & {
     primaryGearPower: Pick<GearPower, 'name' | 'image'>;
     additionalGearPowers: Pick<GearPower, 'name' | 'image'>[];
 };
-type ClothingGear_outfitsCurrentPlayer = Pick<ClothingGear, 'clothingGearId' | 'name' | 'image'> & {
+export type ClothingGear_outfitsCurrentPlayer = Pick<ClothingGear, 'clothingGearId' | 'name' | 'image'> & {
     primaryGearPower: Pick<GearPower, 'name' | 'image'>;
     additionalGearPowers: Pick<GearPower, 'name' | 'image'>[];
 };
-type HeadGear_outfitsCurrentPlayer = Pick<HeadGear, 'headGearId' | 'name' | 'image'> & {
+export type HeadGear_outfitsCurrentPlayer = Pick<HeadGear, 'headGearId' | 'name' | 'image'> & {
     primaryGearPower: Pick<GearPower, 'name' | 'image'>;
     additionalGearPowers: Pick<GearPower, 'name' | 'image'>[];
 };
-type Weapon_outfitsCurrentPlayer = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image'> & {
+export type Weapon_outfitsCurrentPlayer = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image'> & {
     subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
 };
@@ -129,7 +129,7 @@ export interface CreateMyOutfitPayload {
     userErrors: UserError[] | null;
 }
 
-type MyOutfit_createPayload = Pick<MyOutfit, 'id' | 'index'> & {
+export type MyOutfit_createPayload = Pick<MyOutfit, 'id' | 'index'> & {
     currentShoesGear: Pick<ShoesGear_outfitsCurrentPlayer, 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;
     currentClothingGear: Pick<ClothingGear_outfitsCurrentPlayer, 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;
     currentHeadGear: Pick<HeadGear_outfitsCurrentPlayer, 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'>;

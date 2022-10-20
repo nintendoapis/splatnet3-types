@@ -19,15 +19,21 @@ export interface VsHistorySummary {
     xPowerLf: Pick<XPower, 'lastXPower'>;
 }
 
-export type VsPlayer_Gear<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__isGear' | 'name' | 'primaryGearPower' | 'additionalGearPowers'> & {
+type VsPlayer_Gear<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__isGear' | 'name' | 'primaryGearPower' | 'additionalGearPowers'> & {
     thumbnailImage: Pick<Image, 'url'>;
     originalImage: Pick<Image, 'url'>;
     brand: Pick<Brand, 'id' | 'name' | 'image' | 'usualGearPower'>;
 };
+export type HeadGear_vsPlayer = VsPlayer_Gear<HeadGear>;
+export type ClothingGear_vsPlayer = VsPlayer_Gear<ClothingGear>;
+export type ShoesGear_vsPlayer = VsPlayer_Gear<ShoesGear>;
 type VsPlayer_Gear_Self<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__isGear' | 'name' | 'image' | 'primaryGearPower' | 'additionalGearPowers'> & {
     originalImage: Pick<Image, 'url'>;
     brand: Pick<Brand, 'id' | 'name' | 'image'>;
 };
+export type HeadGear_vsPlayerSelf = VsPlayer_Gear_Self<HeadGear>;
+export type ClothingGear_vsPlayerSelf = VsPlayer_Gear_Self<ClothingGear>;
+export type ShoesGear_vsPlayerSelf = VsPlayer_Gear_Self<ShoesGear>;
 
 /** 49dd00428fb8e9b4dde62f585c8de1e0 BattleHistoryCurrentPlayerQuery */
 export interface BattleHistoryCurrentPlayerResult {
@@ -63,13 +69,13 @@ export interface BankaraMatchChallenge {
     earnedUdemaePoint: number;
 }
 
-type VsHistoryGroup_onlyFirst = Pick<VsHistoryGroup, never> & {
+export type VsHistoryGroup_onlyFirst = Pick<VsHistoryGroup, never> & {
     historyDetails: NodeList<VsHistoryDetail_onlyFirst>;
 };
-type VsHistoryDetail_onlyFirst = Pick<VsHistoryDetail, 'id'> & {
+export type VsHistoryDetail_onlyFirst = Pick<VsHistoryDetail, 'id'> & {
     player: VsPlayer_onlyFirst;
 };
-type VsPlayer_onlyFirst = Pick<VsPlayer, 'id'> & {
+export type VsPlayer_onlyFirst = Pick<VsPlayer, 'id'> & {
     weapon: Pick<Weapon, 'id'> & {
         specialWeapon: Pick<SpecialWeapon, 'id' | 'maskingImage'>;
     };
@@ -114,9 +120,9 @@ export interface VsPlayer {
     paint: number;
     isMyself: boolean;
     weapon: Pick<Weapon, 'id' | 'name' | 'image'>;
-    headGear: VsPlayer_Gear_Self<HeadGear>;
-    clothingGear: VsPlayer_Gear_Self<ClothingGear>;
-    shoesGear: VsPlayer_Gear_Self<ShoesGear>;
+    headGear: HeadGear_vsPlayerSelf;
+    clothingGear: ClothingGear_vsPlayerSelf;
+    shoesGear: ShoesGear_vsPlayerSelf;
     species: Species | keyof typeof Species;
     result: VsPlayerResult | null;
     festDragonCert: FestDragonCert | keyof typeof FestDragonCert;
@@ -170,13 +176,13 @@ export interface PagerLatestVsDetailResult {
     vsResult: VsResult_pagerLatest;
 }
 
-type VsResult_pagerLatest = Pick<VsResult, never> & {
+export type VsResult_pagerLatest = Pick<VsResult, never> & {
     historyGroups: NodeList<VsHistoryGroup_pagerLatest>;
 };
-type VsHistoryGroup_pagerLatest = Pick<VsHistoryGroup, never> & {
+export type VsHistoryGroup_pagerLatest = Pick<VsHistoryGroup, never> & {
     historyDetails: NodeList<VsHistoryDetail_pagerLatest>;
 };
-type VsHistoryDetail_pagerLatest = Pick<VsHistoryDetail, 'id' | 'vsMode'>;
+export type VsHistoryDetail_pagerLatest = Pick<VsHistoryDetail, 'id' | 'vsMode'>;
 
 /** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery */
 export interface PagerUpdateBattleHistoriesByVsModeResult {

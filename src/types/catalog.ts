@@ -26,7 +26,7 @@ export interface CatalogProgress {
     rewards: CatalogReward[];
 }
 
-type CatalogExtraReward = unknown;
+export type CatalogExtraReward = unknown;
 
 export interface CatalogReward {
     level: number;

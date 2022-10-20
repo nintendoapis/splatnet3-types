@@ -20,7 +20,7 @@ export interface StageScheduleResult {
     vsStages: NodeList<VsStage_schedule>;
 }
 
-type VsStage_schedule = Pick<VsStage, 'stageId' | 'id' | 'vsStageId' | 'name'> & {
+export type VsStage_schedule = Pick<VsStage, 'stageId' | 'id' | 'vsStageId' | 'name'> & {
     originalImage: Pick<Image, 'url'>;
     stats: Pick<VsStageRecordStats, 'winRateAr' | 'winRateCl' | 'winRateGl' | 'winRateLf'> | null;
 };
@@ -35,19 +35,19 @@ export interface VsSchedule {
     festMatchSetting: FestMatchSetting | null;
 }
 
-type VsSchedule_regular = Pick<VsSchedule, 'startTime' | 'endTime' | 'regularMatchSetting'> & {
+export type VsSchedule_regular = Pick<VsSchedule, 'startTime' | 'endTime' | 'regularMatchSetting'> & {
     festMatchSetting: Pick<FestMatchSetting, '__typename'> | null;
 };
-type VsSchedule_bankara = Pick<VsSchedule, 'startTime' | 'endTime' | 'bankaraMatchSettings'> & {
+export type VsSchedule_bankara = Pick<VsSchedule, 'startTime' | 'endTime' | 'bankaraMatchSettings'> & {
     festMatchSetting: Pick<FestMatchSetting, '__typename'> | null;
 };
-type VsSchedule_xMatch = Pick<VsSchedule, 'startTime' | 'endTime' | 'xMatchSetting'> & {
+export type VsSchedule_xMatch = Pick<VsSchedule, 'startTime' | 'endTime' | 'xMatchSetting'> & {
     festMatchSetting: Pick<FestMatchSetting, '__typename'> | null;
 };
-type VsSchedule_league = Pick<VsSchedule, 'startTime' | 'endTime' | 'leagueMatchSetting'> & {
+export type VsSchedule_league = Pick<VsSchedule, 'startTime' | 'endTime' | 'leagueMatchSetting'> & {
     festMatchSetting: Pick<FestMatchSetting, '__typename'> | null;
 };
-type VsSchedule_fest = Pick<VsSchedule, 'startTime' | 'endTime' | 'festMatchSetting'>;
+export type VsSchedule_fest = Pick<VsSchedule, 'startTime' | 'endTime' | 'festMatchSetting'>;
 
 export interface RegularMatchSetting {
     __isVsSetting: 'RegularMatchSetting';
@@ -97,8 +97,8 @@ export interface CoopSetting {
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
 }
 
-type Fest_schedule = Pick<Fest, 'id' | 'title' | 'startTime' | 'endTime' | 'midtermTime' | 'state' | 'tricolorStage'> & {
+export type Fest_schedule = Pick<Fest, 'id' | 'title' | 'startTime' | 'endTime' | 'midtermTime' | 'state' | 'tricolorStage'> & {
     teams: FestTeam_schedule[];
 };
 
-type FestTeam_schedule = Pick<FestTeam, 'id' | 'color' | 'myVoteState' | 'role'>;
+export type FestTeam_schedule = Pick<FestTeam, 'id' | 'color' | 'myVoteState' | 'role'>;

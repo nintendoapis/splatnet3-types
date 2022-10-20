@@ -7,7 +7,7 @@ export interface SaleGear {
     saleEndTime: string;
     price: number;
     isAlreadyOrdered: boolean;
-    gear: SaleGear_Gear<HeadGear | ClothingGear | ShoesGear>;
+    gear: HeadGear_saleGear | ClothingGear_saleGear | ShoesGear_saleGear;
     nextGear: Pick<SaleGear, 'id'> | null;
     previousGear: Pick<SaleGear, 'id'> | null;
 }
@@ -15,6 +15,9 @@ export interface SaleGear {
 type SaleGear_Gear<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__typename' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
     brand: Pick<Brand, 'id' | 'name' | 'image' | 'usualGearPower'>;
 };
+export type HeadGear_saleGear = SaleGear_Gear<HeadGear>;
+export type ClothingGear_saleGear = SaleGear_Gear<ClothingGear>;
+export type ShoesGear_saleGear = SaleGear_Gear<ShoesGear>;
 
 /** a43dd44899a09013bcfd29b4b13314ff GesotownQuery */
 export interface GesotownResult {
@@ -37,12 +40,15 @@ export interface PickupBrand {
     nextBrand: Pick<Brand, 'id' | 'name' | 'image'>;
 }
 
-type SaleGear_gesotown = Pick<SaleGear, 'id' | 'saleEndTime' | 'price'> & {
+export type SaleGear_gesotown = Pick<SaleGear, 'id' | 'saleEndTime' | 'price'> & {
     gear: SaleGear_gesotown_Gear<HeadGear | ClothingGear | ShoesGear>;
 };
 type SaleGear_gesotown_Gear<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__typename' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
     brand: Pick<Brand, 'id' | 'name' | 'image'>;
 };
+export type HeadGear_gesotown = SaleGear_gesotown_Gear<HeadGear>;
+export type ClothingGear_gesotown = SaleGear_gesotown_Gear<ClothingGear>;
+export type ShoesGear_gesotown = SaleGear_gesotown_Gear<ShoesGear>;
 
 /** 6eb1b255b2cf04c08041567148c883ad SaleGearDetailQuery */
 export interface SaleGearDetailResult {
@@ -65,18 +71,18 @@ export interface OrderGesotownGearPayload {
     userErrors: UserError[] | null;
 }
 
-type SaleGear_order = Pick<SaleGear, 'id' | 'price' | 'saleEndTime' | 'isAlreadyOrdered' | 'nextGear' | 'previousGear'> & {
+export type SaleGear_order = Pick<SaleGear, 'id' | 'price' | 'saleEndTime' | 'isAlreadyOrdered' | 'nextGear' | 'previousGear'> & {
     gear: HeadGear_order | ClothingGear_order | ShoesGear_order;
 };
-type HeadGear_order = Pick<HeadGear, '__typename' | 'headGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
+export type HeadGear_order = Pick<HeadGear, '__typename' | 'headGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
     brand: Pick<Brand, 'id' | 'name' | 'image' | 'usualGearPower'>;
     primaryGearPower: Pick<GearPower, 'gearPowerId' | 'name' | 'image'>;
 };
-type ClothingGear_order = Pick<ClothingGear, '__typename' | 'clothingGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
+export type ClothingGear_order = Pick<ClothingGear, '__typename' | 'clothingGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
     brand: Pick<Brand, 'id' | 'name' | 'image' | 'usualGearPower'>;
     primaryGearPower: Pick<GearPower, 'gearPowerId' | 'name' | 'image'>;
 };
-type ShoesGear_order = Pick<ShoesGear, '__typename' | 'shoesGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
+export type ShoesGear_order = Pick<ShoesGear, '__typename' | 'shoesGearId' | 'name' | 'primaryGearPower' | 'additionalGearPowers' | 'image'> & {
     brand: Pick<Brand, 'id' | 'name' | 'image' | 'usualGearPower'>;
     primaryGearPower: Pick<GearPower, 'gearPowerId' | 'name' | 'image'>;
 };

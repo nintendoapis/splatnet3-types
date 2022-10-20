@@ -7,13 +7,13 @@ export interface BankaraBattleHistoriesResult {
     bankaraBattleHistories: VsResult_bankara;
 }
 
-type VsResult_bankara = Pick<VsResult_latest, 'summary' | 'historyGroupsOnlyFirst'> & {
+export type VsResult_bankara = Pick<VsResult_latest, 'summary' | 'historyGroupsOnlyFirst'> & {
     historyGroups: NodeList<VsHistoryGroup_bankara>;
 };
-type VsHistoryGroup_bankara = Pick<VsHistoryGroup, 'bankaraMatchChallenge'> & {
+export type VsHistoryGroup_bankara = Pick<VsHistoryGroup, 'bankaraMatchChallenge'> & {
     historyDetails: NodeList<VsHistoryDetail_bankara>;
 };
-type VsHistoryDetail_bankara = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'vsStage' | 'judgement' | 'knockout' | 'udemae' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+export type VsHistoryDetail_bankara = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'vsStage' | 'judgement' | 'knockout' | 'udemae' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
     vsRule: Pick<VsRule, 'id' | 'name'>;
     player: Pick<VsPlayer, 'id' | 'weapon'>;
     myTeam: VsTeam_latest;

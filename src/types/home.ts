@@ -14,7 +14,7 @@ export interface ConfigureAnalyticsResult {
     playHistory: PlayHistory_analytics;
 }
 
-type PlayHistory_analytics = Pick<PlayHistory, 'udemaeMax' | 'paintPointTotal' | 'gameStartTime' | 'battleNumTotal'> & {
+export type PlayHistory_analytics = Pick<PlayHistory, 'udemaeMax' | 'paintPointTotal' | 'gameStartTime' | 'battleNumTotal'> & {
     xMatchMaxAr: Pick<XMatchMax, 'rank'>;
     xMatchMaxCl: Pick<XMatchMax, 'rank'>;
     xMatchMaxGl: Pick<XMatchMax, 'rank'>;
@@ -33,32 +33,32 @@ export interface HomeResult {
     footerMessages: HomeFooterMessage[];
 }
 
-type CurrentPlayer_home = Pick<CurrentPlayer, never> & {
+export type CurrentPlayer_home = Pick<CurrentPlayer, never> & {
     weapon: Pick<Weapon, 'id' | 'image'>;
 };
 
-interface Banner {
+export interface Banner {
     image: Pick<Image, 'url' | 'width' | 'height'>;
     message: string;
     jumpTo: string;
 }
 
-type Friend_home = Pick<Friend, 'id' | 'nickname' | 'userIcon'>;
+export type Friend_home = Pick<Friend, 'id' | 'nickname' | 'userIcon'>;
 
-type HomeFooterMessage = FooterBigRunMessage | FooterFestMessage | FooterSeasonMessage | {
+export type HomeFooterMessage = FooterBigRunMessage | FooterFestMessage | FooterSeasonMessage | {
     __typename: string & never;
 };
 
-interface FooterBigRunMessage {
+export interface FooterBigRunMessage {
     __typename: 'FooterBigRunMessage';
     bigRunState: CoopBigRunState | keyof typeof CoopBigRunState;
 }
-interface FooterFestMessage {
+export interface FooterFestMessage {
     __typename: 'FooterFestMessage';
     festState: FestState | keyof typeof FestState;
     festTitle: string;
 }
-interface FooterSeasonMessage {
+export interface FooterSeasonMessage {
     __typename: 'FooterSeasonMessage';
     seasonName: string;
 }
