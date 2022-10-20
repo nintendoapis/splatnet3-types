@@ -32,6 +32,6 @@ export {
     RequestId,
     /** All known persisted query IDs */
     KnownRequestId,
-    RequestParametersFor,
-    RequestResultFor,
+    VariablesTypes,
+    ResultTypes,
 } from './graphql.js';

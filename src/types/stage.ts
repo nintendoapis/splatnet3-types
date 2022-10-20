@@ -28,3 +28,8 @@ export type StageRecordsRefetchResult = StageRecordResult;
 export type VsStage_records = Pick<VsStage, 'id' | 'stageId' | 'vsStageId' | 'name' | 'image' | 'stats'> & {
     originalImage: Pick<Image, 'url'>;
 };
+
+/** 53dffcfb06b273dd7bdf6a303d310730 StageRecordQuery */
+export type StageRecordResult_53dffcf = unknown;
+/** 38624d4864879c745c7b20e653e062db StageRecordsRefetchQuery */
+export type StageRecordsRefetchResult_38624d4 = unknown;

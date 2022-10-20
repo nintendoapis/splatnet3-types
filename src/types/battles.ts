@@ -203,3 +203,8 @@ export interface PagerUpdateBattleHistoriesByVsModeVariables {
     /** Always false in the official app */
     isXBattle: boolean;
 }
+
+/** 67224c25f7b2e605205d152009f593c9 PagerUpdateBattleHistoriesByVsModeQuery */
+export type PagerUpdateBattleHistoriesByVsModeResult_67224c2 = unknown;
+/** 67224c25f7b2e605205d152009f593c9 PagerUpdateBattleHistoriesByVsModeQuery variables */
+export type PagerUpdateBattleHistoriesByVsModeVariables_67224c2 = unknown;

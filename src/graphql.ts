@@ -2,23 +2,23 @@ import { PhotoAlbumRefetchResult, PhotoAlbumResult } from './types/album.js';
 import { BankaraBattleHistoriesRefetchResult, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesResult } from './types/battle-bankara.js';
 import { VsHistoryDetailPagerRefetchResult, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailResult, VsHistoryDetailResult_cd82f2a, VsHistoryDetailVariables, VsHistoryDetailVariables_cd82f2a } from './types/battle-detail.js';
 import { LatestBattleHistoriesRefetchResult, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesResult } from './types/battle-latest.js';
-import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesResult } from './types/battle-private.js';
+import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchResult_9ef974f, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesResult, PrivateBattleHistoriesResult_5198129 } from './types/battle-private.js';
 import { RegularBattleHistoriesRefetchResult, RegularBattleHistoriesRefetchResult_fed6e75, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesResult, RegularBattleHistoriesResult_819b680 } from './types/battle-regular.js';
-import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeVariables } from './types/battles.js';
+import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
 import { CatalogRefetchResult, CatalogResult } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
 import { CheckinHistory, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationVariables } from './types/checkin.js';
 import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailVariables, CoopHistoryResult, CoopPagerLatestCoopResult, RefetchableCoopHistory_CoopResult } from './types/coop.js';
 import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
 import { FriendListRefetchResult, FriendListResult } from './types/friends.js';
-import { GesotownRefetchResult, GesotownResult, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailResult, SaleGearDetailVariables } from './types/gesotown.js';
+import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
 import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
 import { HistoryRecordRefetchResult, HistoryRecordResult } from './types/history.js';
 import { ConfigureAnalyticsResult, CurrentFestResult, HomeResult, SettingResult } from './types/home.js';
 import { CreateMyOutfitResult, CreateMyOutfitVariables, MyOutfitCommonDataEquipmentsResult, MyOutfitCommonDataFilteringConditionResult, MyOutfitDetailResult, MyOutfitDetailVariables, MyOutfitsRefetchResult, MyOutfitsResult, UpdateMyOutfitResult, UpdateMyOutfitVariables } from './types/outfits.js';
 import { DownloadSearchReplayResult, DownloadSearchReplayVariables, ReplayModalReserveReplayDownloadResult, ReplayModalReserveReplayDownloadVariables, ReplayResult, ReplayUploadedReplayListRefetchResult } from './types/replay.js';
-import { StageScheduleResult } from './types/schedules.js';
-import { StageRecordResult, StageRecordsRefetchResult } from './types/stage.js';
+import { StageScheduleResult, StageScheduleResult_10e1d42 } from './types/schedules.js';
+import { StageRecordResult, StageRecordResult_53dffcf, StageRecordsRefetchResult, StageRecordsRefetchResult_38624d4 } from './types/stage.js';
 import { WeaponRecordResult, WeaponRecordsRefetchResult } from './types/weapon.js';
 
 export interface GraphQLRequest<Variables extends unknown> {
@@ -31,7 +31,7 @@ export interface GraphQLRequest<Variables extends unknown> {
     };
 }
 
-export interface RequestParameters {
+interface RequestParameters {
     id: string;
     // ...
 }
@@ -127,6 +127,7 @@ type requests = {
     [RequestId.DownloadSearchReplayQuery]: [RequestType.QUERY, DownloadSearchReplayVariables, DownloadSearchReplayResult];
     [RequestId.ReplayModalReserveReplayDownloadMutation]: [RequestType.MUTATION, ReplayModalReserveReplayDownloadVariables, ReplayModalReserveReplayDownloadResult];
     [RequestId.PagerLatestVsDetailQuery]: [RequestType.QUERY, {}, PagerLatestVsDetailResult];
+    '67224c25f7b2e605205d152009f593c9': [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeResult_67224c2];
     [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeResult];
     [RequestId.ConfigureAnalyticsQuery]: [RequestType.QUERY, {}, ConfigureAnalyticsResult];
     [RequestId.CurrentFestQuery]: [RequestType.QUERY, {}, CurrentFestResult];
@@ -134,11 +135,13 @@ type requests = {
     [RequestId.BankaraBattleHistoriesRefetchQuery]: [RequestType.QUERY, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchResult];
     [RequestId.LatestBattleHistoriesQuery]: [RequestType.QUERY, {}, LatestBattleHistoriesResult];
     [RequestId.LatestBattleHistoriesRefetchQuery]: [RequestType.QUERY, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchResult];
+    '51981299595060692440e0ca66c475a1': [RequestType.QUERY, {}, PrivateBattleHistoriesResult_5198129];
     [RequestId.PrivateBattleHistoriesQuery]: [RequestType.QUERY, {}, PrivateBattleHistoriesResult];
+    '9ef974f2686a88f24e0dbff6f63a83c4': [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchResult_9ef974f];
     [RequestId.PrivateBattleHistoriesRefetchQuery]: [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchResult];
     '819b680b0c7962b6f7dc2a777cd8c5e4': [RequestType.QUERY, {}, RegularBattleHistoriesResult_819b680];
-    'fed6e752513a9986177e8eec50dfdd3c': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesRefetchResult_fed6e75];
     [RequestId.RegularBattleHistoriesQuery]: [RequestType.QUERY, {}, RegularBattleHistoriesResult];
+    'fed6e752513a9986177e8eec50dfdd3c': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesRefetchResult_fed6e75];
     [RequestId.RegularBattleHistoriesRefetchQuery]: [RequestType.QUERY, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchResult];
     [RequestId.BattleHistoryCurrentPlayerQuery]: [RequestType.QUERY, {}, BattleHistoryCurrentPlayerResult];
     [RequestId.ChallengeQuery]: [RequestType.QUERY, {}, ChallengeResult];
@@ -161,9 +164,13 @@ type requests = {
     [RequestId.FestRecordRefetchQuery]: [RequestType.QUERY, {}, FestRecordRefetchResult];
     [RequestId.FriendListQuery]: [RequestType.QUERY, {}, FriendListResult];
     [RequestId.FriendListRefetchQuery]: [RequestType.QUERY, {}, FriendListRefetchResult];
+    'd08dbdd29f31471e61daa978feea697a': [RequestType.QUERY, {}, GesotownResult_d08dbdd];
     [RequestId.GesotownQuery]: [RequestType.QUERY, {}, GesotownResult];
+    'c61bf8a7f7bc47393b8c0e7590ae11f4': [RequestType.QUERY, {}, GesotownRefetchResult_c61bf8a];
     [RequestId.GesotownRefetchQuery]: [RequestType.QUERY, {}, GesotownRefetchResult];
+    'aebd822b4a4e48dc48f618411054b8f5': [RequestType.MUTATION, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailOrderGesotownGearResult_aebd822];
     [RequestId.SaleGearDetailOrderGesotownGearMutation]: [RequestType.MUTATION, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearResult];
+    '7c4173bb0f5d56f29dbec889173cff24': [RequestType.QUERY, SaleGearDetailVariables_7c4173b, SaleGearDetailResult_7c4173b];
     [RequestId.SaleGearDetailQuery]: [RequestType.QUERY, SaleGearDetailVariables, SaleGearDetailResult];
     [RequestId.HeroHistoryQuery]: [RequestType.QUERY, {}, HeroHistoryResult];
     [RequestId.HeroHistoryRefetchQuery]: [RequestType.QUERY, {}, HeroHistoryRefetchQuery];
@@ -179,8 +186,11 @@ type requests = {
     [RequestId.ReplayQuery]: [RequestType.QUERY, {}, ReplayResult];
     [RequestId.ReplayUploadedReplayListRefetchQuery]: [RequestType.QUERY, {}, ReplayUploadedReplayListRefetchResult];
     [RequestId.SettingQuery]: [RequestType.QUERY, {}, SettingResult];
+    '53dffcfb06b273dd7bdf6a303d310730': [RequestType.QUERY, {}, StageRecordResult_53dffcf];
     [RequestId.StageRecordQuery]: [RequestType.QUERY, {}, StageRecordResult];
+    '38624d4864879c745c7b20e653e062db': [RequestType.QUERY, {}, StageRecordsRefetchResult_38624d4];
     [RequestId.StageRecordsRefetchQuery]: [RequestType.QUERY, {}, StageRecordsRefetchResult];
+    '10e1d424391e78d21670227550b3509f': [RequestType.QUERY, {}, StageScheduleResult_10e1d42];
     [RequestId.StageScheduleQuery]: [RequestType.QUERY, {}, StageScheduleResult];
     [RequestId.WeaponRecordQuery]: [RequestType.QUERY, {}, WeaponRecordResult];
     [RequestId.WeaponRecordsRefetchQuery]: [RequestType.QUERY, {}, WeaponRecordsRefetchResult];
@@ -193,5 +203,10 @@ type requests = {
 };
 
 export type KnownRequestId = keyof requests;
-export type RequestParametersFor<I extends keyof requests> = requests[I][1];
-export type RequestResultFor<I extends keyof requests> = requests[I][2];
+
+export type VariablesTypes = {
+    [K in KnownRequestId]: requests[K][1];
+};
+export type ResultTypes = {
+    [K in KnownRequestId]: requests[K][1];
+};

@@ -94,3 +94,16 @@ export interface SaleGearDetailOrderGesotownGearVariables {
         isForceOrder: boolean;
     };
 }
+
+/** d08dbdd29f31471e61daa978feea697a GesotownQuery */
+export type GesotownResult_d08dbdd = unknown;
+/** c61bf8a7f7bc47393b8c0e7590ae11f4 GesotownRefetchQuery */
+export type GesotownRefetchResult_c61bf8a = GesotownResult_d08dbdd;
+/** aebd822b4a4e48dc48f618411054b8f5 SaleGearDetailOrderGesotownGearMutation */
+export type SaleGearDetailOrderGesotownGearResult_aebd822 = unknown;
+/** aebd822b4a4e48dc48f618411054b8f5 SaleGearDetailOrderGesotownGearMutation variables */
+export type SaleGearDetailOrderGesotownGearVariables_aebd822 = unknown;
+/** 7c4173bb0f5d56f29dbec889173cff24 SaleGearDetailQuery */
+export type SaleGearDetailResult_7c4173b = unknown;
+/** 7c4173bb0f5d56f29dbec889173cff24 SaleGearDetailQuery variables */
+export type SaleGearDetailVariables_7c4173b = unknown;

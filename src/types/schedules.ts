@@ -102,3 +102,6 @@ export type Fest_schedule = Pick<Fest, 'id' | 'title' | 'startTime' | 'endTime' 
 };
 
 export type FestTeam_schedule = Pick<FestTeam, 'id' | 'color' | 'myVoteState' | 'role'>;
+
+/** 10e1d424391e78d21670227550b3509f StageScheduleQuery */
+export type StageScheduleResult_10e1d42 = unknown;
