@@ -37,8 +37,6 @@ publish-npm:
       - main
     variables:
       - $NPM_TOKEN
-  except:
-    - branches
   cache:
     paths:
       - node_modules/
@@ -62,8 +60,6 @@ publish-gitlab:
     variables:
       - $GITLAB_NPM_PUBLISH == "true"
       - $GITLAB_NPM_PACKAGE_NAME
-  except:
-    - branches
   cache:
     paths:
       - node_modules/
@@ -88,8 +84,6 @@ publish-github:
       - $GITHUB_REPOSITORY
       - $GITHUB_NPM_PACKAGE_NAME
       - $GITHUB_NPM_TOKEN
-  except:
-    - branches
   cache:
     paths:
       - node_modules/
