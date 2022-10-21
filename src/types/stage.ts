@@ -1,6 +1,7 @@
 import { Image, NodeList } from './common.js';
 
 export interface VsStage {
+    __typename: 'VsStage';
     id: string;
     stageId: number;
     vsStageId: number;

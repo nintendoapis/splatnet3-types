@@ -26,7 +26,6 @@ export * from './types/weapon.js';
 export * from './enum.js';
 
 export {
-    GraphQLRequest,
     GraphQLResponse,
     /** Current persisted queries */
     RequestId,
@@ -35,3 +34,18 @@ export {
     VariablesTypes,
     ResultTypes,
 } from './graphql.js';
+
+export interface GraphQLRequest<Variables extends unknown> {
+    variables: Variables;
+    extensions: {
+        persistedQuery: {
+            version: 1;
+            sha256Hash: RequestParameters['id'];
+        };
+    };
+}
+
+interface RequestParameters {
+    id: string;
+    // ...
+}

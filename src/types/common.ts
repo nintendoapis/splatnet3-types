@@ -19,6 +19,7 @@ export interface Colour {
 }
 
 export interface CurrentPlayer {
+    __typename: 'CurrentPlayer';
     __isPlayer: 'CurrentPlayer';
     byname: string;
     name: string;
@@ -42,6 +43,7 @@ export type Fest_app = Pick<Fest, 'id' | 'state'> & {
 };
 
 export interface Image {
+    __typename: 'Image';
     url: string;
     width: number;
     height: number;
@@ -75,12 +77,14 @@ export interface Badge {
 }
 
 export interface VsRule {
+    __typename: 'VsRule';
     name: string;
     rule: string;
     id: string;
 }
 
 export interface VsMode {
+    __typename: 'VsMode';
     id: string; // "VnNNb2RlLTI=" (2 == Anarchy Series), "VnNNb2RlLTUx" (51 == Anarchy Open)
     mode: string; // "BANKARA"
     name: string; // "Anarchy Battle"

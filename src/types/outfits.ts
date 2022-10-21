@@ -139,7 +139,7 @@ export type MyOutfit_createPayload = Pick<MyOutfit, 'id' | 'index'> & {
 /** 31ff008ea218ffbe11d958a52c6f959f CreateMyOutfitMutation variables */
 export interface CreateMyOutfitVariables {
     input: {
-        myOutfit: Omit<MyOutfitInput, 'id'>;
+        myOutfit: CreateMyOutfitInput;
     };
     /** Always ["client:root:__connection_myOutfits_connection"] */
     connections: string[];
@@ -158,12 +158,11 @@ export interface UpdateMyOutfitPayload {
 /** bb809066282e7d659d3b9e9d4e46b43b UpdateMyOutfitMutation variables */
 export interface UpdateMyOutfitVariables {
     input: {
-        myOutfit: MyOutfitInput;
+        myOutfit: UpdateMyOutfitInput;
     };
 }
 
 export interface MyOutfitInput {
-    id: string;
     controlOptionConsole: PlayControlOption;
     controlOptionHandheld: PlayControlOption;
     weaponId: number;
@@ -171,3 +170,8 @@ export interface MyOutfitInput {
     clothingGearId: number;
     shoesGearId: number;
 }
+
+export type CreateMyOutfitInput = MyOutfitInput;
+export type UpdateMyOutfitInput = {
+    id: string;
+} & MyOutfitInput;

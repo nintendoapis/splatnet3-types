@@ -47,12 +47,14 @@ export type CurrentPlayer_battles = Pick<CurrentPlayer, 'species'> & {
 };
 
 export interface VsResult {
+    __typename: 'VsResult';
     summary: VsHistorySummary;
     historyGroupsOnlyFirst: NodeList<VsHistoryGroup_onlyFirst>;
     historyGroups: NodeList<VsHistoryGroup>;
 }
 
 export interface VsHistoryGroup {
+    __typename: 'VsHistoryGroup';
     bankaraMatchChallenge: BankaraMatchChallenge | null;
     historyDetails: NodeList<VsHistoryDetail>;
 }
@@ -138,6 +140,7 @@ export interface VsPlayerResult {
 }
 
 export interface VsTeam {
+    __typename: 'VsTeam';
     color: Colour;
     judgement: Judgement | keyof typeof Judgement | null;
     result: VsTeamResult | null;
@@ -148,6 +151,7 @@ export interface VsTeam {
 }
 
 export interface VsTeamResult {
+    __typename: 'VsTeamResult';
     paintPoint: number | null;
     paintRatio: number | null;
     score: number | null;

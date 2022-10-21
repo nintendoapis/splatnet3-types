@@ -1,4 +1,4 @@
-import { BankaraMatchMode } from '../enum.js';
+import { BankaraMatchMode, CoopRule } from '../enum.js';
 import { CurrentPlayer, Image, NodeList, VsRule } from './common.js';
 import { CoopStage, CoopSupplyWeapon } from './coop.js';
 import { Fest, FestTeam } from './fest.js';
@@ -11,8 +11,8 @@ export interface StageScheduleResult {
     xSchedules: NodeList<VsSchedule_xMatch>;
     leagueSchedules: NodeList<VsSchedule_league>;
     coopGroupingSchedule: {
-        regularSchedules: NodeList<CoopSchedule>;
-        bigRunSchedules: NodeList<CoopSchedule>;
+        regularSchedules: NodeList<Pick<CoopSchedule, 'startTime' | 'endTime' | 'setting'>>;
+        bigRunSchedules: NodeList<Pick<CoopSchedule, 'startTime' | 'endTime' | 'setting'>>;
     };
     festSchedules: NodeList<VsSchedule_fest>;
     currentFest: Fest_schedule | null;
@@ -26,6 +26,7 @@ export type VsStage_schedule = Pick<VsStage, 'stageId' | 'id' | 'vsStageId' | 'n
 };
 
 export interface VsSchedule {
+    __typename: 'VsSchedule';
     startTime: string;
     endTime: string;
     regularMatchSetting: RegularMatchSetting | null;
@@ -86,15 +87,17 @@ export interface FestMatchSetting {
 }
 
 export interface CoopSchedule {
+    __typename: 'CoopSchedule';
     startTime: string;
     endTime: string;
-    setting: CoopSetting | null;
+    setting: Pick<CoopSetting, '__typename' | 'coopStage' | 'weapons'> | null;
 }
 
 export interface CoopSetting {
     __typename: 'CoopNormalSetting';
     coopStage: Pick<CoopStage, 'id' | 'coopStageId' | 'name' | 'image' | 'thumbnailImage'>;
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
+    rule: CoopRule | keyof typeof CoopRule;
 }
 
 export type Fest_schedule = Pick<Fest, 'id' | 'title' | 'startTime' | 'endTime' | 'midtermTime' | 'state' | 'tricolorStage'> & {

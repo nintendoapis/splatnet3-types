@@ -19,10 +19,10 @@ type StageScheduleResult_splatoon3ink = Omit<StageScheduleResult, 'coopGroupingS
         bigRunSchedules: NodeList<CoopSchedule_splatoon3ink>;
     };
 };
-type CoopSchedule_splatoon3ink = Omit<CoopSchedule, 'setting'> & {
+type CoopSchedule_splatoon3ink = Pick<CoopSchedule, 'startTime' | 'endTime'> & {
     setting: CoopSetting_splatoon3ink;
 };
-type CoopSetting_splatoon3ink = Omit<CoopSetting, 'weapons'> & {
+type CoopSetting_splatoon3ink = Pick<CoopSetting, '__typename' | 'coopStage'> & {
     weapons: CoopSupplyWeapon_splatoon3ink[];
 };
 type CoopSupplyWeapon_splatoon3ink = Pick<CoopSupplyWeapon, 'name' | 'image'> & {

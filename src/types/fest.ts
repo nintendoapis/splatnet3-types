@@ -172,5 +172,8 @@ export type FestRecordRefetchResult = FestRecordResult;
 
 /** a2c742c840718f37488e0394cd6e1e08 VotesUpdateFestVoteMutation */
 export type VotesUpdateFestVoteResult = unknown;
+
 /** a2c742c840718f37488e0394cd6e1e08 VotesUpdateFestVoteMutation variables */
-export type VotesUpdateFestVoteVariables = unknown;
+export interface VotesUpdateFestVoteVariables {
+    teamId: string;
+}

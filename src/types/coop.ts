@@ -4,6 +4,7 @@ import { ClothingGear, HeadGear, ShoesGear } from './gear.js';
 import { SpecialWeapon } from './weapon.js';
 
 export interface CoopStage {
+    __typename: 'CoopStage';
     id: string; // "Q29vcFN0YWdlLTI="
     name: string; // "Sockeye Station"
     coopStageId: number; // 2
@@ -12,6 +13,7 @@ export interface CoopStage {
 }
 
 export interface CoopSupplyWeapon {
+    __typename: 'CoopSupplyWeapon';
     name: string; // "Splattershot Jr."
     image: Pick<Image, 'url'>;
 }
@@ -20,7 +22,7 @@ export interface CoopHistoryDetail {
     __typename: 'CoopHistoryDetail';
     id: string;
     rule: CoopRule | keyof typeof CoopRule;
-    weapons: CoopSupplyWeapon[];
+    weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
     nextHistoryDetail: Pick<CoopHistoryDetail, 'id'> | null;
     previousHistoryDetail: Pick<CoopHistoryDetail, 'id'> | null;
     resultWave: number;
@@ -50,7 +52,7 @@ export interface CoopBossResult {
 
 export interface CoopPlayerResult {
     player: CoopPlayer;
-    weapons: CoopSupplyWeapon[];
+    weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
     specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
     defeatEnemyCount: number;
     deliverCount: number;
@@ -74,11 +76,6 @@ export interface CoopPlayer {
 
 export interface CoopUniform {
     id: string;
-    name: string;
-    image: Pick<Image, 'url'>;
-}
-
-export interface CoopSupplyWeapon {
     name: string;
     image: Pick<Image, 'url'>;
 }
@@ -189,7 +186,7 @@ export interface CoopHistoryDetailResult {
 
 /** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery variables */
 export interface CoopHistoryDetailVariables {
-    id: string;
+    coopHistoryDetailId: string;
 }
 
 /** d3188df2fd4436870936b109675e2849 CoopHistoryDetailRefetchQuery */
@@ -198,7 +195,9 @@ export interface CoopHistoryDetailRefetchResult {
 }
 
 /** d3188df2fd4436870936b109675e2849 CoopHistoryDetailRefetchQuery variables */
-export type CoopHistoryDetailRefetchVariables = CoopHistoryDetailVariables;
+export interface CoopHistoryDetailRefetchVariables {
+    id: string;
+}
 
 /** 82385ab3c3444c857bd35a8d87dbc700 CoopPagerLatestCoopQuery */
 export type CoopPagerLatestCoopResult = CoopHistoryResult;

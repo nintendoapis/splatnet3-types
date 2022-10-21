@@ -9,6 +9,8 @@ import { CatalogRefetchResult, CatalogResult } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
 import { CheckinHistory, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationVariables } from './types/checkin.js';
 import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailVariables, CoopHistoryResult, CoopPagerLatestCoopResult, RefetchableCoopHistory_CoopResult } from './types/coop.js';
+import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
+import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
 import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
 import { FriendListRefetchResult, FriendListResult } from './types/friends.js';
 import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
@@ -20,25 +22,6 @@ import { DownloadSearchReplayResult, DownloadSearchReplayVariables, ReplayModalR
 import { StageScheduleResult, StageScheduleResult_10e1d42 } from './types/schedules.js';
 import { StageRecordResult, StageRecordResult_53dffcf, StageRecordsRefetchResult, StageRecordsRefetchResult_38624d4 } from './types/stage.js';
 import { WeaponRecordResult, WeaponRecordsRefetchResult } from './types/weapon.js';
-
-export interface GraphQLRequest<Variables extends unknown> {
-    variables: Variables;
-    extensions: {
-        persistedQuery: {
-            version: 1;
-            sha256Hash: RequestParameters['id'];
-        };
-    };
-}
-
-interface RequestParameters {
-    id: string;
-    // ...
-}
-
-export interface GraphQLResponse<T = unknown> {
-    data: T;
-}
 
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
@@ -112,12 +95,25 @@ export enum RequestId {
     VsHistoryDetailQuery = '2b085984f729cd51938fc069ceef784a',
 }
 
+export enum CoralWidgetExtensioniOSRequestId {
+    LatestAlbumPhoto = '0a6c7ae9561aa05559ab66f4a8c0399b79c134bba682451e8180b895b92b0698',
+    VsSchedules = 'f5131603b235edce2218e71c27ed0d35610cb78c48bb44aa88e98fb37ab08cd0',
+    CurrentEquipment = '6415729605742e57e4f627db2a5714ba38da0992ec91133b243bf517cd905369',
+    LatestVsResults = 'd167126ea863c00e3472fb3c2e9d9fbc37304d6168cd736e98c490288124f390',
+}
+
+export enum CoralWidgetExtensionAndroidRequestId {
+    LatestAlbumPhoto = 'c5723d79aab0dbcff9dd8808869544c2ef2bb3a5d882147b6b91386c9718a365',
+    LatestVsResults = '23f3cb83d08f46e36a3eced4bffb538a16cfd6ae21799cc8fb54909fa2962706',
+    StageSchedules = 'fb86e1a8d5845b7d7408b3e8074cd19bd9277970da8e21ffb869de6513ea99aa',
+}
+
 enum RequestType {
     QUERY,
     MUTATION,
 }
 
-type requests = {
+type requests_app = {
     [RequestId.SupportButton_SupportChallengeMutation]: [RequestType.MUTATION, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeResult];
     [RequestId.CheckinWithQRCodeMutation]: [RequestType.MUTATION, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationResult];
     [RequestId.CoopPagerLatestCoopQuery]: [RequestType.QUERY, {}, CoopPagerLatestCoopResult];
@@ -202,6 +198,23 @@ type requests = {
     [RequestId.VsHistoryDetailQuery]: [RequestType.QUERY, VsHistoryDetailVariables, VsHistoryDetailResult];
 };
 
+type requests_widgetextension_ios = {
+    // Coral 2.3.0 iOS
+    [CoralWidgetExtensioniOSRequestId.LatestAlbumPhoto]: [RequestType.QUERY, null, CoralWidgetExtensionLatestAlbumPhotoResult];
+    [CoralWidgetExtensioniOSRequestId.VsSchedules]: [RequestType.QUERY, CoralWidgetExtensionVsSchedulesVariables, CoralWidgetExtensionVsSchedulesResult];
+    [CoralWidgetExtensioniOSRequestId.CurrentEquipment]: [RequestType.QUERY, null, CoralWidgetExtensionCurrentEquipmentResult];
+    [CoralWidgetExtensioniOSRequestId.LatestVsResults]: [RequestType.QUERY, null, CoralWidgetExtensionLatestVsResultsResult];
+};
+
+type requests_widgetextension_android = {
+    // Coral 2.3.0 Android
+    [CoralWidgetExtensionAndroidRequestId.LatestAlbumPhoto]: [RequestType.QUERY, null, CoralAndroidWidgetExtensionLatestAlbumPhotoResult];
+    [CoralWidgetExtensionAndroidRequestId.LatestVsResults]: [RequestType.QUERY, unknown, CoralAndroidWidgetExtensionLatestVsResultsResult];
+    [CoralWidgetExtensionAndroidRequestId.StageSchedules]: [RequestType.QUERY, null, CoralAndroidWidgetExtensionStageSchedulesResult];
+};
+
+type requests = requests_app & requests_widgetextension_ios & requests_widgetextension_android;
+
 export type KnownRequestId = keyof requests;
 
 export type VariablesTypes = {
@@ -210,3 +223,16 @@ export type VariablesTypes = {
 export type ResultTypes = {
     [K in KnownRequestId]: requests[K][1];
 };
+
+export interface GraphQLSuccessResponse<T = unknown> {
+    data: T;
+}
+
+export interface GraphQLErrorResponse {
+    errors: GraphQLError[];
+}
+export interface GraphQLError {
+    message: string;
+}
+
+export type GraphQLResponse<T = unknown> = GraphQLSuccessResponse<T> | GraphQLErrorResponse;
