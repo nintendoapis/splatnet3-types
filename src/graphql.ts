@@ -216,12 +216,14 @@ type requests_widgetextension_android = {
 type requests = requests_app & requests_widgetextension_ios & requests_widgetextension_android;
 
 export type KnownRequestId = keyof requests;
+export type VariablesType<T extends KnownRequestId> = requests[T][1];
+export type ResultType<T extends KnownRequestId> = requests[T][2];
 
 export type VariablesTypes = {
-    [K in KnownRequestId]: requests[K][1];
+    [K in KnownRequestId]: VariablesType<K>;
 };
 export type ResultTypes = {
-    [K in KnownRequestId]: requests[K][1];
+    [K in KnownRequestId]: ResultType<K>;
 };
 
 export interface GraphQLSuccessResponse<T = unknown> {

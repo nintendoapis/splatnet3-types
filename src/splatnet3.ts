@@ -27,10 +27,15 @@ export * from './enum.js';
 
 export {
     GraphQLResponse,
+    GraphQLSuccessResponse,
+    GraphQLErrorResponse,
+    GraphQLError,
+
     /** Current persisted queries */
     RequestId,
     /** All known persisted query IDs */
     KnownRequestId,
+
     VariablesTypes,
     ResultTypes,
 } from './graphql.js';
