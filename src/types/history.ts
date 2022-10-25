@@ -1,18 +1,29 @@
 import { Badge, CurrentPlayer, NodeList } from './common.js';
 import { Weapon, WeaponCategory } from './weapon.js';
 
-/** 29957cf5d57b893934de857317cd46d8 HistoryRecordQuery */
+/** 6cd71021eb35a793e3252f7a95deb75a HistoryRecordQuery */
 export interface HistoryRecordResult {
+    currentPlayer: Pick<CurrentPlayer, '__isPlayer' | 'byname' | 'name' | 'nameId' | 'nameplate' | 'weapon' | 'headGear' | 'clothingGear' | 'shoesGear' | 'userIcon'>;
+    playHistory: Pick<PlayHistory, 'currentTime' | 'gameStartTime' | 'rank' | 'udemae' | 'udemaeMax' | 'xMatchMaxAr' | 'xMatchMaxCl' | 'xMatchMaxGl' | 'xMatchMaxLf' | 'winCountTotal' | 'frequentlyUsedWeapons' | 'paintPointTotal' | 'badges' | 'weaponHistory' | 'recentBadges' | 'allBadges'>;
+}
+
+/** 6cd71021eb35a793e3252f7a95deb75a HistoryRecordRefetchQuery */
+export type HistoryRecordRefetchResult = HistoryRecordResult;
+
+/** 29957cf5d57b893934de857317cd46d8 HistoryRecordQuery */
+export interface HistoryRecordResult_29957cf {
     currentPlayer: Pick<CurrentPlayer, '__isPlayer' | 'byname' | 'name' | 'nameId' | 'nameplate' | 'weapon' | 'headGear' | 'clothingGear' | 'shoesGear'>;
     playHistory: Pick<PlayHistory, 'currentTime' | 'gameStartTime' | 'udemaeMax' | 'xMatchMaxAr' | 'xMatchMaxCl' | 'xMatchMaxGl' | 'xMatchMaxLf' | 'winCountTotal' | 'frequentlyUsedWeapons' | 'paintPointTotal' | 'badges' | 'weaponHistory' | 'recentBadges' | 'allBadges'>;
 }
 
 /** 5e1d0bb4b52e2a99049df6e17117f363 HistoryRecordRefetchQuery */
-export type HistoryRecordRefetchResult = HistoryRecordResult;
+export type HistoryRecordRefetchResult_29957cf = HistoryRecordResult_29957cf;
 
 export interface PlayHistory {
     currentTime: string;
     gameStartTime: string;
+    rank: number;
+    udemae: string;
     udemaeMax: string;
     xMatchMaxAr: XMatchMax;
     xMatchMaxCl: XMatchMax;

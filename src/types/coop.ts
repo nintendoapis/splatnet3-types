@@ -27,8 +27,8 @@ export interface CoopHistoryDetail {
     previousHistoryDetail: Pick<CoopHistoryDetail, 'id'> | null;
     resultWave: number;
     coopStage: Pick<CoopStage, 'id' | 'name' | 'image'>;
-    afterGrade: CoopGrade;
-    afterGradePoint: number;
+    afterGrade: CoopGrade | null;
+    afterGradePoint: number | null;
     gradePointDiff: CoopGradePointDiff | keyof typeof CoopGradePointDiff;
     bossResult: CoopBossResult | null;
     myResult: CoopPlayerResult;
@@ -38,12 +38,12 @@ export interface CoopHistoryDetail {
     playedTime: string;
     dangerRate: number;
     scenarioCode: unknown | null;
-    smellMeter: number;
+    smellMeter: number | null;
     scale: CoopScale | null;
-    jobPoint: number;
-    jobScore: number;
-    jobRate: number;
-    jobBonus: number;
+    jobPoint: number | null;
+    jobScore: number | null;
+    jobRate: number | null;
+    jobBonus: number | null;
 }
 
 export interface CoopBossResult {
@@ -53,7 +53,7 @@ export interface CoopBossResult {
 export interface CoopPlayerResult {
     player: CoopPlayer;
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
-    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
+    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'> | null;
     defeatEnemyCount: number;
     deliverCount: number;
     goldenAssistCount: number;
