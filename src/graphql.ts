@@ -15,7 +15,7 @@ import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFe
 import { FriendListRefetchResult, FriendListResult } from './types/friends.js';
 import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
 import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
-import { HistoryRecordRefetchResult, HistoryRecordRefetchResult_29957cf, HistoryRecordResult, HistoryRecordResult_29957cf } from './types/history.js';
+import { HistoryRecordRefetchResult, HistoryRecordRefetchResult_5e1d0bb, HistoryRecordResult, HistoryRecordResult_29957cf } from './types/history.js';
 import { ConfigureAnalyticsResult, CurrentFestResult, HomeResult, SettingResult } from './types/home.js';
 import { CreateMyOutfitResult, CreateMyOutfitVariables, MyOutfitCommonDataEquipmentsResult, MyOutfitCommonDataFilteringConditionResult, MyOutfitDetailResult, MyOutfitDetailVariables, MyOutfitsRefetchResult, MyOutfitsResult, UpdateMyOutfitResult, UpdateMyOutfitVariables } from './types/outfits.js';
 import { DownloadSearchReplayResult, DownloadSearchReplayVariables, ReplayModalReserveReplayDownloadResult, ReplayModalReserveReplayDownloadVariables, ReplayResult, ReplayUploadedReplayListRefetchResult } from './types/replay.js';
@@ -171,9 +171,9 @@ type requests_app = {
     [RequestId.HeroHistoryQuery]: [RequestType.QUERY, {}, HeroHistoryResult];
     [RequestId.HeroHistoryRefetchQuery]: [RequestType.QUERY, {}, HeroHistoryRefetchQuery];
     '29957cf5d57b893934de857317cd46d8': [RequestType.QUERY, {}, HistoryRecordResult_29957cf];
-    [RequestId.HistoryRecordQuery]: [RequestType.QUERY, {}, HistoryRecordResult_29957cf];
-    '5e1d0bb4b52e2a99049df6e17117f363': [RequestType.QUERY, {}, HistoryRecordRefetchResult_29957cf];
-    [RequestId.HistoryRecordRefetchQuery]: [RequestType.QUERY, {}, HistoryRecordRefetchResult_29957cf];
+    [RequestId.HistoryRecordQuery]: [RequestType.QUERY, {}, HistoryRecordResult];
+    '5e1d0bb4b52e2a99049df6e17117f363': [RequestType.QUERY, {}, HistoryRecordRefetchResult_5e1d0bb];
+    [RequestId.HistoryRecordRefetchQuery]: [RequestType.QUERY, {}, HistoryRecordRefetchResult];
     [RequestId.MyOutfitDetailQuery]: [RequestType.QUERY, MyOutfitDetailVariables, MyOutfitDetailResult];
     [RequestId.MyOutfitsQuery]: [RequestType.QUERY, {}, MyOutfitsResult];
     [RequestId.MyOutfitsRefetchQuery]: [RequestType.QUERY, {}, MyOutfitsRefetchResult];
