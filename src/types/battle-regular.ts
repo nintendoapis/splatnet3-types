@@ -21,7 +21,7 @@ export type VsHistoryDetail_regular = Pick<VsHistoryDetail, 'id' | 'vsMode' | 'p
 
 /** 333d0a48071b0036449e35ece577b06f RegularBattleHistoriesRefetchQuery */
 export interface RegularBattleHistoriesRefetchResult {
-    regularBattleHistories: VsResult_latest;
+    regularBattleHistories: VsResult_regular;
     currentPlayer: CurrentPlayer_battles;
 }
 
