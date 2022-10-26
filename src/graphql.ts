@@ -237,6 +237,20 @@ export interface GraphQLErrorResponse {
 }
 export interface GraphQLError {
     message: string;
+    locations?: GraphQLErrorLocation[];
+    extensions?: GraphQLErrorExtensions;
+}
+export interface GraphQLErrorLocation {
+    line: number;
+    column: number;
+}
+export interface GraphQLErrorExtensions {
+    value: unknown | null;
+    problems: GraphQLErrorExtensionsProblem[];
+}
+export interface GraphQLErrorExtensionsProblem {
+    path: unknown[];
+    explanation: string;
 }
 
 export type GraphQLResponse<T = unknown> = GraphQLSuccessResponse<T> | GraphQLErrorResponse;
