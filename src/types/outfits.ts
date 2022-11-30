@@ -94,7 +94,7 @@ export type Weapon_outfitsCurrentPlayer = Pick<Weapon, 'id' | 'weaponId' | 'name
 
 /** d935d9e9ba7a5b6b5d6ece7f253304fc MyOutfitDetailQuery */
 export interface MyOutfitDetailResult {
-    myOutfit: MyOutfit;
+    myOutfit: MyOutfit | null;
 }
 
 /** d935d9e9ba7a5b6b5d6ece7f253304fc MyOutfitDetailQuery variables */

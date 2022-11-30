@@ -52,7 +52,7 @@ export type ShoesGear_gesotown = SaleGear_gesotown_Gear<ShoesGear>;
 
 /** 6eb1b255b2cf04c08041567148c883ad SaleGearDetailQuery */
 export interface SaleGearDetailResult {
-    saleGear: SaleGear;
+    saleGear: SaleGear | null;
 }
 
 /** 6eb1b255b2cf04c08041567148c883ad SaleGearDetailQuery variables */

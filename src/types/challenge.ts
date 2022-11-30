@@ -51,7 +51,7 @@ export type ChallengeJourney_home = Pick<ChallengeJourney, 'id' | 'name' | 'subN
 /** bc71fc0264f3f72256724b069f7a4097 JourneyQuery */
 export interface JourneyResult {
     challengeInfo: Pick<ChallengeHome, 'currentPaintPoint'>;
-    journey: ChallengeJourney_journey;
+    journey: ChallengeJourney_journey | null;
 }
 
 export type ChallengeJourney_journey = Pick<ChallengeJourney, '__typename' | 'id' | 'name' | 'subName' | 'desc' | 'gratitude' | 'image' | 'reward' | 'state'> & {
@@ -71,7 +71,7 @@ export type JourneyRefetchVariables = JourneyVariables;
 /** 38e58b84376a2ad49ddbe4061b948455 JourneyChallengeDetailQuery */
 export interface JourneyChallengeDetailResult {
     challengeHome: Pick<ChallengeHome, 'currentPaintPoint'>;
-    journey: ChallengeJourney_challenges;
+    journey: ChallengeJourney_challenges | null;
 }
 
 export type ChallengeJourney_challenges = Pick<ChallengeJourney, '__typename' | 'id' | 'subName' | 'challenges'>;

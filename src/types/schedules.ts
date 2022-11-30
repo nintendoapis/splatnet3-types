@@ -11,8 +11,8 @@ export interface StageScheduleResult {
     xSchedules: NodeList<VsSchedule_xMatch>;
     leagueSchedules: NodeList<VsSchedule_league>;
     coopGroupingSchedule: {
-        regularSchedules: NodeList<Pick<CoopSchedule, 'startTime' | 'endTime' | 'setting'>>;
-        bigRunSchedules: NodeList<Pick<CoopSchedule, 'startTime' | 'endTime' | 'setting'>>;
+        regularSchedules: NodeList<CoopSchedule_schedule>;
+        bigRunSchedules: NodeList<CoopSchedule_schedule>;
     };
     festSchedules: NodeList<VsSchedule_fest>;
     currentFest: Fest_schedule | null;
@@ -99,6 +99,8 @@ export interface CoopSetting {
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
     rule: CoopRule | keyof typeof CoopRule;
 }
+
+export type CoopSchedule_schedule = Pick<CoopSchedule, 'startTime' | 'endTime' | 'setting'>;
 
 export type Fest_schedule = Pick<Fest, 'id' | 'title' | 'startTime' | 'endTime' | 'midtermTime' | 'state' | 'tricolorStage'> & {
     teams: FestTeam_schedule[];

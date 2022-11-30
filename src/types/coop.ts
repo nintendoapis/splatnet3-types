@@ -181,8 +181,10 @@ export type RefetchableCoopHistory_CoopResult = CoopHistoryResult;
 
 /** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery */
 export interface CoopHistoryDetailResult {
-    coopHistoryDetail: Pick<CoopHistoryDetail, '__typename' | 'id' | 'afterGrade' | 'rule' | 'myResult' | 'memberResults' | 'bossResult' | 'enemyResults' | 'waveResults' | 'resultWave' | 'playedTime' | 'coopStage' | 'dangerRate' | 'scenarioCode' | 'smellMeter' | 'weapons' | 'afterGradePoint' | 'scale' | 'jobPoint' | 'jobScore' | 'jobRate' | 'jobBonus' | 'nextHistoryDetail' | 'previousHistoryDetail'>;
+    coopHistoryDetail: CoopHistoryDetail_result | null;
 }
+
+export type CoopHistoryDetail_result = Pick<CoopHistoryDetail, '__typename' | 'id' | 'afterGrade' | 'rule' | 'myResult' | 'memberResults' | 'bossResult' | 'enemyResults' | 'waveResults' | 'resultWave' | 'playedTime' | 'coopStage' | 'dangerRate' | 'scenarioCode' | 'smellMeter' | 'weapons' | 'afterGradePoint' | 'scale' | 'jobPoint' | 'jobScore' | 'jobRate' | 'jobBonus' | 'nextHistoryDetail' | 'previousHistoryDetail'>;
 
 /** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery variables */
 export interface CoopHistoryDetailVariables {
@@ -191,8 +193,10 @@ export interface CoopHistoryDetailVariables {
 
 /** d3188df2fd4436870936b109675e2849 CoopHistoryDetailRefetchQuery */
 export interface CoopHistoryDetailRefetchResult {
-    node: Pick<CoopHistoryDetail, '__typename' | 'id' | 'nextHistoryDetail' | 'previousHistoryDetail'>;
+    node: CoopHistoryDetail_refetch | null;
 }
+
+export type CoopHistoryDetail_refetch = Pick<CoopHistoryDetail, '__typename' | 'id' | 'nextHistoryDetail' | 'previousHistoryDetail'>;
 
 /** d3188df2fd4436870936b109675e2849 CoopHistoryDetailRefetchQuery variables */
 export interface CoopHistoryDetailRefetchVariables {

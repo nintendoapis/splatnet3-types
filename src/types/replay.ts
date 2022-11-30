@@ -37,7 +37,7 @@ export type ReplayUploadedReplayListRefetchResult = ReplayResult;
 
 /** b461048f9ffc414b3967a3cdad0805dd DownloadSearchReplayQuery */
 export interface DownloadSearchReplayResult {
-    replay: Replay;
+    replay: Replay | null;
 }
 
 /** b461048f9ffc414b3967a3cdad0805dd DownloadSearchReplayQuery variables */

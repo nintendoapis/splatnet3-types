@@ -230,6 +230,7 @@ export type ResultTypes = {
 
 export interface GraphQLSuccessResponse<T = unknown> {
     data: T;
+    errors?: GraphQLError[];
 }
 
 export interface GraphQLErrorResponse {
@@ -239,6 +240,7 @@ export interface GraphQLError {
     message: string;
     locations?: GraphQLErrorLocation[];
     extensions?: GraphQLErrorExtensions;
+    path?: string[];
 }
 export interface GraphQLErrorLocation {
     line: number;

@@ -5,7 +5,7 @@ import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
 
 /** 2b085984f729cd51938fc069ceef784a VsHistoryDetailQuery */
 export interface VsHistoryDetailResult {
-    vsHistoryDetail: VsHistoryDetail_result;
+    vsHistoryDetail: VsHistoryDetail_result | null;
 }
 
 export type VsHistoryDetail_result = Pick<VsHistoryDetail, '__typename' | 'id' | 'vsRule' | 'vsMode' | 'judgement' | 'vsStage' | 'festMatch' | 'knockout' | 'bankaraMatch' | 'xMatch' | 'duration' | 'playedTime' | 'awards' | 'leagueMatch' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
@@ -32,10 +32,10 @@ export interface VsHistoryDetailVariables {
 
 /** cd82f2ade8aca7687947c5f3210805a6 VsHistoryDetailQuery */
 export interface VsHistoryDetailResult_cd82f2a {
-    vsHistoryDetail: VsHistoryDetail_result_cd82f2a;
+    vsHistoryDetail: VsHistoryDetail_result_cd82f2a | null;
 }
 
-type VsHistoryDetail_result_cd82f2a = Pick<VsHistoryDetail, '__typename' | 'id' | 'vsRule' | 'vsMode' | 'judgement' | 'vsStage' | 'festMatch' | 'knockout' | 'bankaraMatch' | 'xMatch' | 'duration' | 'playedTime' | 'awards' | 'leagueMatch' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+export type VsHistoryDetail_result_cd82f2a = Pick<VsHistoryDetail, '__typename' | 'id' | 'vsRule' | 'vsMode' | 'judgement' | 'vsStage' | 'festMatch' | 'knockout' | 'bankaraMatch' | 'xMatch' | 'duration' | 'playedTime' | 'awards' | 'leagueMatch' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
     player: VsPlayer_result;
     myTeam: VsTeam_result_cd82f2a;
     otherTeams: VsTeam_result_cd82f2a[];
@@ -72,7 +72,7 @@ export interface VsHistoryDetailVariables_cd82f2a {
 
 /** 994cf141e55213e6923426caf37a1934 VsHistoryDetailPagerRefetchQuery */
 export interface VsHistoryDetailPagerRefetchResult {
-    vsHistoryDetail: VsHistoryDetail_pagerRefetch;
+    vsHistoryDetail: VsHistoryDetail_pagerRefetch | null;
 }
 
 export type VsHistoryDetail_pagerRefetch = Pick<VsHistoryDetail, '__typename' | 'nextHistoryDetail' | 'previousHistoryDetail' | 'id'>;

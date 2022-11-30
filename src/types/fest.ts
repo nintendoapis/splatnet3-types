@@ -18,7 +18,7 @@ export interface Fest {
     playerResult: FestPlayerResult | null;
     myTeam: Pick<FestTeam, 'id' | 'teamName' | 'color'> | null;
     isVotable: boolean;
-    undecidedVotes: NodeListWithCount<FestVote> | null;
+    undecidedVotes: NodeListTotal | null;
     tricolorStage: Pick<VsStage, 'id' | 'name' | 'image'>;
 }
 
@@ -88,7 +88,7 @@ export interface FestPlayerResult {
 
 /** 2d661988c055d843b3be290f04fb0db9 DetailFestRecordDetailQuery */
 export interface DetailFestRecordDetailResult {
-    fest: Fest_detail;
+    fest: Fest_detail | null;
     currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
 }
 
@@ -111,7 +111,7 @@ export type DetailFestRefetchVariables = DetailFestRecordDetailVariables;
 
 /** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery */
 export interface DetailRankingResult {
-    fest: Fest_ranking;
+    fest: Fest_ranking | null;
 }
 
 export type Fest_ranking = Pick<Fest, '__typename' | 'id' | 'lang'> & {
@@ -128,14 +128,13 @@ export interface DetailRankingVariables {
 
 /** 53ee6b6e2acc3859bf42454266d671fc DetailVotingStatusQuery */
 export interface DetailVotingStatusResult {
-    fest: Fest_votingStatus;
+    fest: Fest_votingStatus | null;
 }
 
 export type Fest_votingStatus = Pick<Fest, '__typename' | 'id' | 'lang'> & {
     teams: FestTeam_votingStatus[];
     undecidedVotes: NodeList<FestVote> | null;
 };
-
 export type FestTeam_votingStatus = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color' | 'myVoteState'> & {
     preVotes: NodeList<FestVote> | null;
     votes: NodeList<FestVote> | null;

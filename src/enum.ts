@@ -95,6 +95,7 @@ export enum AwardRank {
 
 export enum CatalogRewardState {
     ACCEPTED = 'ACCEPTED',
+    ACCEPTABLE = 'ACCEPTABLE',
     INPROGRESS = 'INPROGRESS',
     UNREACHED = 'UNREACHED',
 }
