@@ -71,6 +71,7 @@ export interface NameplateBackground {
 }
 
 export interface Badge {
+    __typename: 'Badge';
     id: string;
     image: Pick<Image, 'url'>;
     description: string;
