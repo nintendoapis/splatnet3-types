@@ -18,6 +18,12 @@ export interface CoopSupplyWeapon {
     image: Pick<Image, 'url'>;
 }
 
+export interface CoopSupplySpecialWeapon {
+    weaponId: number;
+    name: string;
+    image: Pick<Image, 'url'>;
+}
+
 export interface CoopHistoryDetail {
     __typename: 'CoopHistoryDetail';
     id: string;
@@ -53,7 +59,7 @@ export interface CoopBossResult {
 export interface CoopPlayerResult {
     player: CoopPlayer;
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
-    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'> | null;
+    specialWeapon: Pick<CoopSupplySpecialWeapon, 'weaponId' | 'name' | 'image'> | null;
     defeatEnemyCount: number;
     deliverCount: number;
     goldenAssistCount: number;
@@ -108,7 +114,7 @@ export interface CoopEnemy {
     image: Pick<Image, 'url'>;
 }
 
-/** 817618ce39bcf5570f52a97d73301b30 CoopHistoryQuery */
+/** 6ed02537e4a65bbb5e7f4f23092f6154 CoopHistoryQuery */
 export interface CoopHistoryResult {
     coopResult: CoopResult;
 }
@@ -168,26 +174,82 @@ export type CoopHistoryDetail_record = Pick<CoopHistoryDetail, 'id' | 'weapons' 
     coopStage: Pick<CoopStage, 'id' | 'name'>;
     myResult: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>;
     memberResults: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>[];
-    waveResults: Pick<CoopWaveResult, 'waveNumber'>[];
 };
 
 export type CoopHistoryGroup_onlyFirst = Pick<CoopHistoryGroup, never> & {
     historyDetails: NodeList<CoopHistoryDetail_onlyFirst>;
 };
-export type CoopHistoryDetail_onlyFirst = Pick<CoopHistoryDetail, 'id'>;
+export type CoopHistoryDetail_onlyFirst = Pick<CoopHistoryDetail, '__typename' | 'id'>;
+
+/** 817618ce39bcf5570f52a97d73301b30 CoopHistoryQuery */
+export interface CoopHistoryResult_817618c {
+    coopResult: CoopResult_coopHistory_817618c;
+}
+
+export type CoopResult_coopHistory_817618c = Pick<CoopResult, 'regularAverageClearWave' | 'regularGrade' | 'regularGradePoint' | 'monthlyGear' | 'scale' | 'pointCard'> & {
+    historyGroupsOnlyFirst: NodeList<CoopHistoryGroup_onlyFirst_817618c>;
+    historyGroups: NodeList<CoopHistoryGroup_coopHistory_817618c>;
+};
+
+export type CoopHistoryGroup_onlyFirst_817618c = Pick<CoopHistoryGroup, never> & {
+    historyDetails: NodeList<CoopHistoryDetail_onlyFirst_817618c>;
+};
+export type CoopHistoryDetail_onlyFirst_817618c = Pick<CoopHistoryDetail, 'id'>;
+
+export type CoopHistoryGroup_coopHistory_817618c = Pick<CoopHistoryGroup, 'startTime' | 'endTime' | 'mode' | 'rule' | 'highestResult'> & {
+    historyDetails: NodeList<CoopHistoryDetail_record_817618c>;
+};
+export type CoopHistoryDetail_record_817618c = Pick<CoopHistoryDetail, 'id' | 'weapons' | 'nextHistoryDetail' | 'previousHistoryDetail' | 'resultWave' | 'afterGrade' | 'afterGradePoint' | 'gradePointDiff' | 'bossResult'> & {
+    coopStage: Pick<CoopStage, 'id' | 'name'>;
+    myResult: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>;
+    memberResults: Pick<CoopPlayerResult, 'deliverCount' | 'goldenDeliverCount'>[];
+    waveResults: Pick<CoopWaveResult, 'waveNumber'>[];
+};
+
+/** d82a506052aef380e584c695e105f78b RefetchableCoopHistory_CoopResultQuery */
+export type RefetchableCoopHistoryResult = CoopHistoryResult;
 
 /** a5692cf290ffb26f14f0f7b6e5023b07 RefetchableCoopHistory_CoopResultQuery */
-export type RefetchableCoopHistory_CoopResult = CoopHistoryResult;
+export type RefetchableCoopHistoryResult_a5692cf = CoopHistoryResult_817618c;
 
-/** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery */
+/** 3cc5f826a6646b85f3ae45db51bd0707 CoopHistoryDetailQuery */
 export interface CoopHistoryDetailResult {
     coopHistoryDetail: CoopHistoryDetail_result | null;
 }
 
-export type CoopHistoryDetail_result = Pick<CoopHistoryDetail, '__typename' | 'id' | 'afterGrade' | 'rule' | 'myResult' | 'memberResults' | 'bossResult' | 'enemyResults' | 'waveResults' | 'resultWave' | 'playedTime' | 'coopStage' | 'dangerRate' | 'scenarioCode' | 'smellMeter' | 'weapons' | 'afterGradePoint' | 'scale' | 'jobPoint' | 'jobScore' | 'jobRate' | 'jobBonus' | 'nextHistoryDetail' | 'previousHistoryDetail'>;
+export type CoopHistoryDetail_result = Pick<CoopHistoryDetail, '__typename' | 'id' | 'afterGrade' | 'rule' | 'bossResult' | 'enemyResults' | 'waveResults' | 'resultWave' | 'playedTime' | 'coopStage' | 'dangerRate' | 'scenarioCode' | 'smellMeter' | 'weapons' | 'afterGradePoint' | 'scale' | 'jobPoint' | 'jobScore' | 'jobRate' | 'jobBonus' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+    myResult: CoopPlayerResult;
+    memberResults: CoopPlayerResult[];
+};
+
+export type CoopPlayerResult_result = Pick<CoopPlayerResult, 'weapons' | 'specialWeapon' | 'defeatEnemyCount' | 'deliverCount' | 'goldenAssistCount' | 'goldenDeliverCount' | 'rescueCount' | 'rescuedCount'> & {
+    player: CoopPlayer_result;
+};
+export type CoopPlayer_result = Pick<CoopPlayer, '__isPlayer' | 'id' | 'name' | 'nameId' | 'byname' | 'nameplate' | 'uniform' | 'species'>;
+
+/** 3cc5f826a6646b85f3ae45db51bd0707 CoopHistoryDetailQuery variables */
+export interface CoopHistoryDetailVariables {
+    coopHistoryDetailId: string;
+}
+
+/** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery */
+export interface CoopHistoryDetailResult_f3799a0 {
+    coopHistoryDetail: CoopHistoryDetail_result_f3799a0 | null;
+}
+
+export type CoopHistoryDetail_result_f3799a0 = Pick<CoopHistoryDetail, '__typename' | 'id' | 'afterGrade' | 'rule' | 'bossResult' | 'enemyResults' | 'waveResults' | 'resultWave' | 'playedTime' | 'coopStage' | 'dangerRate' | 'scenarioCode' | 'smellMeter' | 'weapons' | 'afterGradePoint' | 'scale' | 'jobPoint' | 'jobScore' | 'jobRate' | 'jobBonus' | 'nextHistoryDetail' | 'previousHistoryDetail'> & {
+    myResult: CoopPlayerResult_result_f3799a0;
+    memberResults: CoopPlayerResult_result_f3799a0[];
+};
+
+export type CoopPlayerResult_result_f3799a0 = Pick<CoopPlayerResult, 'weapons' | 'defeatEnemyCount' | 'deliverCount' | 'goldenAssistCount' | 'goldenDeliverCount' | 'rescueCount' | 'rescuedCount'> & {
+    player: CoopPlayer_result_f3799a0;
+    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'> | null;
+};
+export type CoopPlayer_result_f3799a0 = Pick<CoopPlayer, '__isPlayer' | 'id' | 'name' | 'nameId' | 'byname' | 'nameplate' | 'uniform' | 'isMyself' | 'species'>;
 
 /** f3799a033f0a7ad4b1b396f9a3bafb1e CoopHistoryDetailQuery variables */
-export interface CoopHistoryDetailVariables {
+export interface CoopHistoryDetailVariables_f3799a0 {
     coopHistoryDetailId: string;
 }
 
@@ -203,5 +265,8 @@ export interface CoopHistoryDetailRefetchVariables {
     id: string;
 }
 
-/** 82385ab3c3444c857bd35a8d87dbc700 CoopPagerLatestCoopQuery */
+/** 5711cb6c2e3afce523766c906810f030 CoopPagerLatestCoopQuery */
 export type CoopPagerLatestCoopResult = CoopHistoryResult;
+
+/** 82385ab3c3444c857bd35a8d87dbc700 CoopPagerLatestCoopQuery */
+export type CoopPagerLatestCoopResult_82385ab = CoopHistoryResult_817618c;

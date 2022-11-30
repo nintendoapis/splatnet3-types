@@ -9,7 +9,7 @@ import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdat
 import { CatalogRefetchResult, CatalogRefetchResult_02d2de8, CatalogResult, CatalogResult_aead379 } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
 import { CheckinResult, CheckinResult_af8cac2, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationResult_8e3fecf, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8e3fecf } from './types/checkin.js';
-import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailVariables, CoopHistoryResult, CoopPagerLatestCoopResult, RefetchableCoopHistory_CoopResult } from './types/coop.js';
+import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailResult_f3799a0, CoopHistoryDetailVariables, CoopHistoryDetailVariables_f3799a0, CoopHistoryResult, CoopHistoryResult_817618c, CoopPagerLatestCoopResult, CoopPagerLatestCoopResult_82385ab, RefetchableCoopHistoryResult, RefetchableCoopHistoryResult_a5692cf } from './types/coop.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
 import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
@@ -27,7 +27,7 @@ import { WeaponRecordResult, WeaponRecordResult_a0c277c, WeaponRecordsRefetchRes
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
     CheckinWithQRCodeMutation = '8d54e1c6bdcc65181f65adc582914ad8',
-    CoopPagerLatestCoopQuery = '82385ab3c3444c857bd35a8d87dbc700',
+    CoopPagerLatestCoopQuery = '5711cb6c2e3afce523766c906810f030',
     RankingHoldersFestTeamRankingHoldersPaginationQuery = 'be2eb9e9b8dd680519eb59cc46c1a32b',
     VotesUpdateFestVoteMutation = 'a2c742c840718f37488e0394cd6e1e08',
     CreateMyOutfitMutation = '31ff008ea218ffbe11d958a52c6f959f',
@@ -56,10 +56,10 @@ export enum RequestId {
     JourneyQuery = 'bc71fc0264f3f72256724b069f7a4097',
     JourneyRefetchQuery = '09eee118fa16415d6bc3846bc6e5d8e5',
     CheckinQuery = '5d0d1b45ebf4e324d0dae017d9df06d2',
-    CoopHistoryDetailQuery = 'f3799a033f0a7ad4b1b396f9a3bafb1e',
+    CoopHistoryDetailQuery = '3cc5f826a6646b85f3ae45db51bd0707',
     CoopHistoryDetailRefetchQuery = 'd3188df2fd4436870936b109675e2849',
-    CoopHistoryQuery = '817618ce39bcf5570f52a97d73301b30',
-    RefetchableCoopHistory_CoopResultQuery = 'a5692cf290ffb26f14f0f7b6e5023b07',
+    CoopHistoryQuery = '6ed02537e4a65bbb5e7f4f23092f6154',
+    RefetchableCoopHistory_CoopResultQuery = 'd82a506052aef380e584c695e105f78b',
     DetailFestRecordDetailQuery = '2d661988c055d843b3be290f04fb0db9',
     DetailFestRefethQuery = '0eb7bac3d8aabcad0e9d663ee5b90846',
     DetailFestVotingStatusRefethQuery = '92f51ed1ab462bbf1ab64cad49d36f79',
@@ -121,6 +121,7 @@ type requests_app = {
     [RequestId.SupportButton_SupportChallengeMutation]: [RequestType.MUTATION, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeResult];
     '8e3fecf7cfce83f6831b17e9052791d0': [RequestType.MUTATION, CheckinWithQRCodeMutationVariables_8e3fecf, CheckinWithQRCodeMutationResult_8e3fecf];
     [RequestId.CheckinWithQRCodeMutation]: [RequestType.MUTATION, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationResult];
+    '82385ab3c3444c857bd35a8d87dbc700': [RequestType.QUERY, {}, CoopPagerLatestCoopResult_82385ab];
     [RequestId.CoopPagerLatestCoopQuery]: [RequestType.QUERY, {}, CoopPagerLatestCoopResult];
     [RequestId.RankingHoldersFestTeamRankingHoldersPaginationQuery]: [RequestType.QUERY, RankingHoldersFestTeamRankingHoldersPaginationVariables, RankingHoldersFestTeamRankingHoldersPaginationResult];
     [RequestId.VotesUpdateFestVoteMutation]: [RequestType.MUTATION, VotesUpdateFestVoteVariables, VotesUpdateFestVoteResult];
@@ -164,10 +165,13 @@ type requests_app = {
     [RequestId.JourneyRefetchQuery]: [RequestType.QUERY, JourneyRefetchVariables, JourneyRefetchResult];
     'af8cac2c2554e22e2bbada19392083a2': [RequestType.QUERY, {}, CheckinResult_af8cac2];
     [RequestId.CheckinQuery]: [RequestType.QUERY, {}, CheckinResult];
+    'f3799a033f0a7ad4b1b396f9a3bafb1e': [RequestType.QUERY, CoopHistoryDetailVariables_f3799a0, CoopHistoryDetailResult_f3799a0];
     [RequestId.CoopHistoryDetailQuery]: [RequestType.QUERY, CoopHistoryDetailVariables, CoopHistoryDetailResult];
     [RequestId.CoopHistoryDetailRefetchQuery]: [RequestType.QUERY, CoopHistoryDetailRefetchVariables, CoopHistoryDetailRefetchResult];
+    '817618ce39bcf5570f52a97d73301b30': [RequestType.QUERY, {}, CoopHistoryResult_817618c];
     [RequestId.CoopHistoryQuery]: [RequestType.QUERY, {}, CoopHistoryResult];
-    [RequestId.RefetchableCoopHistory_CoopResultQuery]: [RequestType.QUERY, {}, RefetchableCoopHistory_CoopResult];
+    'a5692cf290ffb26f14f0f7b6e5023b07': [RequestType.QUERY, {}, RefetchableCoopHistoryResult_a5692cf];
+    [RequestId.RefetchableCoopHistory_CoopResultQuery]: [RequestType.QUERY, {}, RefetchableCoopHistoryResult];
     [RequestId.DetailFestRecordDetailQuery]: [RequestType.QUERY, DetailFestRecordDetailVariables, DetailFestRecordDetailResult];
     [RequestId.DetailFestRefethQuery]: [RequestType.QUERY, DetailFestRefetchVariables, DetailFestRefetchResult];
     [RequestId.DetailFestVotingStatusRefethQuery]: [RequestType.QUERY, DetailFestVotingStatusRefetchVariables, DetailFestVotingStatusRefetchResult];
