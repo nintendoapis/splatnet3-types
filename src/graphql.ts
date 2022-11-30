@@ -8,7 +8,7 @@ import { XBattleHistoriesRefetchVariables, XBattleHistoriesResult } from './type
 import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
 import { CatalogRefetchResult, CatalogResult } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
-import { CheckinHistory, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationVariables } from './types/checkin.js';
+import { CheckinResult, CheckinResult_af8cac2, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationResult_8e3fecf, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8e3fecf } from './types/checkin.js';
 import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailVariables, CoopHistoryResult, CoopPagerLatestCoopResult, RefetchableCoopHistory_CoopResult } from './types/coop.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
@@ -26,7 +26,7 @@ import { WeaponRecordResult, WeaponRecordsRefetchResult } from './types/weapon.j
 
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
-    CheckinWithQRCodeMutation = '8e3fecf7cfce83f6831b17e9052791d0',
+    CheckinWithQRCodeMutation = '8d54e1c6bdcc65181f65adc582914ad8',
     CoopPagerLatestCoopQuery = '82385ab3c3444c857bd35a8d87dbc700',
     RankingHoldersFestTeamRankingHoldersPaginationQuery = 'be2eb9e9b8dd680519eb59cc46c1a32b',
     VotesUpdateFestVoteMutation = 'a2c742c840718f37488e0394cd6e1e08',
@@ -55,7 +55,7 @@ export enum RequestId {
     JourneyChallengeDetailRefetchQuery = '8dc246933b1f4e26a6dfd251878cf786',
     JourneyQuery = 'bc71fc0264f3f72256724b069f7a4097',
     JourneyRefetchQuery = '09eee118fa16415d6bc3846bc6e5d8e5',
-    CheckinQuery = 'af8cac2c2554e22e2bbada19392083a2',
+    CheckinQuery = '5d0d1b45ebf4e324d0dae017d9df06d2',
     CoopHistoryDetailQuery = 'f3799a033f0a7ad4b1b396f9a3bafb1e',
     CoopHistoryDetailRefetchQuery = 'd3188df2fd4436870936b109675e2849',
     CoopHistoryQuery = '817618ce39bcf5570f52a97d73301b30',
@@ -119,6 +119,7 @@ enum RequestType {
 
 type requests_app = {
     [RequestId.SupportButton_SupportChallengeMutation]: [RequestType.MUTATION, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeResult];
+    '8e3fecf7cfce83f6831b17e9052791d0': [RequestType.MUTATION, CheckinWithQRCodeMutationVariables_8e3fecf, CheckinWithQRCodeMutationResult_8e3fecf];
     [RequestId.CheckinWithQRCodeMutation]: [RequestType.MUTATION, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationResult];
     [RequestId.CoopPagerLatestCoopQuery]: [RequestType.QUERY, {}, CoopPagerLatestCoopResult];
     [RequestId.VotesUpdateFestVoteMutation]: [RequestType.MUTATION, VotesUpdateFestVoteVariables, VotesUpdateFestVoteResult];
@@ -160,7 +161,8 @@ type requests_app = {
     [RequestId.JourneyChallengeDetailRefetchQuery]: [RequestType.QUERY, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailRefetchResult];
     [RequestId.JourneyQuery]: [RequestType.QUERY, JourneyVariables, JourneyResult];
     [RequestId.JourneyRefetchQuery]: [RequestType.QUERY, JourneyRefetchVariables, JourneyRefetchResult];
-    [RequestId.CheckinQuery]: [RequestType.QUERY, {}, CheckinHistory];
+    'af8cac2c2554e22e2bbada19392083a2': [RequestType.QUERY, {}, CheckinResult_af8cac2];
+    [RequestId.CheckinQuery]: [RequestType.QUERY, {}, CheckinResult];
     [RequestId.CoopHistoryDetailQuery]: [RequestType.QUERY, CoopHistoryDetailVariables, CoopHistoryDetailResult];
     [RequestId.CoopHistoryDetailRefetchQuery]: [RequestType.QUERY, CoopHistoryDetailRefetchVariables, CoopHistoryDetailRefetchResult];
     [RequestId.CoopHistoryQuery]: [RequestType.QUERY, {}, CoopHistoryResult];
