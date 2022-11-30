@@ -49,15 +49,33 @@ export interface WeaponCategory {
     image: Pick<Image, 'url'>;
 }
 
-/** a0c277c719b758a926772879d8e53ef8 WeaponRecordQuery */
+/** 5f279779e7081f2d14ae1ddca0db2b6e WeaponRecordQuery */
 export interface WeaponRecordResult {
     weaponRecords: NodeList<Weapon_records>;
 }
 
-/** 23c9b2b4ad878c2d91a68859be928dea WeaponRecordsRefetchQuery */
+/** 6961f618fcef440c81509b205465eeec WeaponRecordsRefetchQuery */
 export type WeaponRecordsRefetchResult = WeaponRecordResult;
 
-export type Weapon_records = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image' | 'stats'> & {
+export type Weapon_records = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'stats'> & {
+    weaponCategory: Pick<WeaponCategory, 'id' | 'weaponCategoryId'>;
+    subWeapon: Pick<SubWeapon, 'id' | 'subWeaponId' | 'name' | 'image'>;
+    specialWeapon: Pick<SpecialWeapon, 'id' | 'specialWeaponId' | 'name' | 'image'>;
+    image3d: Pick<Image, 'url'>;
+    image2d: Pick<Image, 'url'>;
+    image3dThumbnail: Pick<Image, 'url'>;
+    image2dThumbnail: Pick<Image, 'url'>;
+};
+
+/** a0c277c719b758a926772879d8e53ef8 WeaponRecordQuery */
+export interface WeaponRecordResult_a0c277c {
+    weaponRecords: NodeList<Weapon_records_a0c277c>;
+}
+
+/** 23c9b2b4ad878c2d91a68859be928dea WeaponRecordsRefetchQuery */
+export type WeaponRecordsRefetchResult_23c9b2b = WeaponRecordResult_a0c277c;
+
+export type Weapon_records_a0c277c = Pick<Weapon, 'id' | 'weaponId' | 'name' | 'image' | 'stats'> & {
     weaponCategory: Pick<WeaponCategory, 'id' | 'weaponCategoryId'>;
     subWeapon: Pick<SubWeapon, 'id' | 'subWeaponId' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'specialWeaponId' | 'name' | 'image'>;

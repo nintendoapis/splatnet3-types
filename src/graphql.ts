@@ -22,7 +22,7 @@ import { CreateMyOutfitResult, CreateMyOutfitVariables, MyOutfitCommonDataEquipm
 import { DownloadSearchReplayResult, DownloadSearchReplayVariables, ReplayModalReserveReplayDownloadResult, ReplayModalReserveReplayDownloadVariables, ReplayResult, ReplayUploadedReplayListRefetchResult } from './types/replay.js';
 import { StageScheduleResult, StageScheduleResult_10e1d42, StageScheduleResult_7d4bb05 } from './types/schedules.js';
 import { StageRecordResult, StageRecordResult_53dffcf, StageRecordsRefetchResult, StageRecordsRefetchResult_38624d4 } from './types/stage.js';
-import { WeaponRecordResult, WeaponRecordsRefetchResult } from './types/weapon.js';
+import { WeaponRecordResult, WeaponRecordResult_a0c277c, WeaponRecordsRefetchResult, WeaponRecordsRefetchResult_23c9b2b } from './types/weapon.js';
 
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
@@ -90,8 +90,8 @@ export enum RequestId {
     StageRecordQuery = 'f08a932d533845dde86e674e03bbb7d3',
     StageRecordsRefetchQuery = '2fb1b3fa2d40c9b5953ea1ae263e54c1',
     StageScheduleQuery = '730cd98e84f1030d3e9ac86b6f1aae13',
-    WeaponRecordQuery = 'a0c277c719b758a926772879d8e53ef8',
-    WeaponRecordsRefetchQuery = '23c9b2b4ad878c2d91a68859be928dea',
+    WeaponRecordQuery = '5f279779e7081f2d14ae1ddca0db2b6e',
+    WeaponRecordsRefetchQuery = '6961f618fcef440c81509b205465eeec',
     CatalogQuery = '52504060c81ff2f2d618c4e5377e6e7c',
     CatalogRefetchQuery = '4423dfd630867301fcdd834cd52922f4',
     HomeQuery = 'dba47124d5ec3090c97ba17db5d2f4b3',
@@ -212,7 +212,9 @@ type requests_app = {
     '10e1d424391e78d21670227550b3509f': [RequestType.QUERY, {}, StageScheduleResult_10e1d42];
     '7d4bb0565342b7385ceb97d109e14897': [RequestType.QUERY, {}, StageScheduleResult_7d4bb05];
     [RequestId.StageScheduleQuery]: [RequestType.QUERY, {}, StageScheduleResult];
+    'a0c277c719b758a926772879d8e53ef8': [RequestType.QUERY, {}, WeaponRecordResult_a0c277c];
     [RequestId.WeaponRecordQuery]: [RequestType.QUERY, {}, WeaponRecordResult];
+    '23c9b2b4ad878c2d91a68859be928dea': [RequestType.QUERY, {}, WeaponRecordsRefetchResult_23c9b2b];
     [RequestId.WeaponRecordsRefetchQuery]: [RequestType.QUERY, {}, WeaponRecordsRefetchResult];
     'aead379b98c14798df81f0dd3ebe6121': [RequestType.QUERY, {}, CatalogResult_aead379];
     [RequestId.CatalogQuery]: [RequestType.QUERY, {}, CatalogResult];
