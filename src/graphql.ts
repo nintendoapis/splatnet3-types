@@ -13,7 +13,7 @@ import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, Coop
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
 import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
-import { FriendListRefetchResult, FriendListResult } from './types/friends.js';
+import { FriendListRefetchResult, FriendListRefetchResult_c1afed6, FriendListResult, FriendListResult_7a0e05c } from './types/friends.js';
 import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
 import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
 import { HistoryRecordRefetchResult, HistoryRecordRefetchResult_5e1d0bb, HistoryRecordResult, HistoryRecordResult_29957cf } from './types/history.js';
@@ -174,7 +174,9 @@ type requests_app = {
     [RequestId.DetailVotingStatusQuery]: [RequestType.QUERY, DetailVotingStatusVariables, DetailVotingStatusResult];
     [RequestId.FestRecordQuery]: [RequestType.QUERY, {}, FestRecordResult];
     [RequestId.FestRecordRefetchQuery]: [RequestType.QUERY, {}, FestRecordRefetchResult];
+    '7a0e05c28c7d3f7e5a06def87ab8cd2d': [RequestType.QUERY, {}, FriendListResult_7a0e05c];
     [RequestId.FriendListQuery]: [RequestType.QUERY, {}, FriendListResult];
+    'c1afed6111887347e244c639e7d35c69': [RequestType.QUERY, {}, FriendListRefetchResult_c1afed6];
     [RequestId.FriendListRefetchQuery]: [RequestType.QUERY, {}, FriendListRefetchResult];
     'd08dbdd29f31471e61daa978feea697a': [RequestType.QUERY, {}, GesotownResult_d08dbdd];
     [RequestId.GesotownQuery]: [RequestType.QUERY, {}, GesotownResult];
