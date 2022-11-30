@@ -121,6 +121,11 @@ export type FestTeam_ranking = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'col
     result: Pick<FestTeamResult, 'rankingHolders'> | null;
 };
 
+/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery */
+export type RankingHoldersFestTeamRankingHoldersPaginationResult = unknown;
+/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
+export type RankingHoldersFestTeamRankingHoldersPaginationVariables = unknown;
+
 /** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery variables */
 export interface DetailRankingVariables {
     festId: string;

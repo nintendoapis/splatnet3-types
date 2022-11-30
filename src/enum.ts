@@ -86,6 +86,8 @@ export enum BankaraMatchMode {
 export enum BankaraMatchChallengeState {
     SUCCEEDED = 'SUCCEEDED',
     FAILED = 'FAILED',
+    ABORTED_BY_SEASON_RESET = 'ABORTED_BY_SEASON_RESET',
+    ABORTED_BY_UDEMAE_RESET = 'ABORTED_BY_UDEMAE_RESET',
 }
 
 export enum AwardRank {

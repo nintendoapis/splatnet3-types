@@ -4,6 +4,7 @@ import { VsHistoryDetailPagerRefetchResult, VsHistoryDetailPagerRefetchVariables
 import { LatestBattleHistoriesRefetchResult, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesResult } from './types/battle-latest.js';
 import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchResult_9ef974f, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesResult, PrivateBattleHistoriesResult_5198129 } from './types/battle-private.js';
 import { RegularBattleHistoriesRefetchResult, RegularBattleHistoriesRefetchResult_fed6e75, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesResult, RegularBattleHistoriesResult_819b680 } from './types/battle-regular.js';
+import { XBattleHistoriesRefetchVariables, XBattleHistoriesResult } from './types/battle-xmatch.js';
 import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
 import { CatalogRefetchResult, CatalogResult } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
@@ -11,7 +12,7 @@ import { CheckinHistory, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutat
 import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailVariables, CoopHistoryResult, CoopPagerLatestCoopResult, RefetchableCoopHistory_CoopResult } from './types/coop.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
-import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
+import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
 import { FriendListRefetchResult, FriendListResult } from './types/friends.js';
 import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
 import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
@@ -27,6 +28,7 @@ export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
     CheckinWithQRCodeMutation = '8e3fecf7cfce83f6831b17e9052791d0',
     CoopPagerLatestCoopQuery = '82385ab3c3444c857bd35a8d87dbc700',
+    RankingHoldersFestTeamRankingHoldersPaginationQuery = 'be2eb9e9b8dd680519eb59cc46c1a32b',
     VotesUpdateFestVoteMutation = 'a2c742c840718f37488e0394cd6e1e08',
     CreateMyOutfitMutation = '31ff008ea218ffbe11d958a52c6f959f',
     UpdateMyOutfitMutation = 'bb809066282e7d659d3b9e9d4e46b43b',
@@ -36,14 +38,16 @@ export enum RequestId {
     PagerUpdateBattleHistoriesByVsModeQuery = '000afbc113f5653d2c2cee42ff6cdeab',
     ConfigureAnalyticsQuery = 'f8ae00773cc412a50dd41a6d9a159ddd',
     CurrentFestQuery = 'c0429fd738d829445e994d3370999764',
-    BankaraBattleHistoriesQuery = 'c1553ac75de0a3ea497cdbafaa93e95b',
-    BankaraBattleHistoriesRefetchQuery = 'd8a8662345593bbbcd63841c91d4c6f5',
-    LatestBattleHistoriesQuery = '7d8b560e31617e981cf7c8aa1ca13a00',
-    LatestBattleHistoriesRefetchQuery = '80585ad4e4ecb674c3d8cd278adb1d21',
-    PrivateBattleHistoriesQuery = '38e0529de8bc77189504d26c7a14e0b8',
-    PrivateBattleHistoriesRefetchQuery = 'b304e707648f0669a939943d46febce1',
-    RegularBattleHistoriesQuery = 'f6e7e0277e03ff14edfef3b41f70cd33',
-    RegularBattleHistoriesRefetchQuery = '333d0a48071b0036449e35ece577b06f',
+    BankaraBattleHistoriesQuery = 'de4754588109b77dbcb90fbe44b612ee',
+    BankaraBattleHistoriesRefetchQuery = '964c03ed28eb640438d8113534de2fe4',
+    LatestBattleHistoriesQuery = '4f5f26e64bca394b45345a65a2f383bd',
+    LatestBattleHistoriesRefetchQuery = '047c1ff4d6b9f03b082aa6ffdb200a6a',
+    PrivateBattleHistoriesQuery = '1d6ed57dc8b801863126ad4f351dfb9a',
+    PrivateBattleHistoriesRefetchQuery = '4835a28419ad3c7bfacbb30ca4008140',
+    RegularBattleHistoriesQuery = 'd5b795d09e67ce153e622a184b7e7dfa',
+    RegularBattleHistoriesRefetchQuery = '04e5d83f4243541c369b2e7556b9b809',
+    XBattleHistoriesQuery = '45c74fefb45a49073207229ca65f0a62',
+    XBattleHistoriesRefetchQuery = 'ba35dcea6d5666463e86273e1756d9ed',
     BattleHistoryCurrentPlayerQuery = '49dd00428fb8e9b4dde62f585c8de1e0',
     ChallengeQuery = '8a079214500148bf88a8fce1d7209b90',
     ChallengeRefetchQuery = '34aedc79f96b8613501bba465295f779',
@@ -83,8 +87,8 @@ export enum RequestId {
     ReplayQuery = 'f98cc8326d0d17b07a5785096b0f3517',
     ReplayUploadedReplayListRefetchQuery = 'dd56e76c75cda6af077a223c351ad61d',
     SettingQuery = '61228d553e7463c203e05e7810dd79a7',
-    StageRecordQuery = '56c46bdbdfa4519eaf7845ce9f3cd67a',
-    StageRecordsRefetchQuery = 'fe965bef54377d20e9133087cc6cdf3f',
+    StageRecordQuery = 'f08a932d533845dde86e674e03bbb7d3',
+    StageRecordsRefetchQuery = '2fb1b3fa2d40c9b5953ea1ae263e54c1',
     StageScheduleQuery = '7d4bb0565342b7385ceb97d109e14897',
     WeaponRecordQuery = 'a0c277c719b758a926772879d8e53ef8',
     WeaponRecordsRefetchQuery = '23c9b2b4ad878c2d91a68859be928dea',
@@ -127,18 +131,28 @@ type requests_app = {
     [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeResult];
     [RequestId.ConfigureAnalyticsQuery]: [RequestType.QUERY, {}, ConfigureAnalyticsResult];
     [RequestId.CurrentFestQuery]: [RequestType.QUERY, {}, CurrentFestResult];
+    'c1553ac75de0a3ea497cdbafaa93e95b': [RequestType.QUERY, {}, BankaraBattleHistoriesResult];
     [RequestId.BankaraBattleHistoriesQuery]: [RequestType.QUERY, {}, BankaraBattleHistoriesResult];
+    'd8a8662345593bbbcd63841c91d4c6f5': [RequestType.QUERY, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchResult];
     [RequestId.BankaraBattleHistoriesRefetchQuery]: [RequestType.QUERY, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchResult];
+    '7d8b560e31617e981cf7c8aa1ca13a00': [RequestType.QUERY, {}, LatestBattleHistoriesResult];
     [RequestId.LatestBattleHistoriesQuery]: [RequestType.QUERY, {}, LatestBattleHistoriesResult];
+    '80585ad4e4ecb674c3d8cd278adb1d21': [RequestType.QUERY, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchResult];
     [RequestId.LatestBattleHistoriesRefetchQuery]: [RequestType.QUERY, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchResult];
     '51981299595060692440e0ca66c475a1': [RequestType.QUERY, {}, PrivateBattleHistoriesResult_5198129];
+    '38e0529de8bc77189504d26c7a14e0b8': [RequestType.QUERY, {}, PrivateBattleHistoriesResult];
     [RequestId.PrivateBattleHistoriesQuery]: [RequestType.QUERY, {}, PrivateBattleHistoriesResult];
     '9ef974f2686a88f24e0dbff6f63a83c4': [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchResult_9ef974f];
+    'b304e707648f0669a939943d46febce1': [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchResult];
     [RequestId.PrivateBattleHistoriesRefetchQuery]: [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchResult];
     '819b680b0c7962b6f7dc2a777cd8c5e4': [RequestType.QUERY, {}, RegularBattleHistoriesResult_819b680];
+    'f6e7e0277e03ff14edfef3b41f70cd33': [RequestType.QUERY, {}, RegularBattleHistoriesResult];
     [RequestId.RegularBattleHistoriesQuery]: [RequestType.QUERY, {}, RegularBattleHistoriesResult];
     'fed6e752513a9986177e8eec50dfdd3c': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesRefetchResult_fed6e75];
+    '333d0a48071b0036449e35ece577b06f': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchResult];
     [RequestId.RegularBattleHistoriesRefetchQuery]: [RequestType.QUERY, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchResult];
+    [RequestId.XBattleHistoriesQuery]: [RequestType.QUERY, {}, XBattleHistoriesResult];
+    [RequestId.XBattleHistoriesRefetchQuery]: [RequestType.QUERY, XBattleHistoriesRefetchVariables, XBattleHistoriesResult];
     [RequestId.BattleHistoryCurrentPlayerQuery]: [RequestType.QUERY, {}, BattleHistoryCurrentPlayerResult];
     [RequestId.ChallengeQuery]: [RequestType.QUERY, {}, ChallengeResult];
     [RequestId.ChallengeRefetchQuery]: [RequestType.QUERY, {}, ChallengeRefetchResult];
@@ -185,8 +199,10 @@ type requests_app = {
     [RequestId.ReplayUploadedReplayListRefetchQuery]: [RequestType.QUERY, {}, ReplayUploadedReplayListRefetchResult];
     [RequestId.SettingQuery]: [RequestType.QUERY, {}, SettingResult];
     '53dffcfb06b273dd7bdf6a303d310730': [RequestType.QUERY, {}, StageRecordResult_53dffcf];
+    '56c46bdbdfa4519eaf7845ce9f3cd67a': [RequestType.QUERY, {}, StageRecordResult];
     [RequestId.StageRecordQuery]: [RequestType.QUERY, {}, StageRecordResult];
     '38624d4864879c745c7b20e653e062db': [RequestType.QUERY, {}, StageRecordsRefetchResult_38624d4];
+    'fe965bef54377d20e9133087cc6cdf3f': [RequestType.QUERY, {}, StageRecordsRefetchResult];
     [RequestId.StageRecordsRefetchQuery]: [RequestType.QUERY, {}, StageRecordsRefetchResult];
     '10e1d424391e78d21670227550b3509f': [RequestType.QUERY, {}, StageScheduleResult_10e1d42];
     [RequestId.StageScheduleQuery]: [RequestType.QUERY, {}, StageScheduleResult];
