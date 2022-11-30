@@ -67,8 +67,8 @@ export enum RequestId {
     DetailVotingStatusQuery = '53ee6b6e2acc3859bf42454266d671fc',
     FestRecordQuery = '44c76790b68ca0f3da87f2a3452de986',
     FestRecordRefetchQuery = '73b9837d0e4dd29bfa2f1a7d7ee0814a',
-    FriendListQuery = '7a0e05c28c7d3f7e5a06def87ab8cd2d',
-    FriendListRefetchQuery = 'c1afed6111887347e244c639e7d35c69',
+    FriendListQuery = 'f0a8ebc384cf5fbac01e8085fbd7c898',
+    FriendListRefetchQuery = 'aa2c979ad21a1100170ddf6afea3e2db',
     GesotownQuery = 'a43dd44899a09013bcfd29b4b13314ff',
     GesotownRefetchQuery = '951cab295eafdbeccfc2e718d7a98646',
     SaleGearDetailOrderGesotownGearMutation = 'b79b7a101a243912754f72437e2ad7e5',
@@ -92,8 +92,8 @@ export enum RequestId {
     StageScheduleQuery = '7d4bb0565342b7385ceb97d109e14897',
     WeaponRecordQuery = 'a0c277c719b758a926772879d8e53ef8',
     WeaponRecordsRefetchQuery = '23c9b2b4ad878c2d91a68859be928dea',
-    CatalogQuery = 'aead379b98c14798df81f0dd3ebe6121',
-    CatalogRefetchQuery = '02d2de8967f4ad2ce4f67a3c6c7c4d48',
+    CatalogQuery = '52504060c81ff2f2d618c4e5377e6e7c',
+    CatalogRefetchQuery = '4423dfd630867301fcdd834cd52922f4',
     HomeQuery = 'dba47124d5ec3090c97ba17db5d2f4b3',
     VsHistoryDetailPagerRefetchQuery = '994cf141e55213e6923426caf37a1934',
     VsHistoryDetailQuery = '2b085984f729cd51938fc069ceef784a',
@@ -212,7 +212,9 @@ type requests_app = {
     [RequestId.StageScheduleQuery]: [RequestType.QUERY, {}, StageScheduleResult];
     [RequestId.WeaponRecordQuery]: [RequestType.QUERY, {}, WeaponRecordResult];
     [RequestId.WeaponRecordsRefetchQuery]: [RequestType.QUERY, {}, WeaponRecordsRefetchResult];
+    'aead379b98c14798df81f0dd3ebe6121': [RequestType.QUERY, {}, CatalogResult_aead379];
     [RequestId.CatalogQuery]: [RequestType.QUERY, {}, CatalogResult];
+    '02d2de8967f4ad2ce4f67a3c6c7c4d48': [RequestType.QUERY, {}, CatalogRefetchResult_02d2de8];
     [RequestId.CatalogRefetchQuery]: [RequestType.QUERY, {}, CatalogRefetchResult];
     [RequestId.HomeQuery]: [RequestType.QUERY, {}, HomeResult];
     [RequestId.VsHistoryDetailPagerRefetchQuery]: [RequestType.QUERY, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailPagerRefetchResult];
