@@ -3,7 +3,7 @@ import { CoopHistoryResult, CoopResult, CoopSupplyWeapon } from './types/coop.js
 import { Fest, FestPlayerResult, FestRecordResult, FestTeam, FestTeamResult } from './types/fest.js';
 import { Brand, ClothingGear, GearPower, HeadGear, ShoesGear } from './types/gear.js';
 import { Gesotown, GesotownResult, PickupBrand, SaleGear } from './types/gesotown.js';
-import { CoopSchedule, CoopSetting, StageScheduleResult } from './types/schedules.js';
+import { CoopSchedule, CoopSchedule_schedule_7d4bb05, CoopSetting, CoopSetting_schedule_7d4bb05, StageScheduleResult, StageScheduleResult_7d4bb05 } from './types/schedules.js';
 
 type ReplaceProperty<T, K extends keyof T, V> = Omit<T, K> & {[A in K]: V};
 type ReplaceProperties<T, R extends {[K in keyof T]?: any}> = Omit<T, keyof R> & R;
@@ -13,16 +13,16 @@ export interface Schedules {
     data: StageScheduleResult_splatoon3ink;
 }
 
-type StageScheduleResult_splatoon3ink = Omit<StageScheduleResult, 'coopGroupingSchedule'> & {
+type StageScheduleResult_splatoon3ink = Omit<StageScheduleResult_7d4bb05, 'coopGroupingSchedule'> & {
     coopGroupingSchedule: {
         regularSchedules: NodeList<CoopSchedule_splatoon3ink>;
         bigRunSchedules: NodeList<CoopSchedule_splatoon3ink>;
     };
 };
-type CoopSchedule_splatoon3ink = Pick<CoopSchedule, 'startTime' | 'endTime'> & {
+type CoopSchedule_splatoon3ink = Omit<CoopSchedule_schedule_7d4bb05, 'setting'> & {
     setting: CoopSetting_splatoon3ink;
 };
-type CoopSetting_splatoon3ink = Pick<CoopSetting, '__typename' | 'coopStage'> & {
+type CoopSetting_splatoon3ink = Omit<CoopSetting_schedule_7d4bb05, 'weapons'> & {
     weapons: CoopSupplyWeapon_splatoon3ink[];
 };
 type CoopSupplyWeapon_splatoon3ink = Pick<CoopSupplyWeapon, 'name' | 'image'> & {

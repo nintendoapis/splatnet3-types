@@ -3,7 +3,6 @@ import { Image, NodeList } from './common.js';
 export interface VsStage {
     __typename: 'VsStage';
     id: string;
-    stageId: number;
     vsStageId: number;
     name: string;
     image: Pick<Image, 'url'>;
@@ -26,7 +25,8 @@ export interface StageRecordResult {
 /** fe965bef54377d20e9133087cc6cdf3f StageRecordsRefetchQuery */
 export type StageRecordsRefetchResult = StageRecordResult;
 
-export type VsStage_records = Pick<VsStage, 'id' | 'stageId' | 'vsStageId' | 'name' | 'image' | 'stats'> & {
+export type VsStage_records = Pick<VsStage, 'id' | 'vsStageId' | 'name' | 'image' | 'stats'> & {
+    stageId: number;
     originalImage: Pick<Image, 'url'>;
 };
 
