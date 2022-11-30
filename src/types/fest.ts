@@ -1,5 +1,5 @@
 import { FestState, FestTeamRole, FestVoteState } from '../enum.js';
-import { Colour, CurrentPlayer, Nameplate, NodeList, NodeListTotal, NodeListWithCount } from './common.js';
+import { Colour, CurrentPlayer, EdgeConnections, Nameplate, NodeList, NodeListTotal, NodeListWithCount } from './common.js';
 import { Image } from './common.js';
 import { VsStage } from './stage.js';
 import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
@@ -23,6 +23,7 @@ export interface Fest {
 }
 
 export interface FestTeam {
+    __typename: 'FestTeam';
     id: string;
     teamName: string;
     color: Colour;
@@ -51,10 +52,13 @@ export interface FestTeamResult {
     isRegularContributionRatioTop: boolean;
     challengeContributionRatio: number;
     isChallengeContributionRatioTop: boolean;
-    rankingHolders: NodeList<FestRankingHolder>;
+    tricolorContributionRatio: number | null;
+    isTricolorContributionRatioTop: boolean | null;
+    rankingHolders: EdgeConnections<FestRankingHolder>;
 }
 
 export interface FestRankingHolder {
+    __typename: 'FestRankingHolder';
     __isPlayer: 'FestRankingHolder';
     id: string;
     name: string;
@@ -66,14 +70,13 @@ export interface FestRankingHolder {
     nameplate: Nameplate;
 }
 
-export type Weapon_festRankingHolder = Pick<Weapon, 'id' | 'name' | 'image'> & {
+export type Weapon_festRankingHolder = Pick<Weapon, 'id' | 'name'> & {
     subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
     specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
     image3d: Pick<Image, 'url'>;
     image2d: Pick<Image, 'url'>;
     image3dThumbnail: Pick<Image, 'url'>;
     image2dThumbnail: Pick<Image, 'url'>;
-    originalImage: Pick<Image, 'url'>;
 };
 
 export interface FestPlayerResult {
@@ -83,10 +86,13 @@ export interface FestPlayerResult {
     regularContributionTotal: number;
     challengeContributionAverage: number | null;
     challengeContributionTotal: number | null;
+    tricolorContributionEnabled: boolean;
+    tricolorContributionAverage: number | null;
+    tricolorContributionTotal: number | null;
     maxFestPower: number | null;
 }
 
-/** 2d661988c055d843b3be290f04fb0db9 DetailFestRecordDetailQuery */
+/** 96c3a7fd484b8d3be08e0a3c99eb2a3d DetailFestRecordDetailQuery */
 export interface DetailFestRecordDetailResult {
     fest: Fest_detail | null;
     currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
@@ -96,20 +102,43 @@ export type Fest_detail = Pick<Fest, '__typename' | 'id' | 'title' | 'lang' | 's
     teams: FestTeam_detail[];
 };
 export type FestTeam_detail = Pick<FestTeam, 'id' | 'teamName' | 'color' | 'image' | 'myVoteState' | 'preVotes' | 'votes' | 'role'> & {
-    result: Pick<FestTeamResult, '__typename' | 'isWinner' | 'horagaiRatio' | 'isHoragaiRatioTop' | 'voteRatio' | 'isVoteRatioTop' | 'regularContributionRatio' | 'isRegularContributionRatioTop' | 'challengeContributionRatio' | 'isChallengeContributionRatioTop'> | null;
+    result: Pick<FestTeamResult, '__typename' | 'isWinner' | 'horagaiRatio' | 'isHoragaiRatioTop' | 'voteRatio' | 'isVoteRatioTop' | 'regularContributionRatio' | 'isRegularContributionRatioTop' | 'challengeContributionRatio' | 'isChallengeContributionRatioTop' | 'tricolorContributionRatio' | 'isTricolorContributionRatioTop'> | null;
 };
 
-/** 2d661988c055d843b3be290f04fb0db9 DetailFestRecordDetailQuery variables */
+/** 96c3a7fd484b8d3be08e0a3c99eb2a3d DetailFestRecordDetailQuery variables */
 export interface DetailFestRecordDetailVariables {
     festId: string;
 }
 
-/** 0eb7bac3d8aabcad0e9d663ee5b90846 DetailFestRefethQuery */
+/** 18c7c465b18de5829347b7a7f1e571a1 DetailFestRefethQuery */
 export type DetailFestRefetchResult = DetailFestRecordDetailResult;
-/** 0eb7bac3d8aabcad0e9d663ee5b90846 DetailFestRefethQuery variables */
+/** 18c7c465b18de5829347b7a7f1e571a1 DetailFestRefethQuery variables */
 export type DetailFestRefetchVariables = DetailFestRecordDetailVariables;
 
-/** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery */
+/** 2d661988c055d843b3be290f04fb0db9 DetailFestRecordDetailQuery */
+export interface DetailFestRecordDetailResult_2d66198 {
+    fest: Fest_detail_2d66198 | null;
+    currentPlayer: Pick<CurrentPlayer, 'name' | 'userIcon'>;
+}
+
+export type Fest_detail_2d66198 = Pick<Fest, '__typename' | 'id' | 'title' | 'lang' | 'startTime' | 'endTime' | 'state' | 'image' | 'myTeam' | 'isVotable' | 'undecidedVotes'> & {
+    teams: FestTeam_detail_2d66198[];
+    playerResult: FestPlayerResult_detail_2d66198 | null;
+};
+export type FestTeam_detail_2d66198 = Pick<FestTeam, 'id' | 'teamName' | 'color' | 'image' | 'myVoteState' | 'preVotes' | 'votes' | 'role'> & {
+    result: Pick<FestTeamResult, '__typename' | 'isWinner' | 'horagaiRatio' | 'isHoragaiRatioTop' | 'voteRatio' | 'isVoteRatioTop' | 'regularContributionRatio' | 'isRegularContributionRatioTop' | 'challengeContributionRatio' | 'isChallengeContributionRatioTop'> | null;
+};
+export type FestPlayerResult_detail_2d66198 = Pick<FestPlayerResult, 'grade' | 'horagai' | 'regularContributionAverage' | 'regularContributionTotal' | 'challengeContributionAverage' | 'challengeContributionTotal' | 'maxFestPower'>;
+
+/** 2d661988c055d843b3be290f04fb0db9 DetailFestRecordDetailQuery variables */
+export type DetailFestRecordDetailVariables_2d66198 = DetailFestRecordDetailVariables;
+
+/** 0eb7bac3d8aabcad0e9d663ee5b90846 DetailFestRefethQuery */
+export type DetailFestRefetchResult_0eb7bac = DetailFestRecordDetailResult_2d66198;
+/** 0eb7bac3d8aabcad0e9d663ee5b90846 DetailFestRefethQuery variables */
+export type DetailFestRefetchVariables_0eb7bac = DetailFestRecordDetailVariables_2d66198;
+
+/** 4869de13d0d209032b203608cb598aef DetailRankingQuery */
 export interface DetailRankingResult {
     fest: Fest_ranking | null;
 }
@@ -121,14 +150,72 @@ export type FestTeam_ranking = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'col
     result: Pick<FestTeamResult, 'rankingHolders'> | null;
 };
 
-/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery */
-export type RankingHoldersFestTeamRankingHoldersPaginationResult = unknown;
-/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
-export type RankingHoldersFestTeamRankingHoldersPaginationVariables = unknown;
-
-/** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery variables */
+/** 4869de13d0d209032b203608cb598aef DetailRankingQuery variables */
 export interface DetailRankingVariables {
     festId: string;
+}
+
+/** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery */
+export interface DetailRankingResult_58bdd28 {
+    fest: Fest_ranking_58bdd28 | null;
+}
+
+export type Fest_ranking_58bdd28 = Pick<Fest, '__typename' | 'id' | 'lang'> & {
+    teams: FestTeam_ranking_58bdd28[];
+};
+export type FestTeam_ranking_58bdd28 = Pick<FestTeam, 'id' | 'teamName' | 'image' | 'color'> & {
+    result: FestTeamResult_ranking_58bdd28 | null;
+};
+export type FestTeamResult_ranking_58bdd28 = Pick<FestTeamResult, never> & {
+    rankingHolders: NodeList<FestRankingHolder_ranking_58bdd28>;
+};
+export type FestRankingHolder_ranking_58bdd28 = Pick<FestRankingHolder, '__isPlayer' | 'id' | 'name' | 'nameId' | 'byname' | 'rank' | 'festPower' | 'nameplate'> & {
+    weapon: Weapon_festRankingHolder_58bdd28;
+};
+export type Weapon_festRankingHolder_58bdd28 = Pick<Weapon, 'id' | 'name' | 'image'> & {
+    subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
+    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
+    image3d: Pick<Image, 'url'>;
+    image2d: Pick<Image, 'url'>;
+    image3dThumbnail: Pick<Image, 'url'>;
+    image2dThumbnail: Pick<Image, 'url'>;
+    originalImage: Pick<Image, 'url'>;
+};
+
+/** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery variables */
+export type DetailRankingVariables_58bdd28 = DetailRankingVariables;
+
+/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery */
+export interface RankingHoldersFestTeamRankingHoldersPaginationResult {
+    node: FestTeam_rankingPagination;
+}
+
+export type FestTeam_rankingPagination = Pick<FestTeam, '__typename' | 'id' | 'teamName' | 'color'> & {
+    result: FestTeamResult_rankingPagination | null;
+};
+export type FestTeamResult_rankingPagination = Pick<FestTeamResult, never> & {
+    rankingHolders: EdgeConnections<FestRankingHolder_rankingPagination>;
+};
+export type FestRankingHolder_rankingPagination = Pick<FestRankingHolder, '__typename' | '__isPlayer' | 'id' | 'name' | 'nameId' | 'byname' | 'rank' | 'festPower' | 'nameplate'> & {
+    weapon: Weapon_rankingPagination;
+};
+export type Weapon_rankingPagination = Pick<Weapon, 'id' | 'name' | 'image'> & {
+    subWeapon: Pick<SubWeapon, 'id' | 'name' | 'image'>;
+    specialWeapon: Pick<SpecialWeapon, 'id' | 'name' | 'image'>;
+    image3d: Pick<Image, 'url'>;
+    image2d: Pick<Image, 'url'>;
+    image3dThumbnail: Pick<Image, 'url'>;
+    image2dThumbnail: Pick<Image, 'url'>;
+};
+
+/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
+export interface RankingHoldersFestTeamRankingHoldersPaginationVariables {
+    /** PageInfo.endCursor */
+    cursor: string;
+    /** Always 25 in the app */
+    first: number;
+    /** FestTeam ID */
+    id: string;
 }
 
 /** 53ee6b6e2acc3859bf42454266d671fc DetailVotingStatusQuery */

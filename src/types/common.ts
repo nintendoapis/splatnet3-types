@@ -11,6 +11,21 @@ export type NodeList<T> = Pick<_NodeList<T>, 'nodes'>;
 export type NodeListWithCount<T> = _NodeList<T>;
 export type NodeListTotal = Pick<_NodeList<unknown>, 'totalCount'>;
 
+export interface EdgeConnections<T> {
+    edges: Edge<T>[];
+    pageInfo: PageInfo;
+}
+
+export interface PageInfo {
+    endCursor: string;
+    hasNextPage: boolean;
+}
+
+export interface Edge<T> {
+    node: T;
+    cursor: string;
+}
+
 export interface Colour {
     a: number;
     r: number;

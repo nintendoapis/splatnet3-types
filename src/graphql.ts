@@ -12,7 +12,7 @@ import { CheckinResult, CheckinResult_af8cac2, CheckinWithQRCodeMutationResult, 
 import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailResult_f3799a0, CoopHistoryDetailVariables, CoopHistoryDetailVariables_f3799a0, CoopHistoryResult, CoopHistoryResult_817618c, CoopPagerLatestCoopResult, CoopPagerLatestCoopResult_82385ab, RefetchableCoopHistoryResult, RefetchableCoopHistoryResult_a5692cf } from './types/coop.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
-import { DetailFestRecordDetailResult, DetailFestRecordDetailVariables, DetailFestRefetchResult, DetailFestRefetchVariables, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingVariables, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
+import { DetailFestRecordDetailResult, DetailFestRecordDetailResult_2d66198, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchResult, DetailFestRefetchResult_0eb7bac, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingResult_58bdd28, DetailRankingVariables, DetailRankingVariables_58bdd28, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
 import { FriendListRefetchResult, FriendListRefetchResult_c1afed6, FriendListResult, FriendListResult_7a0e05c } from './types/friends.js';
 import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
 import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
@@ -60,10 +60,10 @@ export enum RequestId {
     CoopHistoryDetailRefetchQuery = 'd3188df2fd4436870936b109675e2849',
     CoopHistoryQuery = '6ed02537e4a65bbb5e7f4f23092f6154',
     RefetchableCoopHistory_CoopResultQuery = 'd82a506052aef380e584c695e105f78b',
-    DetailFestRecordDetailQuery = '2d661988c055d843b3be290f04fb0db9',
-    DetailFestRefethQuery = '0eb7bac3d8aabcad0e9d663ee5b90846',
+    DetailFestRecordDetailQuery = '96c3a7fd484b8d3be08e0a3c99eb2a3d',
+    DetailFestRefethQuery = '18c7c465b18de5829347b7a7f1e571a1',
     DetailFestVotingStatusRefethQuery = '92f51ed1ab462bbf1ab64cad49d36f79',
-    DetailRankingQuery = '58bdd28e3cf71c3bf38bc45836ee1e96',
+    DetailRankingQuery = '4869de13d0d209032b203608cb598aef',
     DetailVotingStatusQuery = '53ee6b6e2acc3859bf42454266d671fc',
     FestRecordQuery = '44c76790b68ca0f3da87f2a3452de986',
     FestRecordRefetchQuery = '73b9837d0e4dd29bfa2f1a7d7ee0814a',
@@ -172,9 +172,12 @@ type requests_app = {
     [RequestId.CoopHistoryQuery]: [RequestType.QUERY, {}, CoopHistoryResult];
     'a5692cf290ffb26f14f0f7b6e5023b07': [RequestType.QUERY, {}, RefetchableCoopHistoryResult_a5692cf];
     [RequestId.RefetchableCoopHistory_CoopResultQuery]: [RequestType.QUERY, {}, RefetchableCoopHistoryResult];
+    '2d661988c055d843b3be290f04fb0db9': [RequestType.QUERY, DetailFestRecordDetailVariables_2d66198, DetailFestRecordDetailResult_2d66198];
     [RequestId.DetailFestRecordDetailQuery]: [RequestType.QUERY, DetailFestRecordDetailVariables, DetailFestRecordDetailResult];
+    '0eb7bac3d8aabcad0e9d663ee5b90846': [RequestType.QUERY, DetailFestRefetchVariables_0eb7bac, DetailFestRefetchResult_0eb7bac];
     [RequestId.DetailFestRefethQuery]: [RequestType.QUERY, DetailFestRefetchVariables, DetailFestRefetchResult];
     [RequestId.DetailFestVotingStatusRefethQuery]: [RequestType.QUERY, DetailFestVotingStatusRefetchVariables, DetailFestVotingStatusRefetchResult];
+    '58bdd28e3cf71c3bf38bc45836ee1e96': [RequestType.QUERY, DetailRankingVariables_58bdd28, DetailRankingResult_58bdd28];
     [RequestId.DetailRankingQuery]: [RequestType.QUERY, DetailRankingVariables, DetailRankingResult];
     [RequestId.DetailVotingStatusQuery]: [RequestType.QUERY, DetailVotingStatusVariables, DetailVotingStatusResult];
     [RequestId.FestRecordQuery]: [RequestType.QUERY, {}, FestRecordResult];

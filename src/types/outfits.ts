@@ -1,30 +1,15 @@
-import { CurrentPlayer, NodeList, UserError } from './common.js';
+import { CurrentPlayer, EdgeConnections, NodeList, UserError } from './common.js';
 import { Brand, ClothingGear, GearPower, HeadGear, ShoesGear } from './gear.js';
 import { SpecialWeapon, SubWeapon, Weapon, WeaponCategory, WeaponRecordStats } from './weapon.js';
 
 /** 81d9a6849467d2aa6b1603ebcedbddbe MyOutfitsQuery */
 export interface MyOutfitsResult {
-    myOutfits: MyOutfitConnection;
+    myOutfits: EdgeConnections<MyOutfit>;
     currentPlayer: CurrentPlayer_outfits;
 }
 
 /** 10db4e349f3123c56df14e3adec2ee6f MyOutfitsRefetchQuery */
 export type MyOutfitsRefetchResult = MyOutfitsResult;
-
-export interface MyOutfitConnection {
-    edges: MyOutfitEdge[];
-    pageInfo: PageInfo;
-}
-
-export interface PageInfo {
-    endCursor: string;
-    hasNextPage: boolean;
-}
-
-export interface MyOutfitEdge {
-    node: MyOutfit;
-    cursor: string;
-}
 
 export interface MyOutfit {
     __typename: 'MyOutfit';
