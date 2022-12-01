@@ -127,6 +127,7 @@ export interface VsPlayer {
     shoesGear: ShoesGear_vsPlayerSelf;
     species: Species | keyof typeof Species;
     result: VsPlayerResult | null;
+    crown: boolean;
     festDragonCert: FestDragonCert | keyof typeof FestDragonCert;
     festGrade: string | null;
 }
@@ -146,6 +147,9 @@ export interface VsTeam {
     result: VsTeamResult | null;
     tricolorRole: TricolourRole | keyof typeof TricolourRole | null;
     festTeamName: string | null;
+    festUniformName: string | null;
+    festUniformBonusRate: number | null;
+    festStreakWinCount: number | null;
     players: VsPlayer[];
     order: number;
 }

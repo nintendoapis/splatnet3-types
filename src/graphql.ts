@@ -1,6 +1,6 @@
 import { PhotoAlbumRefetchResult, PhotoAlbumResult } from './types/album.js';
 import { BankaraBattleHistoriesRefetchResult, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesResult } from './types/battle-bankara.js';
-import { VsHistoryDetailPagerRefetchResult, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailResult, VsHistoryDetailResult_cd82f2a, VsHistoryDetailVariables, VsHistoryDetailVariables_cd82f2a } from './types/battle-detail.js';
+import { VsHistoryDetailPagerRefetchResult, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailResult, VsHistoryDetailResult_2b08598, VsHistoryDetailResult_cd82f2a, VsHistoryDetailVariables, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a } from './types/battle-detail.js';
 import { LatestBattleHistoriesRefetchResult, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesResult } from './types/battle-latest.js';
 import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchResult_9ef974f, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesResult, PrivateBattleHistoriesResult_5198129 } from './types/battle-private.js';
 import { RegularBattleHistoriesRefetchResult, RegularBattleHistoriesRefetchResult_fed6e75, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesResult, RegularBattleHistoriesResult_819b680 } from './types/battle-regular.js';
@@ -96,7 +96,7 @@ export enum RequestId {
     CatalogRefetchQuery = '4423dfd630867301fcdd834cd52922f4',
     HomeQuery = 'dba47124d5ec3090c97ba17db5d2f4b3',
     VsHistoryDetailPagerRefetchQuery = '994cf141e55213e6923426caf37a1934',
-    VsHistoryDetailQuery = '2b085984f729cd51938fc069ceef784a',
+    VsHistoryDetailQuery = '291295ad311b99a6288fc95a5c4cb2d2',
 }
 
 export enum CoralWidgetExtensioniOSRequestId {
@@ -232,6 +232,7 @@ type requests_app = {
     [RequestId.HomeQuery]: [RequestType.QUERY, {}, HomeResult];
     [RequestId.VsHistoryDetailPagerRefetchQuery]: [RequestType.QUERY, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailPagerRefetchResult];
     'cd82f2ade8aca7687947c5f3210805a6': [RequestType.QUERY, VsHistoryDetailVariables_cd82f2a, VsHistoryDetailResult_cd82f2a];
+    '2b085984f729cd51938fc069ceef784a': [RequestType.QUERY, VsHistoryDetailVariables_2b08598, VsHistoryDetailResult_2b08598];
     [RequestId.VsHistoryDetailQuery]: [RequestType.QUERY, VsHistoryDetailVariables, VsHistoryDetailResult];
 };
 
