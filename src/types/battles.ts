@@ -192,13 +192,13 @@ export type VsHistoryGroup_pagerLatest = Pick<VsHistoryGroup, never> & {
 };
 export type VsHistoryDetail_pagerLatest = Pick<VsHistoryDetail, 'id' | 'vsMode'>;
 
-/** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery */
+/** 7297ae42bbb1958cfe438736865d304e PagerUpdateBattleHistoriesByVsModeQuery */
 export interface PagerUpdateBattleHistoriesByVsModeResult {
     latestBattleHistories: VsResult_latest;
     currentFest: Fest_app | null;
 }
 
-/** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery variables */
+/** 7297ae42bbb1958cfe438736865d304e PagerUpdateBattleHistoriesByVsModeQuery variables */
 export interface PagerUpdateBattleHistoriesByVsModeVariables {
     /** Always false in the official app */
     isBankara: boolean;
@@ -211,6 +211,11 @@ export interface PagerUpdateBattleHistoriesByVsModeVariables {
     /** Always false in the official app */
     isXBattle: boolean;
 }
+
+/** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery */
+export type PagerUpdateBattleHistoriesByVsModeResult_000afbc = PagerUpdateBattleHistoriesByVsModeResult;
+/** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery */
+export type PagerUpdateBattleHistoriesByVsModeVariables_000afbc = PagerUpdateBattleHistoriesByVsModeVariables;
 
 /** 67224c25f7b2e605205d152009f593c9 PagerUpdateBattleHistoriesByVsModeQuery */
 export type PagerUpdateBattleHistoriesByVsModeResult_67224c2 = unknown;

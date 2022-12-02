@@ -5,7 +5,7 @@ import { LatestBattleHistoriesRefetchResult, LatestBattleHistoriesRefetchVariabl
 import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchResult_9ef974f, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesResult, PrivateBattleHistoriesResult_5198129 } from './types/battle-private.js';
 import { RegularBattleHistoriesRefetchResult, RegularBattleHistoriesRefetchResult_fed6e75, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesResult, RegularBattleHistoriesResult_819b680 } from './types/battle-regular.js';
 import { XBattleHistoriesRefetchVariables, XBattleHistoriesResult } from './types/battle-xmatch.js';
-import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
+import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_000afbc, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
 import { CatalogRefetchResult, CatalogRefetchResult_02d2de8, CatalogResult, CatalogResult_aead379 } from './types/catalog.js';
 import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
 import { CheckinResult, CheckinResult_af8cac2, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationResult_8e3fecf, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8e3fecf } from './types/checkin.js';
@@ -35,7 +35,7 @@ export enum RequestId {
     DownloadSearchReplayQuery = 'b461048f9ffc414b3967a3cdad0805dd',
     ReplayModalReserveReplayDownloadMutation = '87bff2b854168b496c2da8c0e7f3e5bc',
     PagerLatestVsDetailQuery = '0329c535a32f914fd44251be1f489e24',
-    PagerUpdateBattleHistoriesByVsModeQuery = '000afbc113f5653d2c2cee42ff6cdeab',
+    PagerUpdateBattleHistoriesByVsModeQuery = '7297ae42bbb1958cfe438736865d304e',
     ConfigureAnalyticsQuery = 'f8ae00773cc412a50dd41a6d9a159ddd',
     CurrentFestQuery = 'c0429fd738d829445e994d3370999764',
     BankaraBattleHistoriesQuery = 'de4754588109b77dbcb90fbe44b612ee',
@@ -131,6 +131,7 @@ type requests_app = {
     [RequestId.ReplayModalReserveReplayDownloadMutation]: [RequestType.MUTATION, ReplayModalReserveReplayDownloadVariables, ReplayModalReserveReplayDownloadResult];
     [RequestId.PagerLatestVsDetailQuery]: [RequestType.QUERY, {}, PagerLatestVsDetailResult];
     '67224c25f7b2e605205d152009f593c9': [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeResult_67224c2];
+    '000afbc113f5653d2c2cee42ff6cdeab': [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeResult_000afbc];
     [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeResult];
     [RequestId.ConfigureAnalyticsQuery]: [RequestType.QUERY, {}, ConfigureAnalyticsResult];
     [RequestId.CurrentFestQuery]: [RequestType.QUERY, {}, CurrentFestResult];
