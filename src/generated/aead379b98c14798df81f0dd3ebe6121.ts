@@ -6,7 +6,7 @@ import { Catalog, CatalogBonus, CatalogExtraReward, CatalogItem, CatalogProgress
  *
  * query CatalogQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface CatalogQuery_aead379 {
     catalog: /** Catalog */ OperationFieldType<'CatalogQuery', 'catalog', {

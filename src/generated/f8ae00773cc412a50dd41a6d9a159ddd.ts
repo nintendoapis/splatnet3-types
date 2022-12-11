@@ -6,7 +6,7 @@ import { PlayHistory, XMatchMax } from '../types.js';
  *
  * query ConfigureAnalyticsQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface ConfigureAnalyticsQuery_f8ae007 {
     playHistory: /** PlayHistory */ OperationFieldType<'ConfigureAnalyticsQuery', 'playHistory', {

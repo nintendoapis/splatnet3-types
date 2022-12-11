@@ -6,7 +6,7 @@ import { Brand, ClothingGear, Gear, GearPower, GearRecordStats, HeadGear, Image,
  *
  * query MyOutfitDetailQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface MyOutfitDetailQuery_d935d9e {
     myOutfit: /** unknown type */ OperationFieldType<'MyOutfitDetailQuery', 'node', ({

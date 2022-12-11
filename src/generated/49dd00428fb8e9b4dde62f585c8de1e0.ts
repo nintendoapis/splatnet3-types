@@ -6,7 +6,7 @@ import { CurrentPlayer, MaskingImage, SpecialWeapon, Weapon } from '../types.js'
  *
  * query BattleHistoryCurrentPlayerQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface BattleHistoryCurrentPlayerQuery_49dd004 {
     currentPlayer: /** CurrentPlayer */ OperationFieldType<'BattleHistoryCurrentPlayerQuery', 'currentPlayer', {

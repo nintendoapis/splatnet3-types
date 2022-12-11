@@ -6,7 +6,7 @@ import { Award, Badge, ClothingGear, Color, Fest, FestTeam, Gear, GearPower, Hea
  *
  * query ReplayQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface ReplayQuery_f98cc83 {
     currentFest: /** Fest */ OperationFieldType<'ReplayQuery', 'currentFest', {

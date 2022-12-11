@@ -6,7 +6,7 @@ import { CoopHistoryDetail } from '../types.js';
  *
  * query CoopHistoryDetailRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5e2bcdfb.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
  */
 interface CoopHistoryDetailRefetchQuery_d3188df {
     node: /** unknown type */ OperationFieldType<'CoopHistoryDetailRefetchQuery', 'node', ({
