@@ -6,7 +6,7 @@ import { Replay, ReserveReplayDownloadPayload, UserError } from '../types.js';
  *
  * mutation ReplayModalReserveReplayDownloadMutation
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface ReplayModalReserveReplayDownloadMutation_87bff2b {
     reserveReplayDownload: /** ReserveReplayDownloadPayload */ OperationFieldType<'ReplayModalReserveReplayDownloadMutation', 'reserveReplayDownload', {

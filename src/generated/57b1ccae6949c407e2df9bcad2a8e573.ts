@@ -6,7 +6,7 @@ import { Badge, Color, CurrentPlayer, Gear, GearPower, Image, Nameplate, Namepla
  *
  * query HistoryRecordRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface HistoryRecordRefetchQuery_57b1cca {
     currentPlayer: /** CurrentPlayer */ OperationFieldType<'HistoryRecordRefetchQuery', 'currentPlayer', ({

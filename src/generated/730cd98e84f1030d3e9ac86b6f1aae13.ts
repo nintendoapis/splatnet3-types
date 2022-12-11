@@ -6,7 +6,7 @@ import { BankaraMatchSetting, Color, CoopGroupingSchedule, CoopSchedule, CoopSch
  *
  * query StageScheduleQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface StageScheduleQuery_730cd98 {
     bankaraSchedules: /** VsScheduleConnection */ OperationFieldType<'StageScheduleQuery', 'vsSchedules', {

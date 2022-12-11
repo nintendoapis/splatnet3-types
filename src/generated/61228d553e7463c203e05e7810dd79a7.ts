@@ -6,7 +6,7 @@ import { CurrentPlayer, Image } from '../types.js';
  *
  * query SettingQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface SettingQuery_61228d5 {
     currentPlayer: /** CurrentPlayer */ OperationFieldType<'SettingQuery', 'currentPlayer', {

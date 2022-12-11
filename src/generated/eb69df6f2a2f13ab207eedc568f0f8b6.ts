@@ -6,7 +6,7 @@ import { Badge, Color, Image, Nameplate, NameplateBackground, PageInfo, Player, 
  *
  * query DetailTabViewXRankingArRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface DetailTabViewXRankingArRefetchQuery_eb69df6 {
     node: /** unknown type */ OperationFieldType<'DetailTabViewXRankingArRefetchQuery', 'node', ({

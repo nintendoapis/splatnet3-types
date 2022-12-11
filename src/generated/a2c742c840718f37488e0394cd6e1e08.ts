@@ -6,7 +6,7 @@ import { Color, Fest, FestTeam, FestVote, FestVoteConnection, Image, UpdateFestV
  *
  * mutation VotesUpdateFestVoteMutation
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
  */
 interface VotesUpdateFestVoteMutation_a2c742c {
     updateFestVote: /** UpdateFestVotePayload */ OperationFieldType<'VotesUpdateFestVoteMutation', 'updateFestVote', {
