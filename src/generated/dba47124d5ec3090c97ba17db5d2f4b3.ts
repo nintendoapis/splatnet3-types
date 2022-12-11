@@ -6,7 +6,7 @@ import { Banner, CurrentPlayer, FooterBigRunMessage, FooterFestMessage, FooterSe
  *
  * query HomeQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
  */
 interface HomeQuery_dba4712 {
     banners: /** Banner */ OperationFieldType<'HomeQuery', 'banners', {

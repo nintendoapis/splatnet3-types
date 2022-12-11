@@ -6,7 +6,7 @@ import { Brand, BrandConnection, GearPower, GearPowerConnection, Image, SpecialW
  *
  * query myOutfitCommonDataFilteringConditionQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
  */
 interface myOutfitCommonDataFilteringConditionQuery_d02ab22 {
     brands: /** BrandConnection */ OperationFieldType<'myOutfitCommonDataFilteringConditionQuery', 'brands', {
