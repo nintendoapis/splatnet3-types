@@ -95,8 +95,8 @@ export interface CoopSchedule {
 }
 
 export interface CoopSetting {
-    __typename: 'CoopNormalSetting';
-    __isCoopSetting: 'CoopNormalSetting';
+    __typename: 'CoopNormalSetting' | 'CoopBigRunSetting';
+    __isCoopSetting: 'CoopNormalSetting' | 'CoopBigRunSetting';
     coopStage: Pick<CoopStage, 'id' | 'coopStageId' | 'name' | 'image' | 'thumbnailImage'>;
     weapons: Pick<CoopSupplyWeapon, 'name' | 'image'>[];
     rule: CoopRule | keyof typeof CoopRule;

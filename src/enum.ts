@@ -57,6 +57,7 @@ export enum CoopMode {
     REGULAR = 'REGULAR',
     PRIVATE_CUSTOM = 'PRIVATE_CUSTOM',
     PRIVATE_SCENARIO = 'PRIVATE_SCENARIO',
+    BIG_RUN = 'BIG_RUN',
 }
 export enum CoopRule {
     REGULAR = 'REGULAR',
@@ -88,6 +89,11 @@ export enum BankaraMatchChallengeState {
     FAILED = 'FAILED',
     ABORTED_BY_SEASON_RESET = 'ABORTED_BY_SEASON_RESET',
     ABORTED_BY_UDEMAE_RESET = 'ABORTED_BY_UDEMAE_RESET',
+}
+
+export enum XMatchMeasurementState {
+    COMPLETED = 'COMPLETED',
+    INPROGRESS = 'INPROGRESS',
 }
 
 export enum AwardRank {

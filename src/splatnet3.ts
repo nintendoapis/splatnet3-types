@@ -4,6 +4,7 @@ export * from './types/battle-detail.js';
 export * from './types/battle-latest.js';
 export * from './types/battle-private.js';
 export * from './types/battle-regular.js';
+export * from './types/battle-xmatch.js';
 export * from './types/battles.js';
 export * from './types/catalog.js';
 export * from './types/challenge.js';

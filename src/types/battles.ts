@@ -1,4 +1,4 @@
-import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, DragonMatchType, FestDragonCert, Judgement, JudgementKnockout, Species, TricolourRole } from '../enum.js';
+import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, DragonMatchType, FestDragonCert, Judgement, JudgementKnockout, Species, TricolourRole, XMatchMeasurementState } from '../enum.js';
 import { Colour, CurrentPlayer, Fest_app, Image, Nameplate, NodeList, VsMode, VsRule, XPower } from './common.js';
 import { Brand, ClothingGear, HeadGear, ShoesGear } from './gear.js';
 import { SpecialWeapon, Weapon } from './weapon.js';
@@ -13,10 +13,10 @@ export interface VsHistorySummary {
     perUnitTimeMinute: number;
     specialAverage: number;
     win: number;
-    xPowerAr: Pick<XPower, 'lastXPower'>;
-    xPowerCl: Pick<XPower, 'lastXPower'>;
-    xPowerGl: Pick<XPower, 'lastXPower'>;
-    xPowerLf: Pick<XPower, 'lastXPower'>;
+    xPowerAr: Pick<XPower, 'lastXPower'> | null;
+    xPowerCl: Pick<XPower, 'lastXPower'> | null;
+    xPowerGl: Pick<XPower, 'lastXPower'> | null;
+    xPowerLf: Pick<XPower, 'lastXPower'> | null;
 }
 
 type VsPlayer_Gear<T extends HeadGear | ClothingGear | ShoesGear> = Pick<T, '__isGear' | 'name' | 'primaryGearPower' | 'additionalGearPowers'> & {
@@ -56,6 +56,7 @@ export interface VsResult {
 export interface VsHistoryGroup {
     __typename: 'VsHistoryGroup';
     bankaraMatchChallenge: BankaraMatchChallenge | null;
+    xMatchMeasurement: XMatchMeasurement | null;
     historyDetails: NodeList<VsHistoryDetail>;
 }
 
@@ -69,6 +70,18 @@ export interface BankaraMatchChallenge {
     isUdemaeUp: boolean;
     udemaeAfter: string;
     earnedUdemaePoint: number;
+}
+
+export interface XMatchMeasurement {
+    state: XMatchMeasurementState | keyof typeof XMatchMeasurementState;
+    xPowerAfter: number | null;
+    isInitial: boolean;
+    winCount: number;
+    loseCount: number;
+    maxInitialBattleCount: number;
+    maxWinCount: number;
+    maxLoseCount: number;
+    vsRule: Pick<VsRule, 'id' | 'rule' | 'name'>;
 }
 
 export type VsHistoryGroup_onlyFirst = Pick<VsHistoryGroup, never> & {
