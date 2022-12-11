@@ -6,7 +6,7 @@ import { Brand, ClothingGear, GearPower, HeadGear, Image, OrderGesotownGearPaylo
  *
  * mutation SaleGearDetailOrderGesotownGearMutation
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
  */
 interface SaleGearDetailOrderGesotownGearMutation_b79b7a1 {
     orderGesotownGear: /** OrderGesotownGearPayload */ OperationFieldType<'SaleGearDetailOrderGesotownGearMutation', 'orderGesotownGear', {

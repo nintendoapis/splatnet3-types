@@ -6,7 +6,7 @@ import { BynameReward, CardSleeveReward, Challenge, ChallengeHome, ChallengeJour
  *
  * query JourneyChallengeDetailQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
  */
 interface JourneyChallengeDetailQuery_38e58b8 {
     challengeHome: /** ChallengeHome */ OperationFieldType<'JourneyChallengeDetailQuery', 'challenge', ({

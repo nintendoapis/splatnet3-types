@@ -6,7 +6,7 @@ import { DownloadImage, HeroRecord, HeroSite, HeroStage, HeroSupplyWeapon, Image
  *
  * query HeroHistoryRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
  */
 interface HeroHistoryRefetchQuery_4f9ae2b {
     heroRecord: /** HeroRecord */ OperationFieldType<'HeroHistoryRefetchQuery', 'heroRecord', {

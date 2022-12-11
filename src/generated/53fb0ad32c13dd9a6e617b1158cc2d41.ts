@@ -6,7 +6,7 @@ import { Image, PhotoAlbum, PhotoAlbumItem, PhotoAlbumItemConnection } from '../
  *
  * query PhotoAlbumRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
  */
 interface PhotoAlbumRefetchQuery_53fb0ad {
     photoAlbum: /** PhotoAlbum */ OperationFieldType<'PhotoAlbumRefetchQuery', 'photoAlbum', {

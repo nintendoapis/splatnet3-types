@@ -6,7 +6,7 @@ import { ClothingGear, CreateMyOutfitPayload, GearPower, HeadGear, Image, MyOutf
  *
  * mutation CreateMyOutfitMutation
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-5644e7a2.
  */
 interface CreateMyOutfitMutation_31ff008 {
     createMyOutfit: /** CreateMyOutfitPayload */ OperationFieldType<'CreateMyOutfitMutation', 'createMyOutfit', ({
