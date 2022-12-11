@@ -6,7 +6,7 @@ import { Award, Badge, BankaraMatchHistory, Brand, ClothingGear, Color, FestMatc
  *
  * query VsHistoryDetailQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
 interface VsHistoryDetailQuery_2b08598 {
     vsHistoryDetail: /** unknown type */ OperationFieldType<'VsHistoryDetailQuery', 'node', ({

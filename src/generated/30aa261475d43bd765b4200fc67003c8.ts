@@ -6,7 +6,7 @@ import { BynameReward, CardSleeveReward, Challenge, ChallengeJourney, ChallengeR
  *
  * mutation SupportButton_SupportChallengeMutation
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
 interface SupportButton_SupportChallengeMutation_30aa261 {
     supportChallenge: /** SupportChallengePayload */ OperationFieldType<'SupportButton_SupportChallengeMutation', 'supportChallenge', {

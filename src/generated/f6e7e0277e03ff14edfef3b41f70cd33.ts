@@ -1,41 +1,22 @@
 import { LinkedFieldType, OperationFieldType, UnknownScalarType } from '../generated-type-helpers.js';
-import { BankaraMatchHistory, Color, Fest, FestTeam, Image, LeagueMatchHistory, MaskingImage, SpecialWeapon, VsHistoryDetail, VsHistoryDetailConnection, VsHistoryGroup, VsHistoryGroupConnection, VsHistorySummary, VsMode, VsPlayer, VsResult, VsRule, VsStage, VsTeam, VsTeamResult, Weapon } from '../types.js';
+import { Image, MaskingImage, SpecialWeapon, VsHistoryDetail, VsHistoryDetailConnection, VsHistoryGroup, VsHistoryGroupConnection, VsHistorySummary, VsMode, VsPlayer, VsResult, VsRule, VsStage, VsTeam, VsTeamResult, Weapon } from '../types.js';
 
 /**
- * 7d8b560e31617e981cf7c8aa1ca13a00 LatestBattleHistoriesQuery
+ * f6e7e0277e03ff14edfef3b41f70cd33 RegularBattleHistoriesQuery
  *
- * query LatestBattleHistoriesQuery
+ * query RegularBattleHistoriesQuery
  *
  * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
-interface LatestBattleHistoriesQuery_7d8b560 {
-    currentFest: /** Fest */ OperationFieldType<'LatestBattleHistoriesQuery', 'currentFest', {
-        id: Fest['id'];
-        state: Fest['state'];
-        teams: /** FestTeam */ LinkedFieldType<Fest, 'teams', {
-            id: FestTeam['id'];
-            color: /** Color */ LinkedFieldType<FestTeam, 'color', {
-                r: Color['r'];
-                g: Color['g'];
-                b: Color['b'];
-                a: Color['a'];
-            }, false>;
-        }, true>;
-    }>;
-    latestBattleHistories: /** VsResult */ OperationFieldType<'LatestBattleHistoriesQuery', 'vsResult', {
+interface RegularBattleHistoriesQuery_f6e7e02 {
+    regularBattleHistories: /** VsResult */ OperationFieldType<'RegularBattleHistoriesQuery', 'vsResult', {
         historyGroups: /** VsHistoryGroupConnection */ LinkedFieldType<VsResult, 'historyGroups', {
             nodes: /** VsHistoryGroup */ LinkedFieldType<VsHistoryGroupConnection, 'nodes', {
                 historyDetails: /** VsHistoryDetailConnection */ LinkedFieldType<VsHistoryGroup, 'historyDetails', {
                     nodes: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetailConnection, 'nodes', {
                         id: VsHistoryDetail['id'];
-                        bankaraMatch: /** BankaraMatchHistory */ LinkedFieldType<VsHistoryDetail, 'bankaraMatch', {
-                            earnedUdemaePoint: BankaraMatchHistory['earnedUdemaePoint'];
-                        }, false>;
                         judgement: VsHistoryDetail['judgement'];
                         knockout: VsHistoryDetail['knockout'];
-                        leagueMatch: /** LeagueMatchHistory */ LinkedFieldType<VsHistoryDetail, 'leagueMatch', {
-                            myLeaguePower: LeagueMatchHistory['myLeaguePower'];
-                        }, false>;
                         myTeam: /** VsTeam */ LinkedFieldType<VsHistoryDetail, 'myTeam', {
                             result: /** VsTeamResult */ LinkedFieldType<VsTeam, 'result', {
                                 paintPoint: VsTeamResult['paintPoint'];
@@ -46,6 +27,7 @@ interface LatestBattleHistoriesQuery_7d8b560 {
                         nextHistoryDetail: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetail, 'nextHistoryDetail', {
                             id: VsHistoryDetail['id'];
                         }, false>;
+                        playedTime: VsHistoryDetail['playedTime'];
                         player: /** VsPlayer */ LinkedFieldType<VsHistoryDetail, 'player', {
                             id: VsPlayer['id'];
                             festGrade: VsPlayer['festGrade'];
@@ -60,7 +42,6 @@ interface LatestBattleHistoriesQuery_7d8b560 {
                         previousHistoryDetail: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetail, 'previousHistoryDetail', {
                             id: VsHistoryDetail['id'];
                         }, false>;
-                        udemae: VsHistoryDetail['udemae'];
                         vsMode: /** VsMode */ LinkedFieldType<VsHistoryDetail, 'vsMode', {
                             id: VsMode['id'];
                             mode: VsMode['mode'];
@@ -116,5 +97,5 @@ interface LatestBattleHistoriesQuery_7d8b560 {
     }>;
 }
 
-export default LatestBattleHistoriesQuery_7d8b560;
-export { LatestBattleHistoriesQuery_7d8b560 };
+export default RegularBattleHistoriesQuery_f6e7e02;
+export { RegularBattleHistoriesQuery_f6e7e02 };

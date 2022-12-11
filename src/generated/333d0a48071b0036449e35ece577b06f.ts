@@ -1,41 +1,24 @@
 import { LinkedFieldType, OperationFieldType, UnknownScalarType } from '../generated-type-helpers.js';
-import { BankaraMatchHistory, Color, Fest, FestTeam, Image, LeagueMatchHistory, MaskingImage, SpecialWeapon, VsHistoryDetail, VsHistoryDetailConnection, VsHistoryGroup, VsHistoryGroupConnection, VsHistorySummary, VsMode, VsPlayer, VsResult, VsRule, VsStage, VsTeam, VsTeamResult, Weapon } from '../types.js';
+import { CurrentPlayer, Image, MaskingImage, SpecialWeapon, VsHistoryDetail, VsHistoryDetailConnection, VsHistoryGroup, VsHistoryGroupConnection, VsHistorySummary, VsMode, VsPlayer, VsResult, VsRule, VsStage, VsTeam, VsTeamResult, Weapon } from '../types.js';
 
 /**
- * 7d8b560e31617e981cf7c8aa1ca13a00 LatestBattleHistoriesQuery
+ * 333d0a48071b0036449e35ece577b06f RegularBattleHistoriesRefetchQuery
  *
- * query LatestBattleHistoriesQuery
+ * query RegularBattleHistoriesRefetchQuery
  *
  * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
-interface LatestBattleHistoriesQuery_7d8b560 {
-    currentFest: /** Fest */ OperationFieldType<'LatestBattleHistoriesQuery', 'currentFest', {
-        id: Fest['id'];
-        state: Fest['state'];
-        teams: /** FestTeam */ LinkedFieldType<Fest, 'teams', {
-            id: FestTeam['id'];
-            color: /** Color */ LinkedFieldType<FestTeam, 'color', {
-                r: Color['r'];
-                g: Color['g'];
-                b: Color['b'];
-                a: Color['a'];
-            }, false>;
-        }, true>;
-    }>;
-    latestBattleHistories: /** VsResult */ OperationFieldType<'LatestBattleHistoriesQuery', 'vsResult', {
+type RegularBattleHistoriesRefetchQuery_333d0a4<
+    fetchCurrentPlayer extends boolean = boolean,
+> = ({
+    regularBattleHistories: /** VsResult */ OperationFieldType<'RegularBattleHistoriesRefetchQuery', 'vsResult', {
         historyGroups: /** VsHistoryGroupConnection */ LinkedFieldType<VsResult, 'historyGroups', {
             nodes: /** VsHistoryGroup */ LinkedFieldType<VsHistoryGroupConnection, 'nodes', {
                 historyDetails: /** VsHistoryDetailConnection */ LinkedFieldType<VsHistoryGroup, 'historyDetails', {
                     nodes: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetailConnection, 'nodes', {
                         id: VsHistoryDetail['id'];
-                        bankaraMatch: /** BankaraMatchHistory */ LinkedFieldType<VsHistoryDetail, 'bankaraMatch', {
-                            earnedUdemaePoint: BankaraMatchHistory['earnedUdemaePoint'];
-                        }, false>;
                         judgement: VsHistoryDetail['judgement'];
                         knockout: VsHistoryDetail['knockout'];
-                        leagueMatch: /** LeagueMatchHistory */ LinkedFieldType<VsHistoryDetail, 'leagueMatch', {
-                            myLeaguePower: LeagueMatchHistory['myLeaguePower'];
-                        }, false>;
                         myTeam: /** VsTeam */ LinkedFieldType<VsHistoryDetail, 'myTeam', {
                             result: /** VsTeamResult */ LinkedFieldType<VsTeam, 'result', {
                                 paintPoint: VsTeamResult['paintPoint'];
@@ -46,6 +29,7 @@ interface LatestBattleHistoriesQuery_7d8b560 {
                         nextHistoryDetail: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetail, 'nextHistoryDetail', {
                             id: VsHistoryDetail['id'];
                         }, false>;
+                        playedTime: VsHistoryDetail['playedTime'];
                         player: /** VsPlayer */ LinkedFieldType<VsHistoryDetail, 'player', {
                             id: VsPlayer['id'];
                             festGrade: VsPlayer['festGrade'];
@@ -60,7 +44,6 @@ interface LatestBattleHistoriesQuery_7d8b560 {
                         previousHistoryDetail: /** VsHistoryDetail */ LinkedFieldType<VsHistoryDetail, 'previousHistoryDetail', {
                             id: VsHistoryDetail['id'];
                         }, false>;
-                        udemae: VsHistoryDetail['udemae'];
                         vsMode: /** VsMode */ LinkedFieldType<VsHistoryDetail, 'vsMode', {
                             id: VsMode['id'];
                             mode: VsMode['mode'];
@@ -114,7 +97,23 @@ interface LatestBattleHistoriesQuery_7d8b560 {
             win: VsHistorySummary['win'];
         }, false>;
     }>;
-}
+}) & (/** Condition */ fetchCurrentPlayer extends true ? {
+    currentPlayer: /** CurrentPlayer */ ({
+        species: CurrentPlayer['species'];
+        weapon: /** Weapon */ LinkedFieldType<CurrentPlayer, 'weapon', {
+            id: Weapon['id'];
+            specialWeapon: /** SpecialWeapon */ LinkedFieldType<Weapon, 'specialWeapon', {
+                id: SpecialWeapon['id'];
+                maskingImage: /** MaskingImage */ LinkedFieldType<SpecialWeapon, 'maskingImage', {
+                    height: MaskingImage['height'];
+                    maskImageUrl: MaskingImage['maskImageUrl'];
+                    overlayImageUrl: MaskingImage['overlayImageUrl'];
+                    width: MaskingImage['width'];
+                }, false>;
+            }, false>;
+        }, false>;
+    } | null);
+} : {});
 
-export default LatestBattleHistoriesQuery_7d8b560;
-export { LatestBattleHistoriesQuery_7d8b560 };
+export default RegularBattleHistoriesRefetchQuery_333d0a4;
+export { RegularBattleHistoriesRefetchQuery_333d0a4 };

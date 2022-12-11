@@ -6,7 +6,7 @@ import { VsHistoryDetail } from '../types.js';
  *
  * query VsHistoryDetailPagerRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
 interface VsHistoryDetailPagerRefetchQuery_994cf14 {
     vsHistoryDetail: /** unknown type */ OperationFieldType<'VsHistoryDetailPagerRefetchQuery', 'node', ({

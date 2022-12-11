@@ -6,7 +6,7 @@ import { Award, Badge, ClothingGear, Color, Gear, GearPower, HeadGear, Image, Na
  *
  * query DownloadSearchReplayQuery
  *
- * Generated 11/12/2022 from SplatNet 3 1.0.0-63bad6e1.
+ * Generated 11/12/2022 from SplatNet 3 1.0.0-216d0219.
  */
 interface DownloadSearchReplayQuery_b461048 {
     replay: /** Replay */ OperationFieldType<'DownloadSearchReplayQuery', 'replay', {
