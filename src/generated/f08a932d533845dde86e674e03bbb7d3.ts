@@ -6,7 +6,7 @@ import { Image, VsStage, VsStageConnection, VsStageRecordStats } from '../types.
  *
  * query StageRecordQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
  */
 interface StageRecordQuery_f08a932 {
     stageRecords: /** VsStageConnection */ OperationFieldType<'StageRecordQuery', 'vsStages', {

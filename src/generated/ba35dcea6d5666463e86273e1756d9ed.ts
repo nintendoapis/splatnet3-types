@@ -6,7 +6,7 @@ import { CurrentPlayer, Image, MaskingImage, SpecialWeapon, VsHistoryDetail, VsH
  *
  * query XBattleHistoriesRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
  */
 type XBattleHistoriesRefetchQuery_ba35dce<
     fetchCurrentPlayer extends boolean = boolean,

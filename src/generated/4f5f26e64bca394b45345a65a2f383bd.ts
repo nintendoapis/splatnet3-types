@@ -6,7 +6,7 @@ import { BankaraMatchHistory, Color, Fest, FestTeam, Image, LeagueMatchHistory, 
  *
  * query LatestBattleHistoriesQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
  */
 interface LatestBattleHistoriesQuery_4f5f26e {
     currentFest: /** Fest */ OperationFieldType<'LatestBattleHistoriesQuery', 'currentFest', {

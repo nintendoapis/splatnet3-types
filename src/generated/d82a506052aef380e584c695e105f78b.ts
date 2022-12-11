@@ -6,7 +6,7 @@ import { CoopBossResult, CoopEnemy, CoopGrade, CoopGroupHighestResult, CoopHisto
  *
  * query refetchableCoopHistory_coopResultQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
  */
 interface refetchableCoopHistory_coopResultQuery_d82a506 {
     coopResult: /** CoopResult */ OperationFieldType<'refetchableCoopHistory_coopResultQuery', 'coopResult', {

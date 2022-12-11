@@ -6,7 +6,7 @@ import { BankaraMatchHistory, Color, CurrentPlayer, Fest, FestTeam, Image, Leagu
  *
  * query LatestBattleHistoriesRefetchQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-8a061f6c.
+ * Generated 11/12/2022 from SplatNet 3 2.0.0-15dc639f.
  */
 type LatestBattleHistoriesRefetchQuery_047c1ff<
     fetchCurrentPlayer extends boolean = boolean,
