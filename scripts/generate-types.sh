@@ -20,8 +20,10 @@ do
 done
 
 rm src/generated/types.ts
+rm src/generated/latest.ts
+
 GENERATED_TYPES=`ls src/generated | sed -r s/\.ts//`
-echo "export type types = {" > src/generated/types.ts
+echo "type generated_types = {" > src/generated/types.ts
 
 for id in $GENERATED_TYPES
 do
@@ -29,3 +31,21 @@ do
 done
 
 echo "};" >> src/generated/types.ts
+echo "" >> src/generated/types.ts
+echo "export default generated_types;" >> src/generated/types.ts
+echo "" >> src/generated/types.ts
+
+for id in $GENERATED_TYPES
+do
+    echo "export * from './$id.js';" >> src/generated/types.ts
+done
+
+for file in $QUERIES
+do
+    id=`jq -r '.params.id' "$QUERIES_DIRECTORY/$file"`
+    name=`jq -r '.params.name' "$QUERIES_DIRECTORY/$file"`
+
+    # jq -r "'export { default as \(.params.name) } from \'./\(.params.id).js\';'" "$QUERIES_DIRECTORY/$file" >> src/generated/current.ts
+    
+    echo "export { default as $name } from './$id.js';" >> src/generated/latest.ts
+done

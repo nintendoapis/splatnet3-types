@@ -12,6 +12,9 @@
     "bugs": "https://github.com/nintendoapis/splatnet3-types/issues",
     "exports": {
         "./splatnet3": "./dist/splatnet3.js",
+        "./graphql/*": "./dist/generated/*.js",
+        "./graphql/types": null,
+        "./graphql/latest": null,
         "./splatoon3ink": "./dist/splatoon3ink.js"
     },
     "files": [
