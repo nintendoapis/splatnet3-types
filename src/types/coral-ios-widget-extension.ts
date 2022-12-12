@@ -1,11 +1,13 @@
-import { PhotoAlbum, PhotoAlbumItem } from './album.js';
-import { VsHistoryDetail, VsHistoryGroup, VsPlayer, VsResult, VsTeam, VsTeamResult } from './battles.js';
-import { CurrentPlayer, Image, NodeList, VsMode, VsRule } from './common.js';
-import { Fest } from './fest.js';
-import { Brand, ClothingGear, GearPower, HeadGear, ShoesGear } from './gear.js';
-import { BankaraMatchSetting, FestMatchSetting, LeagueMatchSetting, RegularMatchSetting, VsSchedule, XMatchSetting } from './schedules.js';
-import { VsStage } from './stage.js';
-import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
+// import { PhotoAlbum, PhotoAlbumItem } from './album.js';
+// import { VsHistoryDetail, VsHistoryGroup, VsPlayer, VsResult, VsTeam, VsTeamResult } from './battles.js';
+// import { CurrentPlayer, Image, NodeList, VsMode, VsRule } from './common.js';
+// import { Fest } from './fest.js';
+// import { Brand, ClothingGear, GearPower, HeadGear, ShoesGear } from './gear.js';
+// import { BankaraMatchSetting, FestMatchSetting, LeagueMatchSetting, RegularMatchSetting, VsSchedule, XMatchSetting } from './schedules.js';
+// import { VsStage } from './stage.js';
+// import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
+
+import { BankaraMatchSetting, Brand, ClothingGear, Connection, CurrentPlayer, Fest, FestMatchSetting, GearPower, HeadGear, Image, LeagueMatchSetting, PhotoAlbum, PhotoAlbumItem, RegularMatchSetting, ShoesGear, SpecialWeapon, SubWeapon, VsHistoryDetail, VsHistoryGroup, VsMode, VsPlayer, VsResult, VsRule, VsSchedule, VsStage, VsTeam, VsTeamResult, Weapon, XMatchSetting } from '../types.js';
 
 /** 6415729605742e57e4f627db2a5714ba38da0992ec91133b243bf517cd905369 CurrentEquipment */
 export interface CoralWidgetExtensionCurrentEquipmentResult {
@@ -58,7 +60,7 @@ export type GearPower_widgetEquipment = Pick<GearPower, '__typename' | 'name'> &
 export interface CoralWidgetExtensionVsSchedulesResult {
     vsSchedules: {
         __typename: 'VsScheduleConnection';
-    } & NodeList<VsSchedule_widgetSchedules>;
+    } & Pick<Connection<VsSchedule_widgetSchedules>, 'nodes'>;
     currentFest: Pick<Fest, unknown & never> | null;
 }
 
@@ -109,7 +111,7 @@ export interface CoralWidgetExtensionLatestAlbumPhotoResult {
 export type PhotoAlbum_widgetLatestPhoto = Pick<PhotoAlbum, '__typename' | 'nplnUserId'> & {
     items: {
         __typename: 'PhotoAlbumItemConnection';
-    } & NodeList<PhotoAlbumItem_widgetLatestPhoto>;
+    } & Pick<Connection<PhotoAlbumItem_widgetLatestPhoto>, 'nodes'>;
 };
 export type PhotoAlbumItem_widgetLatestPhoto = Pick<PhotoAlbumItem, '__typename'> & {
     photo: Pick<Image, '__typename' | 'url'>;
@@ -123,12 +125,12 @@ export interface CoralWidgetExtensionLatestVsResultsResult {
 export type VsResult_widgetLatestResults = Pick<VsResult, '__typename'> & {
     historyGroups: {
         __typename: 'VsHistoryGroupConnection';
-    } & NodeList<VsHistoryGroup_widgetLatestResults>;
+    } & Pick<Connection<VsHistoryGroup_widgetLatestResults>, 'nodes'>;
 };
 export type VsHistoryGroup_widgetLatestResults = Pick<VsHistoryGroup, '__typename'> & {
     historyDetails: {
         __typename: 'VsHistoryDetailConnection';
-    } & NodeList<VsHistoryDetail_widgetLatestResults>;
+    } & Pick<Connection<VsHistoryDetail_widgetLatestResults>, 'nodes'>;
 };
 export type VsHistoryDetail_widgetLatestResults = Pick<VsHistoryDetail, '__typename' | 'id' | 'judgement' | 'knockout'> & {
     vsMode: Pick<VsMode, '__typename' | 'mode'>;

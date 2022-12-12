@@ -1,12 +1,14 @@
-import { PhotoAlbum, PhotoAlbumItem } from './album.js';
-import { VsHistoryDetail, VsHistoryGroup, VsPlayer, VsResult, VsTeam, VsTeamResult } from './battles.js';
-import { CurrentPlayer, NodeList, VsMode, VsRule } from './common.js';
-import { CoopStage, CoopSupplyWeapon } from './coop.js';
-import { Fest } from './fest.js';
-import { ClothingGear, GearPower, HeadGear, ShoesGear } from './gear.js';
-import { BankaraMatchSetting, CoopSchedule, CoopSetting, FestMatchSetting, LeagueMatchSetting, RegularMatchSetting, VsSchedule, XMatchSetting } from './schedules.js';
-import { VsStage } from './stage.js';
-import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
+// import { PhotoAlbum, PhotoAlbumItem } from './album.js';
+// import { VsHistoryDetail, VsHistoryGroup, VsPlayer, VsResult, VsTeam, VsTeamResult } from './battles.js';
+// import { CurrentPlayer, NodeList, VsMode, VsRule } from './common.js';
+// import { CoopStage, CoopSupplyWeapon } from './coop.js';
+// import { Fest } from './fest.js';
+// import { ClothingGear, GearPower, HeadGear, ShoesGear } from './gear.js';
+// import { BankaraMatchSetting, CoopSchedule, CoopSetting, FestMatchSetting, LeagueMatchSetting, RegularMatchSetting, VsSchedule, XMatchSetting } from './schedules.js';
+// import { VsStage } from './stage.js';
+// import { SpecialWeapon, SubWeapon, Weapon } from './weapon.js';
+
+import { BankaraMatchSetting, ClothingGear, Connection, CoopSchedule, CoopSetting, CoopStage, CoopSupplyWeapon, CurrentPlayer, Fest, FestMatchSetting, GearPower, HeadGear, LeagueMatchSetting, PhotoAlbum, PhotoAlbumItem, RegularMatchSetting, ShoesGear, SpecialWeapon, SubWeapon, VsHistoryDetail, VsHistoryGroup, VsMode, VsPlayer, VsResult, VsRule, VsSchedule, VsStage, VsTeam, VsTeamResult, Weapon, XMatchSetting } from '../types.js';
 
 /** c5723d79aab0dbcff9dd8808869544c2ef2bb3a5d882147b6b91386c9718a365 LatestAlbumPhoto */
 export interface CoralAndroidWidgetExtensionLatestAlbumPhotoResult {
@@ -14,7 +16,7 @@ export interface CoralAndroidWidgetExtensionLatestAlbumPhotoResult {
 }
 
 export type PhotoAlbum_widgetAndroidLatestPhoto = Pick<PhotoAlbum, 'nplnUserId'> & {
-    items: NodeList<Pick<PhotoAlbumItem, '__typename' | 'photo'>>;
+    items: Pick<Connection<Pick<PhotoAlbumItem, '__typename' | 'photo'>>, 'nodes'>;
 };
 
 /** 23f3cb83d08f46e36a3eced4bffb538a16cfd6ae21799cc8fb54909fa2962706 LatestVsResults */
@@ -23,10 +25,10 @@ export interface CoralAndroidWidgetExtensionLatestVsResultsResult {
 }
 
 export type VsResult_widgetAndroidLatestResults = Pick<VsResult, never> & {
-    historyGroups: NodeList<VsHistoryGroup_widgetAndroidLatestResults>;
+    historyGroups: Pick<Connection<VsHistoryGroup_widgetAndroidLatestResults>, 'nodes'>;
 };
 export type VsHistoryGroup_widgetAndroidLatestResults = Pick<VsHistoryGroup, never> & {
-    historyDetails: NodeList<VsHistoryDetail_widgetAndroidLatestResults>;
+    historyDetails: Pick<Connection<VsHistoryDetail_widgetAndroidLatestResults>, 'nodes'>;
 };
 export type VsHistoryDetail_widgetAndroidLatestResults = Pick<VsHistoryDetail, '__typename' | 'id' | 'judgement' | 'knockout'> & {
     vsMode: Pick<VsMode, 'name' | 'mode'>;
@@ -44,8 +46,8 @@ export type VsTeam_widgetAndroidLatestResults = Pick<VsTeam, never> & {
 
 /** fb86e1a8d5845b7d7408b3e8074cd19bd9277970da8e21ffb869de6513ea99aa StageSchedules */
 export interface CoralAndroidWidgetExtensionStageSchedulesResult {
-    vsSchedules: NodeList<VsSchedule_widgetAndroidSchedules>;
-    coopSchedules: NodeList<CoopSchedule_widgetAndroidSchedules>;
+    vsSchedules: Pick<Connection<VsSchedule_widgetAndroidSchedules>, 'nodes'>;
+    coopSchedules: Pick<Connection<CoopSchedule_widgetAndroidSchedules>, 'nodes'>;
     currentPlayer: CurrentPlayer_widgetAndroidSchedules;
     currentFest: Pick<Fest, unknown & never> | null;
 }

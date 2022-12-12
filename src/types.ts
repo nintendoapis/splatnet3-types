@@ -93,6 +93,7 @@ export interface VsMode {
 
 export interface UserError {
     code: number;
+    message: string;
 }
 
 export interface PhotoAlbum {
@@ -307,7 +308,8 @@ export interface CoopHistoryDetail {
 }
 
 export interface CoopBossResult {
-    //
+    boss: unknown;
+    hasDefeatBoss: unknown;
 }
 
 export interface CoopPlayerResult {
@@ -511,7 +513,7 @@ export interface Friend {
     playerName: string | null;
     userIcon: Image;
     vsMode: VsMode | null;
-    coopMode: string | null;
+    coopRule: string | null;
     isFavorite: boolean;
     isLocked: boolean | null;
     isVcEnabled: boolean | null;
@@ -618,6 +620,7 @@ export interface HeroRecord {
 
 export interface HeroSite {
     id: string;
+    image: Image;
     siteNumber: number;
     progressRate: number;
     siteName: string;
@@ -767,6 +770,7 @@ export interface Replay {
 export type ReplayConnection = Connection<Replay>;
 
 export interface ReserveReplayDownloadPayload {
+    replay: Replay;
     userErrors: UserError[] | null;
 }
 
@@ -939,7 +943,10 @@ export interface VsHistoryGroup {
     __typename: 'VsHistoryGroup';
     bankaraMatchChallenge: BankaraMatchChallenge | null;
     xMatchMeasurement: XMatchMeasurement | null;
+    leagueMatchTeamId: string | null;
     historyDetails: VsHistoryDetailConnection;
+    regularMatchLastPlayedTime: string | null;
+    privateMatchLastPlayedTime: string | null;
 }
 
 export interface BankaraMatchChallenge {
@@ -1050,15 +1057,17 @@ export interface BankaraMatchHistory {
 }
 export interface XMatchHistory {
     lastXPower: number | null;
+    entireXPower: number | null;
 }
 export interface LeagueMatchHistory {
-    teamId: UnknownScalarType | null;
+    teamId: string;
     leagueMatchEvent: LeagueMatchEvent | null;
+    myLeaguePower: number | null;
 }
 export interface LeagueMatchEvent {
-    id: UnknownScalarType | null;
-    name: UnknownScalarType | null;
-    desc: UnknownScalarType | null;
+    id: string;
+    name: string;
+    desc: string;
 }
 export interface FestMatchHistory {
     dragonMatchType: DragonMatchType | keyof typeof DragonMatchType;

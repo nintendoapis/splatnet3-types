@@ -1,53 +1,32 @@
-import { PhotoAlbumRefetchResult, PhotoAlbumResult } from './types/album.js';
-import { BankaraBattleHistoriesRefetchResult, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesResult } from './types/battle-bankara.js';
-import { VsHistoryDetailPagerRefetchResult, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailResult, VsHistoryDetailResult_2b08598, VsHistoryDetailResult_cd82f2a, VsHistoryDetailVariables, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a } from './types/battle-detail.js';
-import { LatestBattleHistoriesRefetchResult, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesResult } from './types/battle-latest.js';
-import { PrivateBattleHistoriesRefetchResult, PrivateBattleHistoriesRefetchResult_9ef974f, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesResult, PrivateBattleHistoriesResult_5198129 } from './types/battle-private.js';
-import { RegularBattleHistoriesRefetchResult, RegularBattleHistoriesRefetchResult_fed6e75, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesResult, RegularBattleHistoriesResult_819b680 } from './types/battle-regular.js';
-import { XBattleHistoriesRefetchVariables, XBattleHistoriesResult } from './types/battle-xmatch.js';
-import { BattleHistoryCurrentPlayerResult, PagerLatestVsDetailResult, PagerUpdateBattleHistoriesByVsModeResult, PagerUpdateBattleHistoriesByVsModeResult_000afbc, PagerUpdateBattleHistoriesByVsModeResult_67224c2, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_67224c2 } from './types/battles.js';
-import { CatalogRefetchResult, CatalogRefetchResult_02d2de8, CatalogResult, CatalogResult_aead379 } from './types/catalog.js';
-import { ChallengeRefetchResult, ChallengeResult, JourneyChallengeDetailRefetchResult, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailResult, JourneyChallengeDetailVariables, JourneyRefetchResult, JourneyRefetchVariables, JourneyResult, JourneyVariables, SupportButtonSupportChallengeResult, SupportButtonSupportChallengeVariables } from './types/challenge.js';
-import { CheckinResult, CheckinResult_af8cac2, CheckinWithQRCodeMutationResult, CheckinWithQRCodeMutationResult_8e3fecf, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8e3fecf } from './types/checkin.js';
-import { CoopHistoryDetailRefetchResult, CoopHistoryDetailRefetchVariables, CoopHistoryDetailResult, CoopHistoryDetailResult_f3799a0, CoopHistoryDetailVariables, CoopHistoryDetailVariables_f3799a0, CoopHistoryResult, CoopHistoryResult_817618c, CoopPagerLatestCoopResult, CoopPagerLatestCoopResult_82385ab, RefetchableCoopHistoryResult, RefetchableCoopHistoryResult_a5692cf } from './types/coop.js';
+import { types as generated_types } from './generated/types.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
-import { DetailFestRecordDetailResult, DetailFestRecordDetailResult_2d66198, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchResult, DetailFestRefetchResult_0eb7bac, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchResult, DetailFestVotingStatusRefetchVariables, DetailRankingResult, DetailRankingResult_58bdd28, DetailRankingVariables, DetailRankingVariables_58bdd28, DetailVotingStatusResult, DetailVotingStatusVariables, FestRecordRefetchResult, FestRecordResult, RankingHoldersFestTeamRankingHoldersPaginationResult, RankingHoldersFestTeamRankingHoldersPaginationVariables, VotesUpdateFestVoteResult, VotesUpdateFestVoteVariables } from './types/fest.js';
-import { FriendListRefetchResult, FriendListRefetchResult_c1afed6, FriendListResult, FriendListResult_7a0e05c } from './types/friends.js';
-import { GesotownRefetchResult, GesotownRefetchResult_c61bf8a, GesotownResult, GesotownResult_d08dbdd, SaleGearDetailOrderGesotownGearResult, SaleGearDetailOrderGesotownGearResult_aebd822, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailResult, SaleGearDetailResult_7c4173b, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b } from './types/gesotown.js';
-import { HeroHistoryRefetchQuery, HeroHistoryResult } from './types/hero.js';
-import { HistoryRecordRefetchResult, HistoryRecordRefetchResult_5e1d0bb, HistoryRecordRefetchResult_6cd7102, HistoryRecordResult, HistoryRecordResult_29957cf, HistoryRecordResult_9d4ef9f } from './types/history.js';
-import { ConfigureAnalyticsResult, CurrentFestResult, HomeResult, SettingResult } from './types/home.js';
-import { CreateMyOutfitResult, CreateMyOutfitVariables, MyOutfitCommonDataEquipmentsResult, MyOutfitCommonDataFilteringConditionResult, MyOutfitDetailResult, MyOutfitDetailVariables, MyOutfitsRefetchResult, MyOutfitsResult, UpdateMyOutfitResult, UpdateMyOutfitVariables } from './types/outfits.js';
-import { DownloadSearchReplayResult, DownloadSearchReplayVariables, ReplayModalReserveReplayDownloadResult, ReplayModalReserveReplayDownloadVariables, ReplayResult, ReplayUploadedReplayListRefetchResult } from './types/replay.js';
-import { StageScheduleResult, StageScheduleResult_10e1d42, StageScheduleResult_7d4bb05 } from './types/schedules.js';
-import { StageRecordResult, StageRecordResult_53dffcf, StageRecordsRefetchResult, StageRecordsRefetchResult_38624d4 } from './types/stage.js';
-import { WeaponRecordResult, WeaponRecordResult_a0c277c, WeaponRecordsRefetchResult, WeaponRecordsRefetchResult_23c9b2b } from './types/weapon.js';
+import { BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchVariables_964c03e, BankaraBattleHistoriesRefetchVariables_d8a8662, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8e3fecf, CoopHistoryDetailRefetchVariables, CoopHistoryDetailVariables, CoopHistoryDetailVariables_3cc5f82, CoopHistoryDetailVariables_f3799a0, CreateMyOutfitVariables, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchVariables, DetailRankingVariables, DetailRankingVariables_58bdd28, DetailVotingStatusVariables, DownloadSearchReplayVariables, DownloadSearchReplayVariables_b461048, DownloadSearchReplayVariables_cde4fe7, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailVariables, JourneyRefetchVariables, JourneyVariables, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchVariables_047c1ff, LatestBattleHistoriesRefetchVariables_80585ad, MyOutfitDetailVariables, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeVariables_7297ae4, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_4835a28, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchVariables_b304e70, RankingHoldersFestTeamRankingHoldersPaginationVariables, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_04e5d83, RegularBattleHistoriesRefetchVariables_333d0a4, RegularBattleHistoriesRefetchVariables_fed6e75, ReplayModalReserveReplayDownloadVariables, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b, SupportButtonSupportChallengeVariables, UpdateMyOutfitVariables, VotesUpdateFestVoteVariables, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailVariables, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a, XBattleHistoriesRefetchVariables, XBattleHistoriesRefetchVariables_ba35dce } from './variable-types.js';
 
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '30aa261475d43bd765b4200fc67003c8',
     CheckinWithQRCodeMutation = '8d54e1c6bdcc65181f65adc582914ad8',
-    CoopPagerLatestCoopQuery = '5711cb6c2e3afce523766c906810f030',
+    CoopPagerLatestCoopQuery = 'a2704e18852efce9cdbc61e205e1ed4e',
     RankingHoldersFestTeamRankingHoldersPaginationQuery = 'be2eb9e9b8dd680519eb59cc46c1a32b',
     VotesUpdateFestVoteMutation = 'a2c742c840718f37488e0394cd6e1e08',
     CreateMyOutfitMutation = '31ff008ea218ffbe11d958a52c6f959f',
     UpdateMyOutfitMutation = 'bb809066282e7d659d3b9e9d4e46b43b',
-    DownloadSearchReplayQuery = 'b461048f9ffc414b3967a3cdad0805dd',
+    DownloadSearchReplayQuery = '43a5f23eec238d7ee827cc87f47f050c',
     ReplayModalReserveReplayDownloadMutation = '87bff2b854168b496c2da8c0e7f3e5bc',
     PagerLatestVsDetailQuery = '0329c535a32f914fd44251be1f489e24',
-    PagerUpdateBattleHistoriesByVsModeQuery = '7297ae42bbb1958cfe438736865d304e',
+    PagerUpdateBattleHistoriesByVsModeQuery = '094a9b44ff21e8c409d6046fc1af9dfe',
     ConfigureAnalyticsQuery = 'f8ae00773cc412a50dd41a6d9a159ddd',
     CurrentFestQuery = 'c0429fd738d829445e994d3370999764',
-    BankaraBattleHistoriesQuery = 'de4754588109b77dbcb90fbe44b612ee',
-    BankaraBattleHistoriesRefetchQuery = '964c03ed28eb640438d8113534de2fe4',
-    LatestBattleHistoriesQuery = '4f5f26e64bca394b45345a65a2f383bd',
-    LatestBattleHistoriesRefetchQuery = '047c1ff4d6b9f03b082aa6ffdb200a6a',
-    PrivateBattleHistoriesQuery = '1d6ed57dc8b801863126ad4f351dfb9a',
-    PrivateBattleHistoriesRefetchQuery = '4835a28419ad3c7bfacbb30ca4008140',
-    RegularBattleHistoriesQuery = 'd5b795d09e67ce153e622a184b7e7dfa',
-    RegularBattleHistoriesRefetchQuery = '04e5d83f4243541c369b2e7556b9b809',
-    XBattleHistoriesQuery = '45c74fefb45a49073207229ca65f0a62',
-    XBattleHistoriesRefetchQuery = 'ba35dcea6d5666463e86273e1756d9ed',
+    BankaraBattleHistoriesQuery = '0438ea6978ae8bd77c5d1250f4f84803',
+    BankaraBattleHistoriesRefetchQuery = '92b56403c0d9b1e63566ec98fef52eb3',
+    LatestBattleHistoriesQuery = '0176a47218d830ee447e10af4a287b3f',
+    LatestBattleHistoriesRefetchQuery = '7161210aad0793e58e76f20e0443855e',
+    PrivateBattleHistoriesQuery = '8e5ae78b194264a6c230e262d069bd28',
+    PrivateBattleHistoriesRefetchQuery = '89bc61012dcf170d9253f406ebebee67',
+    RegularBattleHistoriesQuery = '3baef04b095ad8975ea679d722bc17de',
+    RegularBattleHistoriesRefetchQuery = '4c95233c8d55e7c8cc23aae06109a2e8',
+    XBattleHistoriesQuery = '6796e3cd5dc3ebd51864dc709d899fc5',
+    XBattleHistoriesRefetchQuery = '94711fc9f95dd78fc640909f02d09215',
     BattleHistoryCurrentPlayerQuery = '49dd00428fb8e9b4dde62f585c8de1e0',
     ChallengeQuery = '8a079214500148bf88a8fce1d7209b90',
     ChallengeRefetchQuery = '34aedc79f96b8613501bba465295f779',
@@ -56,10 +35,10 @@ export enum RequestId {
     JourneyQuery = 'bc71fc0264f3f72256724b069f7a4097',
     JourneyRefetchQuery = '09eee118fa16415d6bc3846bc6e5d8e5',
     CheckinQuery = '5d0d1b45ebf4e324d0dae017d9df06d2',
-    CoopHistoryDetailQuery = '3cc5f826a6646b85f3ae45db51bd0707',
+    CoopHistoryDetailQuery = '9ade2aa3656324870ccec023636aed32',
     CoopHistoryDetailRefetchQuery = 'd3188df2fd4436870936b109675e2849',
-    CoopHistoryQuery = '6ed02537e4a65bbb5e7f4f23092f6154',
-    RefetchableCoopHistory_CoopResultQuery = 'd82a506052aef380e584c695e105f78b',
+    CoopHistoryQuery = '2fd21f270d381ecf894eb975c5f6a716',
+    RefetchableCoopHistory_CoopResultQuery = '2a7f4335bcf586d904db85e75ba868c0',
     DetailFestRecordDetailQuery = '96c3a7fd484b8d3be08e0a3c99eb2a3d',
     DetailFestRefethQuery = '18c7c465b18de5829347b7a7f1e571a1',
     DetailFestVotingStatusRefethQuery = '92f51ed1ab462bbf1ab64cad49d36f79',
@@ -84,14 +63,26 @@ export enum RequestId {
     MyOutfitCommonDataFilteringConditionQuery = 'd02ab22c9dccc440076055c8baa0fa7a',
     PhotoAlbumQuery = '7e950e4f69a5f50013bba8a8fb6a3807',
     PhotoAlbumRefetchQuery = '53fb0ad32c13dd9a6e617b1158cc2d41',
-    ReplayQuery = 'f98cc8326d0d17b07a5785096b0f3517',
-    ReplayUploadedReplayListRefetchQuery = 'dd56e76c75cda6af077a223c351ad61d',
+    ReplayQuery = '7ec830425971a0e0ff5b2a378455e38e',
+    ReplayUploadedReplayListRefetchQuery = '1d1048e2af114e263a3c3d3ddd34bcb4',
     SettingQuery = '61228d553e7463c203e05e7810dd79a7',
     StageRecordQuery = 'f08a932d533845dde86e674e03bbb7d3',
     StageRecordsRefetchQuery = '2fb1b3fa2d40c9b5953ea1ae263e54c1',
     StageScheduleQuery = '730cd98e84f1030d3e9ac86b6f1aae13',
     WeaponRecordQuery = '5f279779e7081f2d14ae1ddca0db2b6e',
     WeaponRecordsRefetchQuery = '6961f618fcef440c81509b205465eeec',
+    DetailTabViewWeaponTopsArRefetchQuery = 'a6782a0c692e8076656f9b4ab613fd82',
+    DetailTabViewWeaponTopsClRefetchQuery = '8d3c5bb2e82d6eb32a37eefb0e1f8f69',
+    DetailTabViewWeaponTopsGlRefetchQuery = 'b23468857c049c2f0684797e45fabac1',
+    DetailTabViewWeaponTopsLfRefetchQuery = 'd46f88c2ea5c4daeb5fe9d5813d07a99',
+    DetailTabViewXRankingArRefetchQuery = 'eb69df6f2a2f13ab207eedc568f0f8b6',
+    DetailTabViewXRankingClRefetchQuery = '68f99b7b02537bcb881db07e4e67f8dd',
+    DetailTabViewXRankingGlRefetchQuery = '5f8f333770ed3c43e21b0121f3a86716',
+    DetailTabViewXRankingLfRefetchQuery = '4e8b381ae6f9620443627f4eac3a2210',
+    XRankingDetailQuery = 'ec7174376203f9901713e116075c5ecd',
+    XRankingDetailRefetchQuery = '2aac81b2ec56fb2d15ce3d6a2b625772',
+    XRankingQuery = 'd771444f2584d938db8d10055599011d',
+    XRankingRefetchQuery = '5149402597bd2531b4eea04692d8bfd5',
     CatalogQuery = '52504060c81ff2f2d618c4e5377e6e7c',
     CatalogRefetchQuery = '4423dfd630867301fcdd834cd52922f4',
     HomeQuery = 'dba47124d5ec3090c97ba17db5d2f4b3',
@@ -117,124 +108,67 @@ enum RequestType {
     MUTATION,
 }
 
+type request_variables_app = {
+    [RequestId.SupportButton_SupportChallengeMutation]: SupportButtonSupportChallengeVariables;
+    '8e3fecf7cfce83f6831b17e9052791d0': CheckinWithQRCodeMutationVariables_8e3fecf;
+    [RequestId.CheckinWithQRCodeMutation]: CheckinWithQRCodeMutationVariables;
+    [RequestId.RankingHoldersFestTeamRankingHoldersPaginationQuery]: RankingHoldersFestTeamRankingHoldersPaginationVariables;
+    [RequestId.VotesUpdateFestVoteMutation]: VotesUpdateFestVoteVariables;
+    [RequestId.CreateMyOutfitMutation]: CreateMyOutfitVariables;
+    [RequestId.UpdateMyOutfitMutation]: UpdateMyOutfitVariables;
+    'b461048f9ffc414b3967a3cdad0805dd': DownloadSearchReplayVariables_b461048;
+    'cde4fe7d6467b32d5a06279492aa21dc': DownloadSearchReplayVariables_cde4fe7;
+    [RequestId.DownloadSearchReplayQuery]: DownloadSearchReplayVariables;
+    [RequestId.ReplayModalReserveReplayDownloadMutation]: ReplayModalReserveReplayDownloadVariables;
+    '67224c25f7b2e605205d152009f593c9': PagerUpdateBattleHistoriesByVsModeVariables_67224c2;
+    '000afbc113f5653d2c2cee42ff6cdeab': PagerUpdateBattleHistoriesByVsModeVariables_000afbc;
+    '7297ae42bbb1958cfe438736865d304e': PagerUpdateBattleHistoriesByVsModeVariables_7297ae4;
+    [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: PagerUpdateBattleHistoriesByVsModeVariables;
+    'd8a8662345593bbbcd63841c91d4c6f5': BankaraBattleHistoriesRefetchVariables_d8a8662;
+    '964c03ed28eb640438d8113534de2fe4': BankaraBattleHistoriesRefetchVariables_964c03e;
+    [RequestId.BankaraBattleHistoriesRefetchQuery]: BankaraBattleHistoriesRefetchVariables;
+    '80585ad4e4ecb674c3d8cd278adb1d21': LatestBattleHistoriesRefetchVariables_80585ad;
+    '047c1ff4d6b9f03b082aa6ffdb200a6a': LatestBattleHistoriesRefetchVariables_047c1ff;
+    [RequestId.LatestBattleHistoriesRefetchQuery]: LatestBattleHistoriesRefetchVariables;
+    '9ef974f2686a88f24e0dbff6f63a83c4': PrivateBattleHistoriesRefetchVariables_9ef974f;
+    'b304e707648f0669a939943d46febce1': PrivateBattleHistoriesRefetchVariables_b304e70;
+    '4835a28419ad3c7bfacbb30ca4008140': PrivateBattleHistoriesRefetchVariables_4835a28;
+    [RequestId.PrivateBattleHistoriesRefetchQuery]: PrivateBattleHistoriesRefetchVariables;
+    'fed6e752513a9986177e8eec50dfdd3c': RegularBattleHistoriesRefetchVariables_fed6e75;
+    '333d0a48071b0036449e35ece577b06f': RegularBattleHistoriesRefetchVariables_333d0a4;
+    '04e5d83f4243541c369b2e7556b9b809': RegularBattleHistoriesRefetchVariables_04e5d83;
+    [RequestId.RegularBattleHistoriesRefetchQuery]: RegularBattleHistoriesRefetchVariables;
+    'ba35dcea6d5666463e86273e1756d9ed': XBattleHistoriesRefetchVariables_ba35dce;
+    [RequestId.XBattleHistoriesRefetchQuery]: XBattleHistoriesRefetchVariables;
+    [RequestId.JourneyChallengeDetailQuery]: JourneyChallengeDetailVariables;
+    [RequestId.JourneyChallengeDetailRefetchQuery]: JourneyChallengeDetailRefetchVariables;
+    [RequestId.JourneyQuery]: JourneyVariables;
+    [RequestId.JourneyRefetchQuery]: JourneyRefetchVariables;
+    'f3799a033f0a7ad4b1b396f9a3bafb1e': CoopHistoryDetailVariables_f3799a0;
+    '3cc5f826a6646b85f3ae45db51bd0707': CoopHistoryDetailVariables_3cc5f82;
+    [RequestId.CoopHistoryDetailQuery]: CoopHistoryDetailVariables;
+    [RequestId.CoopHistoryDetailRefetchQuery]: CoopHistoryDetailRefetchVariables;
+    '2d661988c055d843b3be290f04fb0db9': DetailFestRecordDetailVariables_2d66198;
+    [RequestId.DetailFestRecordDetailQuery]: DetailFestRecordDetailVariables;
+    '0eb7bac3d8aabcad0e9d663ee5b90846': DetailFestRefetchVariables_0eb7bac;
+    [RequestId.DetailFestRefethQuery]: DetailFestRefetchVariables;
+    [RequestId.DetailFestVotingStatusRefethQuery]: DetailFestVotingStatusRefetchVariables;
+    '58bdd28e3cf71c3bf38bc45836ee1e96': DetailRankingVariables_58bdd28;
+    [RequestId.DetailRankingQuery]: DetailRankingVariables;
+    [RequestId.DetailVotingStatusQuery]: DetailVotingStatusVariables;
+    'aebd822b4a4e48dc48f618411054b8f5': SaleGearDetailOrderGesotownGearVariables_aebd822;
+    [RequestId.SaleGearDetailOrderGesotownGearMutation]: SaleGearDetailOrderGesotownGearVariables;
+    '7c4173bb0f5d56f29dbec889173cff24': SaleGearDetailVariables_7c4173b;
+    [RequestId.SaleGearDetailQuery]: SaleGearDetailVariables;
+    [RequestId.MyOutfitDetailQuery]: MyOutfitDetailVariables;
+    [RequestId.VsHistoryDetailPagerRefetchQuery]: VsHistoryDetailPagerRefetchVariables;
+    'cd82f2ade8aca7687947c5f3210805a6': VsHistoryDetailVariables_cd82f2a;
+    '2b085984f729cd51938fc069ceef784a': VsHistoryDetailVariables_2b08598;
+    [RequestId.VsHistoryDetailQuery]: VsHistoryDetailVariables;
+};
+
 type requests_app = {
-    [RequestId.SupportButton_SupportChallengeMutation]: [RequestType.MUTATION, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeResult];
-    '8e3fecf7cfce83f6831b17e9052791d0': [RequestType.MUTATION, CheckinWithQRCodeMutationVariables_8e3fecf, CheckinWithQRCodeMutationResult_8e3fecf];
-    [RequestId.CheckinWithQRCodeMutation]: [RequestType.MUTATION, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationResult];
-    '82385ab3c3444c857bd35a8d87dbc700': [RequestType.QUERY, {}, CoopPagerLatestCoopResult_82385ab];
-    [RequestId.CoopPagerLatestCoopQuery]: [RequestType.QUERY, {}, CoopPagerLatestCoopResult];
-    [RequestId.RankingHoldersFestTeamRankingHoldersPaginationQuery]: [RequestType.QUERY, RankingHoldersFestTeamRankingHoldersPaginationVariables, RankingHoldersFestTeamRankingHoldersPaginationResult];
-    [RequestId.VotesUpdateFestVoteMutation]: [RequestType.MUTATION, VotesUpdateFestVoteVariables, VotesUpdateFestVoteResult];
-    [RequestId.CreateMyOutfitMutation]: [RequestType.MUTATION, CreateMyOutfitVariables, CreateMyOutfitResult];
-    [RequestId.UpdateMyOutfitMutation]: [RequestType.MUTATION, UpdateMyOutfitVariables, UpdateMyOutfitResult];
-    [RequestId.DownloadSearchReplayQuery]: [RequestType.QUERY, DownloadSearchReplayVariables, DownloadSearchReplayResult];
-    [RequestId.ReplayModalReserveReplayDownloadMutation]: [RequestType.MUTATION, ReplayModalReserveReplayDownloadVariables, ReplayModalReserveReplayDownloadResult];
-    [RequestId.PagerLatestVsDetailQuery]: [RequestType.QUERY, {}, PagerLatestVsDetailResult];
-    '67224c25f7b2e605205d152009f593c9': [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeResult_67224c2];
-    '000afbc113f5653d2c2cee42ff6cdeab': [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeResult_000afbc];
-    [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: [RequestType.QUERY, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeResult];
-    [RequestId.ConfigureAnalyticsQuery]: [RequestType.QUERY, {}, ConfigureAnalyticsResult];
-    [RequestId.CurrentFestQuery]: [RequestType.QUERY, {}, CurrentFestResult];
-    'c1553ac75de0a3ea497cdbafaa93e95b': [RequestType.QUERY, {}, BankaraBattleHistoriesResult];
-    [RequestId.BankaraBattleHistoriesQuery]: [RequestType.QUERY, {}, BankaraBattleHistoriesResult];
-    'd8a8662345593bbbcd63841c91d4c6f5': [RequestType.QUERY, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchResult];
-    [RequestId.BankaraBattleHistoriesRefetchQuery]: [RequestType.QUERY, BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchResult];
-    '7d8b560e31617e981cf7c8aa1ca13a00': [RequestType.QUERY, {}, LatestBattleHistoriesResult];
-    [RequestId.LatestBattleHistoriesQuery]: [RequestType.QUERY, {}, LatestBattleHistoriesResult];
-    '80585ad4e4ecb674c3d8cd278adb1d21': [RequestType.QUERY, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchResult];
-    [RequestId.LatestBattleHistoriesRefetchQuery]: [RequestType.QUERY, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchResult];
-    '51981299595060692440e0ca66c475a1': [RequestType.QUERY, {}, PrivateBattleHistoriesResult_5198129];
-    '38e0529de8bc77189504d26c7a14e0b8': [RequestType.QUERY, {}, PrivateBattleHistoriesResult];
-    [RequestId.PrivateBattleHistoriesQuery]: [RequestType.QUERY, {}, PrivateBattleHistoriesResult];
-    '9ef974f2686a88f24e0dbff6f63a83c4': [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchResult_9ef974f];
-    'b304e707648f0669a939943d46febce1': [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchResult];
-    [RequestId.PrivateBattleHistoriesRefetchQuery]: [RequestType.QUERY, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchResult];
-    '819b680b0c7962b6f7dc2a777cd8c5e4': [RequestType.QUERY, {}, RegularBattleHistoriesResult_819b680];
-    'f6e7e0277e03ff14edfef3b41f70cd33': [RequestType.QUERY, {}, RegularBattleHistoriesResult];
-    [RequestId.RegularBattleHistoriesQuery]: [RequestType.QUERY, {}, RegularBattleHistoriesResult];
-    'fed6e752513a9986177e8eec50dfdd3c': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables_fed6e75, RegularBattleHistoriesRefetchResult_fed6e75];
-    '333d0a48071b0036449e35ece577b06f': [RequestType.QUERY, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchResult];
-    [RequestId.RegularBattleHistoriesRefetchQuery]: [RequestType.QUERY, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchResult];
-    [RequestId.XBattleHistoriesQuery]: [RequestType.QUERY, {}, XBattleHistoriesResult];
-    [RequestId.XBattleHistoriesRefetchQuery]: [RequestType.QUERY, XBattleHistoriesRefetchVariables, XBattleHistoriesResult];
-    [RequestId.BattleHistoryCurrentPlayerQuery]: [RequestType.QUERY, {}, BattleHistoryCurrentPlayerResult];
-    [RequestId.ChallengeQuery]: [RequestType.QUERY, {}, ChallengeResult];
-    [RequestId.ChallengeRefetchQuery]: [RequestType.QUERY, {}, ChallengeRefetchResult];
-    [RequestId.JourneyChallengeDetailQuery]: [RequestType.QUERY, JourneyChallengeDetailVariables, JourneyChallengeDetailResult];
-    [RequestId.JourneyChallengeDetailRefetchQuery]: [RequestType.QUERY, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailRefetchResult];
-    [RequestId.JourneyQuery]: [RequestType.QUERY, JourneyVariables, JourneyResult];
-    [RequestId.JourneyRefetchQuery]: [RequestType.QUERY, JourneyRefetchVariables, JourneyRefetchResult];
-    'af8cac2c2554e22e2bbada19392083a2': [RequestType.QUERY, {}, CheckinResult_af8cac2];
-    [RequestId.CheckinQuery]: [RequestType.QUERY, {}, CheckinResult];
-    'f3799a033f0a7ad4b1b396f9a3bafb1e': [RequestType.QUERY, CoopHistoryDetailVariables_f3799a0, CoopHistoryDetailResult_f3799a0];
-    [RequestId.CoopHistoryDetailQuery]: [RequestType.QUERY, CoopHistoryDetailVariables, CoopHistoryDetailResult];
-    [RequestId.CoopHistoryDetailRefetchQuery]: [RequestType.QUERY, CoopHistoryDetailRefetchVariables, CoopHistoryDetailRefetchResult];
-    '817618ce39bcf5570f52a97d73301b30': [RequestType.QUERY, {}, CoopHistoryResult_817618c];
-    [RequestId.CoopHistoryQuery]: [RequestType.QUERY, {}, CoopHistoryResult];
-    'a5692cf290ffb26f14f0f7b6e5023b07': [RequestType.QUERY, {}, RefetchableCoopHistoryResult_a5692cf];
-    [RequestId.RefetchableCoopHistory_CoopResultQuery]: [RequestType.QUERY, {}, RefetchableCoopHistoryResult];
-    '2d661988c055d843b3be290f04fb0db9': [RequestType.QUERY, DetailFestRecordDetailVariables_2d66198, DetailFestRecordDetailResult_2d66198];
-    [RequestId.DetailFestRecordDetailQuery]: [RequestType.QUERY, DetailFestRecordDetailVariables, DetailFestRecordDetailResult];
-    '0eb7bac3d8aabcad0e9d663ee5b90846': [RequestType.QUERY, DetailFestRefetchVariables_0eb7bac, DetailFestRefetchResult_0eb7bac];
-    [RequestId.DetailFestRefethQuery]: [RequestType.QUERY, DetailFestRefetchVariables, DetailFestRefetchResult];
-    [RequestId.DetailFestVotingStatusRefethQuery]: [RequestType.QUERY, DetailFestVotingStatusRefetchVariables, DetailFestVotingStatusRefetchResult];
-    '58bdd28e3cf71c3bf38bc45836ee1e96': [RequestType.QUERY, DetailRankingVariables_58bdd28, DetailRankingResult_58bdd28];
-    [RequestId.DetailRankingQuery]: [RequestType.QUERY, DetailRankingVariables, DetailRankingResult];
-    [RequestId.DetailVotingStatusQuery]: [RequestType.QUERY, DetailVotingStatusVariables, DetailVotingStatusResult];
-    [RequestId.FestRecordQuery]: [RequestType.QUERY, {}, FestRecordResult];
-    [RequestId.FestRecordRefetchQuery]: [RequestType.QUERY, {}, FestRecordRefetchResult];
-    '7a0e05c28c7d3f7e5a06def87ab8cd2d': [RequestType.QUERY, {}, FriendListResult_7a0e05c];
-    [RequestId.FriendListQuery]: [RequestType.QUERY, {}, FriendListResult];
-    'c1afed6111887347e244c639e7d35c69': [RequestType.QUERY, {}, FriendListRefetchResult_c1afed6];
-    [RequestId.FriendListRefetchQuery]: [RequestType.QUERY, {}, FriendListRefetchResult];
-    'd08dbdd29f31471e61daa978feea697a': [RequestType.QUERY, {}, GesotownResult_d08dbdd];
-    [RequestId.GesotownQuery]: [RequestType.QUERY, {}, GesotownResult];
-    'c61bf8a7f7bc47393b8c0e7590ae11f4': [RequestType.QUERY, {}, GesotownRefetchResult_c61bf8a];
-    [RequestId.GesotownRefetchQuery]: [RequestType.QUERY, {}, GesotownRefetchResult];
-    'aebd822b4a4e48dc48f618411054b8f5': [RequestType.MUTATION, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailOrderGesotownGearResult_aebd822];
-    [RequestId.SaleGearDetailOrderGesotownGearMutation]: [RequestType.MUTATION, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearResult];
-    '7c4173bb0f5d56f29dbec889173cff24': [RequestType.QUERY, SaleGearDetailVariables_7c4173b, SaleGearDetailResult_7c4173b];
-    [RequestId.SaleGearDetailQuery]: [RequestType.QUERY, SaleGearDetailVariables, SaleGearDetailResult];
-    [RequestId.HeroHistoryQuery]: [RequestType.QUERY, {}, HeroHistoryResult];
-    [RequestId.HeroHistoryRefetchQuery]: [RequestType.QUERY, {}, HeroHistoryRefetchQuery];
-    '29957cf5d57b893934de857317cd46d8': [RequestType.QUERY, {}, HistoryRecordResult_29957cf];
-    '9d4ef9fba3f84d6933bb1f6f436f7200': [RequestType.QUERY, {}, HistoryRecordResult_9d4ef9f];
-    [RequestId.HistoryRecordQuery]: [RequestType.QUERY, {}, HistoryRecordResult];
-    '5e1d0bb4b52e2a99049df6e17117f363': [RequestType.QUERY, {}, HistoryRecordRefetchResult_5e1d0bb];
-    '6cd71021eb35a793e3252f7a95deb75a': [RequestType.QUERY, {}, HistoryRecordRefetchResult_6cd7102];
-    [RequestId.HistoryRecordRefetchQuery]: [RequestType.QUERY, {}, HistoryRecordRefetchResult];
-    [RequestId.MyOutfitDetailQuery]: [RequestType.QUERY, MyOutfitDetailVariables, MyOutfitDetailResult];
-    [RequestId.MyOutfitsQuery]: [RequestType.QUERY, {}, MyOutfitsResult];
-    [RequestId.MyOutfitsRefetchQuery]: [RequestType.QUERY, {}, MyOutfitsRefetchResult];
-    [RequestId.MyOutfitCommonDataEquipmentsQuery]: [RequestType.QUERY, {}, MyOutfitCommonDataEquipmentsResult];
-    [RequestId.MyOutfitCommonDataFilteringConditionQuery]: [RequestType.QUERY, {}, MyOutfitCommonDataFilteringConditionResult];
-    [RequestId.PhotoAlbumQuery]: [RequestType.QUERY, {}, PhotoAlbumResult];
-    [RequestId.PhotoAlbumRefetchQuery]: [RequestType.QUERY, {}, PhotoAlbumRefetchResult];
-    [RequestId.ReplayQuery]: [RequestType.QUERY, {}, ReplayResult];
-    [RequestId.ReplayUploadedReplayListRefetchQuery]: [RequestType.QUERY, {}, ReplayUploadedReplayListRefetchResult];
-    [RequestId.SettingQuery]: [RequestType.QUERY, {}, SettingResult];
-    '53dffcfb06b273dd7bdf6a303d310730': [RequestType.QUERY, {}, StageRecordResult_53dffcf];
-    '56c46bdbdfa4519eaf7845ce9f3cd67a': [RequestType.QUERY, {}, StageRecordResult];
-    [RequestId.StageRecordQuery]: [RequestType.QUERY, {}, StageRecordResult];
-    '38624d4864879c745c7b20e653e062db': [RequestType.QUERY, {}, StageRecordsRefetchResult_38624d4];
-    'fe965bef54377d20e9133087cc6cdf3f': [RequestType.QUERY, {}, StageRecordsRefetchResult];
-    [RequestId.StageRecordsRefetchQuery]: [RequestType.QUERY, {}, StageRecordsRefetchResult];
-    '10e1d424391e78d21670227550b3509f': [RequestType.QUERY, {}, StageScheduleResult_10e1d42];
-    '7d4bb0565342b7385ceb97d109e14897': [RequestType.QUERY, {}, StageScheduleResult_7d4bb05];
-    [RequestId.StageScheduleQuery]: [RequestType.QUERY, {}, StageScheduleResult];
-    'a0c277c719b758a926772879d8e53ef8': [RequestType.QUERY, {}, WeaponRecordResult_a0c277c];
-    [RequestId.WeaponRecordQuery]: [RequestType.QUERY, {}, WeaponRecordResult];
-    '23c9b2b4ad878c2d91a68859be928dea': [RequestType.QUERY, {}, WeaponRecordsRefetchResult_23c9b2b];
-    [RequestId.WeaponRecordsRefetchQuery]: [RequestType.QUERY, {}, WeaponRecordsRefetchResult];
-    'aead379b98c14798df81f0dd3ebe6121': [RequestType.QUERY, {}, CatalogResult_aead379];
-    [RequestId.CatalogQuery]: [RequestType.QUERY, {}, CatalogResult];
-    '02d2de8967f4ad2ce4f67a3c6c7c4d48': [RequestType.QUERY, {}, CatalogRefetchResult_02d2de8];
-    [RequestId.CatalogRefetchQuery]: [RequestType.QUERY, {}, CatalogRefetchResult];
-    [RequestId.HomeQuery]: [RequestType.QUERY, {}, HomeResult];
-    [RequestId.VsHistoryDetailPagerRefetchQuery]: [RequestType.QUERY, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailPagerRefetchResult];
-    'cd82f2ade8aca7687947c5f3210805a6': [RequestType.QUERY, VsHistoryDetailVariables_cd82f2a, VsHistoryDetailResult_cd82f2a];
-    '2b085984f729cd51938fc069ceef784a': [RequestType.QUERY, VsHistoryDetailVariables_2b08598, VsHistoryDetailResult_2b08598];
-    [RequestId.VsHistoryDetailQuery]: [RequestType.QUERY, VsHistoryDetailVariables, VsHistoryDetailResult];
+    [K in keyof generated_types]: [RequestType, K extends keyof request_variables_app ? request_variables_app[K] : {}, generated_types[K]];
 };
 
 type requests_widgetextension_ios = {
