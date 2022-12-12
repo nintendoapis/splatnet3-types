@@ -18,9 +18,11 @@
         "./splatoon3ink": "./dist/splatoon3ink.js"
     },
     "files": [
-        "dist"
+        "dist",
+        "!dist/scripts"
     ],
     "devDependencies": {
+        "@types/node": "^18.11.13",
         "typescript": "^4.8.4"
     }
 }
