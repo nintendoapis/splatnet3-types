@@ -26,7 +26,7 @@ console.warn({
 });
 
 const version =
-    '0.1.' +
+    '0.2.' +
     last_commit_timestamp.getUTCFullYear() +
     (last_commit_timestamp.getUTCMonth() + 1).toString().padStart(2, '0') +
     last_commit_timestamp.getUTCDate().toString().padStart(2, '0') +
