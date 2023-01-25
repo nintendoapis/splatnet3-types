@@ -1,4 +1,4 @@
-import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, DragonMatchType, FestDragonCert, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
+import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, CoopTrophy, DragonMatchType, FestDragonCert, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
 import { UnknownScalarType } from './generated-type-helpers.js';
 
 export interface Connection<T> {
@@ -415,10 +415,33 @@ export interface CoopGroupHighestResult {
     grade: CoopGrade;
     gradePoint: number;
     jobScore: number;
+    trophy: CoopTrophy | null;
 }
 
 export type CoopHistoryGroupConnection = Connection<CoopHistoryGroup>;
 export type CoopHistoryDetailConnection = Connection<CoopHistoryDetail>;
+
+export interface CoopRecord {
+    bigRunRecord: CoopBigRunRecord;
+}
+
+export interface CoopBigRunRecord {
+    records: CoopBigRunRecordItemConnection;
+}
+
+export type CoopBigRunRecordItemConnection = Connection<CoopBigRunRecordItem>;
+export type CoopBigRunRecordItemEdge = Edge<CoopBigRunRecordItem>;
+
+export interface CoopBigRunRecordItem {
+    __typename: 'CoopBigRunRecordItem';
+    startTime: string;
+    endTime: string;
+    trophy: CoopTrophy | null;
+    coopStage: CoopStage;
+    highestGrade: CoopGrade;
+    highestGradePoint: number;
+    highestJobScore: number;
+}
 
 export interface Fest {
     __typename: 'Fest';

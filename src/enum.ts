@@ -66,6 +66,11 @@ export enum CoopRule {
 export enum CoopBigRunState {
     SCHEDULED = 'SCHEDULED',
 }
+export enum CoopTrophy {
+    GOLD = 'GOLD',
+    SILVER = 'SILVER',
+    BRONZE = 'BRONZE',
+}
 
 export enum FriendOnlineState {
     OFFLINE = 'OFFLINE',

@@ -172,7 +172,7 @@ export type VsTeam_replay = VsHistoryDetail_replay['myTeam'];
 export type VsSchedule_regular = ResultType<RequestId.StageScheduleQuery>['regularSchedules']['nodes'][0];
 export type VsSchedule_bankara = ResultType<RequestId.StageScheduleQuery>['bankaraSchedules']['nodes'][0];
 export type VsSchedule_xMatch = ResultType<RequestId.StageScheduleQuery>['xSchedules']['nodes'][0];
-export type VsSchedule_league = ResultType<RequestId.StageScheduleQuery>['leagueSchedules']['nodes'][0];
+export type VsSchedule_league = ResultType<'730cd98e84f1030d3e9ac86b6f1aae13'>['leagueSchedules']['nodes'][0];
 export type VsSchedule_fest = ResultType<RequestId.StageScheduleQuery>['festSchedules']['nodes'][0];
 
 export type RegularMatchSetting_schedule = VsSchedule_regular['regularMatchSetting'];
