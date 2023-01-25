@@ -6,7 +6,7 @@ import { Brand, ClothingGear, ClothingGearConnection, Gear, GearPower, GearRecor
  *
  * query myOutfitCommonDataEquipmentsQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
+ * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
  */
 interface myOutfitCommonDataEquipmentsQuery_d29cd0c {
     clothingGears: /** ClothingGearConnection */ OperationFieldType<'myOutfitCommonDataEquipmentsQuery', 'clothingGears', {

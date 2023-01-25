@@ -6,7 +6,7 @@ import { BankaraMatchChallenge, BankaraMatchHistory, Color, Fest, FestTeam, Imag
  *
  * query PagerUpdateBattleHistoriesByVsModeQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
+ * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
  */
 type PagerUpdateBattleHistoriesByVsModeQuery_094a9b4<
     isRegular extends boolean = boolean,

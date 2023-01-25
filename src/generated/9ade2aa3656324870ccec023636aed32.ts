@@ -6,7 +6,7 @@ import { Badge, Color, CoopBossResult, CoopEnemy, CoopEnemyResult, CoopEventWave
  *
  * query CoopHistoryDetailQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
+ * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
  */
 interface CoopHistoryDetailQuery_9ade2aa {
     coopHistoryDetail: /** unknown type */ OperationFieldType<'CoopHistoryDetailQuery', 'node', ({

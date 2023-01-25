@@ -6,7 +6,7 @@ import { Color, Fest, FestTeam } from '../types.js';
  *
  * query useCurrentFestQuery
  *
- * Generated 11/12/2022 from SplatNet 3 2.0.0-bd36a652.
+ * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
  */
 interface useCurrentFestQuery_c0429fd {
     currentFest: /** Fest */ OperationFieldType<'useCurrentFestQuery', 'currentFest', {
