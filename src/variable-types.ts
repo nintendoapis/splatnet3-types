@@ -12,25 +12,36 @@ export interface JourneyVariables {
 /** 09eee118fa16415d6bc3846bc6e5d8e5 JourneyRefetchQuery variables */
 export type JourneyRefetchVariables = JourneyVariables;
 
-/** 38e58b84376a2ad49ddbe4061b948455 JourneyChallengeDetailQuery variables */
+/** 5a199948d059985bd758cc0175131f4a JourneyChallengeDetailQuery variables */
 export interface JourneyChallengeDetailVariables {
     journeyId: string;
 }
 
-/** 8dc246933b1f4e26a6dfd251878cf786 JourneyChallengeDetailRefetchQuery variables */
+/** 38e58b84376a2ad49ddbe4061b948455 JourneyChallengeDetailQuery variables */
+export type JourneyChallengeDetailVariables_38e58b8 = JourneyChallengeDetailVariables;
+
+/** e7414c7a64bf80bb50ce21d5ccfde772 JourneyChallengeDetailRefetchQuery variables */
 export type JourneyChallengeDetailRefetchVariables = JourneyChallengeDetailVariables;
 
-/** 30aa261475d43bd765b4200fc67003c8 SupportButton_SupportChallengeMutation variables */
+/** 8dc246933b1f4e26a6dfd251878cf786 JourneyChallengeDetailRefetchQuery variables */
+export type JourneyChallengeDetailRefetchVariables_8dc2469 = JourneyChallengeDetailVariables;
+
+/** 991bace9e8c52d63084cd1570a97a5b4 SupportButton_SupportChallengeMutation variables */
 export type SupportButtonSupportChallengeVariables = unknown;
+/** 30aa261475d43bd765b4200fc67003c8 SupportButton_SupportChallengeMutation variables */
+export type SupportButtonSupportChallengeVariables_30aa261 = unknown;
 
 //
 // Checkin
 //
 
-/** 8d54e1c6bdcc65181f65adc582914ad8 CheckinWithQRCodeMutation variables */
+/** daffd9621680664dbf19d27e87484ac7 CheckinWithQRCodeMutation variables */
 export interface CheckinWithQRCodeMutationVariables {
     checkinEventId: string;
 }
+
+/** 8d54e1c6bdcc65181f65adc582914ad8 CheckinWithQRCodeMutation variables */
+export type CheckinWithQRCodeMutationVariables_8d54e1c = CheckinWithQRCodeMutationVariables;
 
 /** 8e3fecf7cfce83f6831b17e9052791d0 CheckinWithQRCodeMutation variables */
 export type CheckinWithQRCodeMutationVariables_8e3fecf = CheckinWithQRCodeMutationVariables;
@@ -161,6 +172,9 @@ export interface CoopHistoryDetailRefetchVariables {
     id: string;
 }
 
+/** 2b83817b6e88b202d25939fe04658d33 CoopRecordBigRunRecordContainerPaginationQuery variables */
+export type CoopRecordBigRunRecordContainerPaginationVariables = unknown;
+
 //
 // Fest
 //
@@ -276,10 +290,13 @@ export type UpdateMyOutfitInput = {
 // Replay
 //
 
-/** 43a5f23eec238d7ee827cc87f47f050c DownloadSearchReplayQuery variables */
+/** 8e904b52b5080b6f4b4448a50762362c DownloadSearchReplayQuery variables */
 export interface DownloadSearchReplayVariables {
     code: string;
 }
+
+/** 43a5f23eec238d7ee827cc87f47f050c DownloadSearchReplayQuery variables */
+export type DownloadSearchReplayVariables_43a5f23 = DownloadSearchReplayVariables;
 
 /** cde4fe7d6467b32d5a06279492aa21dc DownloadSearchReplayQuery variables */
 export type DownloadSearchReplayVariables_cde4fe7 = DownloadSearchReplayVariables;
