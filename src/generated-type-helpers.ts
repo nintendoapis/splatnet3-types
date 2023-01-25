@@ -3,7 +3,7 @@ export type LinkedFieldType<
     TypeName extends string & keyof ParentType,
     Type,
     Plural extends boolean,
-> = Plural extends true ? Type[] : ParentType[TypeName] extends null ? Type | null : Type;
+> = Plural extends true ? Type[] : null extends ParentType[TypeName] ? Type | null : Type;
 
 export type OperationFieldType<
     ParentTypeName extends string,
