@@ -1,4 +1,4 @@
-import { ChallengeJourney, CoopHistoryDetail, Fest, FestTeam, MyOutfit, Replay, VsHistoryDetail, VsResult, XRankingSeason } from './types.js';
+import { ChallengeJourney, CoopHistoryDetail, Fest, FestTeam, MyOutfit, Replay, SaleGear, VsHistoryDetail, XRankingSeason } from './types.js';
 
 //
 // Request types
@@ -92,6 +92,10 @@ export interface MyOutfitDetailQuery {
 
 export interface RankingHoldersFestTeamRankingHoldersPaginationQuery {
     node: FestTeam | null;
+}
+
+export interface SaleGearDetailQuery {
+    node: SaleGear;
 }
 
 export interface StageScheduleQuery {

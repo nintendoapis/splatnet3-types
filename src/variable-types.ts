@@ -156,10 +156,13 @@ export interface VsHistoryDetailPagerRefetchVariables {
 // CoopHistory
 //
 
-/** 9ade2aa3656324870ccec023636aed32 CoopHistoryDetailQuery variables */
+/** 379f0d9b78b531be53044bcac031b34b CoopHistoryDetailQuery variables */
 export interface CoopHistoryDetailVariables {
     coopHistoryDetailId: string;
 }
+
+/** 9ade2aa3656324870ccec023636aed32 CoopHistoryDetailQuery variables */
+export type CoopHistoryDetailVariables_9ade2aa = CoopHistoryDetailVariables;
 
 /** 3cc5f826a6646b85f3ae45db51bd0707 CoopHistoryDetailQuery variables */
 export type CoopHistoryDetailVariables_3cc5f82 = CoopHistoryDetailVariables;
@@ -286,6 +289,12 @@ export type UpdateMyOutfitInput = {
     id: string;
 } & MyOutfitInput;
 
+/** 3ba5572efce5bebbd859fc2d269d223c useShareMyOutfitQuery variables */
+export interface ShareMyOutfitVariables {
+    myOutfitIndex: number;
+    timezoneOffset: number;
+}
+
 //
 // Replay
 //
@@ -309,4 +318,18 @@ export interface ReplayModalReserveReplayDownloadVariables {
     input: {
         id: string;
     };
+}
+
+//
+// Home/Settings
+//
+
+/** 22e2fa8294168003c21b00c333c35384 HomeQuery variables */
+export interface HomeVariables {
+    naCountry: string;
+}
+
+/** 73bd677ed986ad2cb7004ceabfff4d38 SettingQuery variables */
+export interface SettingVariables {
+    naCountry: string;
 }
