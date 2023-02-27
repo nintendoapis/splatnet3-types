@@ -15,7 +15,7 @@ interface SettingQuery_73bd677 {
             url: Image['url'];
         }, false>;
     }>;
-    expansionPassUrl: UnknownScalarType | null;
+    expansionPassUrl: OperationFieldType<'SettingQuery', 'expansionPassUrl', UnknownScalarType>;
 }
 
 export default SettingQuery_73bd677;

@@ -347,7 +347,9 @@ function generateTypeForSelection(
 
         const parent_types = getSelectionParentType(selection.name, parents, type_imports);
 
-        if (parent_types) {
+        if (parents[0].kind === 'Operation') {
+            type = `OperationFieldType<'${parents[0].name}', '${selection.name}', UnknownScalarType>`;
+        } else if (parent_types) {
             type += `${parent_types[0]}['${selection.name}']`;
         } else {
             type += 'UnknownScalarType | null';

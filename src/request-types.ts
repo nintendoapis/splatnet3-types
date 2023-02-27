@@ -1,4 +1,4 @@
-import { ChallengeJourney, CoopHistoryDetail, Fest, FestTeam, MyOutfit, Replay, SaleGear, VsHistoryDetail, XRankingSeason } from './types.js';
+import { ChallengeJourney, CoopHistoryDetail, CurrentPlayer, Fest, FestTeam, MyOutfit, Replay, SaleGear, VsHistoryDetail, XRankingSeason } from './types.js';
 
 //
 // Request types
@@ -98,6 +98,11 @@ export interface SaleGearDetailQuery {
     node: SaleGear;
 }
 
+export interface SettingQuery {
+    currentPlayer: CurrentPlayer;
+    expansionPassUrl: string;
+}
+
 export interface StageScheduleQuery {
     currentFest: Fest | null;
 }
@@ -145,6 +150,7 @@ export type request_types = {
     'JourneyRefetchQuery': JourneyRefetchQuery;
     'MyOutfitDetailQuery': MyOutfitDetailQuery;
     'RankingHoldersFestTeamRankingHoldersPaginationQuery': RankingHoldersFestTeamRankingHoldersPaginationQuery;
+    'SettingQuery': SettingQuery;
     'StageScheduleQuery': StageScheduleQuery;
     'useCurrentFestQuery': CurrentFestQuery;
     'VsHistoryDetailPagerRefetchQuery': VsHistoryDetailPagerRefetchQuery;

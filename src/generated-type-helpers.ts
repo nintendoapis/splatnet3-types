@@ -13,6 +13,7 @@ export type OperationFieldType<
     Type,
 > = ParentTypeName extends keyof OperationFields ?
     TypeName extends keyof OperationFields[ParentTypeName] ?
+        UnknownScalarType extends Type ? OperationFields[ParentTypeName][TypeName] :
         null extends OperationFields[ParentTypeName][TypeName] ? Type | null : Type : Type :
     Type;
 
