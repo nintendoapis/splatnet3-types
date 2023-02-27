@@ -6,7 +6,7 @@ import { Badge, Color, Image, Nameplate, NameplateBackground, Player, SpecialWea
  *
  * query XRankingQuery
  *
- * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
+ * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
  */
 interface XRankingQuery_d771444 {
     xRanking: /** XRanking */ OperationFieldType<'XRankingQuery', 'xRanking', {

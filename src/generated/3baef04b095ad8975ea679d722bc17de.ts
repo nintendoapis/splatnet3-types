@@ -6,7 +6,7 @@ import { Image, MaskingImage, SpecialWeapon, VsHistoryDetail, VsHistoryDetailCon
  *
  * query RegularBattleHistoriesQuery
  *
- * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
+ * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
  */
 interface RegularBattleHistoriesQuery_3baef04 {
     regularBattleHistories: /** VsResult */ OperationFieldType<'RegularBattleHistoriesQuery', 'vsResult', {

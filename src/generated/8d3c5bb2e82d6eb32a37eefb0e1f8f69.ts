@@ -6,7 +6,7 @@ import { Badge, Color, Image, Nameplate, NameplateBackground, PageInfo, Player, 
  *
  * query DetailTabViewWeaponTopsClRefetchQuery
  *
- * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
+ * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
  */
 interface DetailTabViewWeaponTopsClRefetchQuery_8d3c5bb {
     node: /** unknown type */ OperationFieldType<'DetailTabViewWeaponTopsClRefetchQuery', 'node', ({

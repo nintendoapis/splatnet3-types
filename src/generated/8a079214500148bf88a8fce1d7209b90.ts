@@ -6,7 +6,7 @@ import { ChallengeHome, ChallengeJourney, ChallengeJourneyConnection, Image } fr
  *
  * query ChallengeQuery
  *
- * Generated 25/01/2023 from SplatNet 3 2.0.0-7070f95e.
+ * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
  */
 interface ChallengeQuery_8a07921 {
     challenge: /** ChallengeHome */ OperationFieldType<'ChallengeQuery', 'challenge', {
