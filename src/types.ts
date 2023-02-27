@@ -151,6 +151,7 @@ export interface CatalogBonus {
     dailyWinPoint: number;
     isBigRun: boolean;
     isFest: boolean;
+    isSeasonClosing: boolean;
 }
 
 export interface ChallengeJourney {
@@ -400,6 +401,7 @@ export interface CoopPointCard {
     rescueCount: number;
     regularPoint: number;
     totalPoint: number;
+    limitedPoint: unknown | null;
 }
 
 export interface CoopHistoryGroup {
@@ -423,6 +425,7 @@ export type CoopHistoryDetailConnection = Connection<CoopHistoryDetail>;
 
 export interface CoopRecord {
     bigRunRecord: CoopBigRunRecord;
+    teamContestRecord: CoopTeamContestRecord;
 }
 
 export interface CoopBigRunRecord {
@@ -441,6 +444,13 @@ export interface CoopBigRunRecordItem {
     highestGrade: CoopGrade;
     highestGradePoint: number;
     highestJobScore: number;
+}
+
+export interface CoopTeamContestRecord {
+    attend: number;
+    bronze: number;
+    gold: number;
+    silver: number;
 }
 
 export interface Fest {
@@ -697,6 +707,7 @@ export interface PlayHistory {
     weaponHistory: WeaponHistoryConnection;
     recentBadges: Badge[];
     allBadges: Badge[];
+    xMatchSeasonHistory: XMatchSeasonHistoryConnection;
 }
 
 export interface XMatchMax {
@@ -727,6 +738,21 @@ export interface WeaponUtilRatio {
     weapon: Weapon;
     utilRatio: number;
 }
+
+export interface XMatchSeasonHistory {
+    powerAr: unknown;
+    powerCl: unknown;
+    powerGl: unknown;
+    powerLf: unknown;
+    rankAr: unknown;
+    rankCl: unknown;
+    rankGl: unknown;
+    rankLf: unknown;
+    xRankingSeason: XRankingSeason;
+}
+
+export type XMatchSeasonHistoryConnection = Connection<XMatchSeasonHistory>;
+export type XMatchSeasonHistoryEdge = Edge<XMatchSeasonHistory>;
 
 export interface Banner {
     image: Image;
@@ -782,6 +808,10 @@ export interface CreateMyOutfitPayload {
 export interface UpdateMyOutfitPayload {
     myOutfit: MyOutfit;
     userErrors: UserError[] | null;
+}
+
+export interface MyOutfitShare {
+    image: Image;
 }
 
 export interface Replay {
@@ -846,6 +876,7 @@ export interface CoopGroupingSchedule {
     bannerImage: Image | null;
     bigRunSchedules: CoopScheduleConnection;
     regularSchedules: CoopScheduleConnection;
+    teamContestSchedules: CoopScheduleConnection;
 }
 
 export interface CoopSchedule {
