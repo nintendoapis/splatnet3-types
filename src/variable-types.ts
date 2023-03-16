@@ -196,15 +196,18 @@ export type DetailFestRecordDetailVariables_2d66198 = DetailFestRecordDetailVari
 /** 0eb7bac3d8aabcad0e9d663ee5b90846 DetailFestRefethQuery variables */
 export type DetailFestRefetchVariables_0eb7bac = DetailFestRecordDetailVariables;
 
-/** 4869de13d0d209032b203608cb598aef DetailRankingQuery variables */
+/** cc38f388c51f9930bd7cca966893f1b4 DetailRankingQuery variables */
 export interface DetailRankingVariables {
     festId: string;
 }
 
+/** 4869de13d0d209032b203608cb598aef DetailRankingQuery variables */
+export type DetailRankingVariables_4869de1 = DetailRankingVariables;
+
 /** 58bdd28e3cf71c3bf38bc45836ee1e96 DetailRankingQuery variables */
 export type DetailRankingVariables_58bdd28 = DetailRankingVariables;
 
-/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
+/** f488fccdad37b9e19aed50a8d6e83a24 RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
 export interface RankingHoldersFestTeamRankingHoldersPaginationVariables {
     /** PageInfo.endCursor */
     cursor: string;
@@ -213,6 +216,9 @@ export interface RankingHoldersFestTeamRankingHoldersPaginationVariables {
     /** FestTeam ID */
     id: string;
 }
+
+/** be2eb9e9b8dd680519eb59cc46c1a32b RankingHoldersFestTeamRankingHoldersPaginationQuery variables */
+export type RankingHoldersFestTeamRankingHoldersPaginationVariables_be2eb9e = RankingHoldersFestTeamRankingHoldersPaginationVariables;
 
 /** 53ee6b6e2acc3859bf42454266d671fc DetailVotingStatusQuery */
 export interface DetailVotingStatusVariables {
