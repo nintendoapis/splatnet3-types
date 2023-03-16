@@ -6,7 +6,7 @@ import { Color, Fest, FestTeam, FestVote, FestVoteConnection, Image } from '../t
  *
  * query DetailVotingStatusQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface DetailVotingStatusQuery_53ee6b6 {
     fest: /** unknown type */ OperationFieldType<'DetailVotingStatusQuery', 'node', ({

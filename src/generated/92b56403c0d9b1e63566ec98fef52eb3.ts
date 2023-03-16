@@ -6,7 +6,7 @@ import { BankaraMatchChallenge, BankaraMatchHistory, CurrentPlayer, Image, Maski
  *
  * query BankaraBattleHistoriesRefetchQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 type BankaraBattleHistoriesRefetchQuery_92b5640<
     fetchCurrentPlayer extends boolean = boolean,

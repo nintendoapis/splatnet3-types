@@ -6,7 +6,7 @@ import { Image, SpecialWeapon, SubWeapon, Weapon, WeaponCategory, WeaponConnecti
  *
  * query WeaponRecordsRefetchQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface WeaponRecordsRefetchQuery_6961f61 {
     weaponRecords: /** WeaponConnection */ OperationFieldType<'WeaponRecordsRefetchQuery', 'weapons', {

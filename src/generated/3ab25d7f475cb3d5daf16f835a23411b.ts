@@ -1,19 +1,19 @@
 import { LinkedFieldType, OperationFieldType, UnknownScalarType } from '../generated-type-helpers.js';
-import { Badge, Color, Image, Nameplate, NameplateBackground, PageInfo, Player, SpecialWeapon, SubWeapon, Weapon, WeaponCategory, XRankingHolder, XRankingHolderConnection, XRankingHolderEdge, XRankingSeason } from '../types.js';
+import { Badge, Color, Image, Nameplate, NameplateBackground, PageInfo, Player, SpecialWeapon, SubWeapon, Weapon, XRankingHolder, XRankingHolderConnection, XRankingHolderEdge, XRankingSeason } from '../types.js';
 
 /**
- * a6782a0c692e8076656f9b4ab613fd82 DetailTabViewWeaponTopsArRefetchQuery
+ * 3ab25d7f475cb3d5daf16f835a23411b DetailTabViewXRankingClRefetchQuery
  *
- * query DetailTabViewWeaponTopsArRefetchQuery
+ * query DetailTabViewXRankingClRefetchQuery
  *
  * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
-interface DetailTabViewWeaponTopsArRefetchQuery_a6782a0 {
-    node: /** unknown type */ OperationFieldType<'DetailTabViewWeaponTopsArRefetchQuery', 'node', ({
+interface DetailTabViewXRankingClRefetchQuery_3ab25d7 {
+    node: /** unknown type */ OperationFieldType<'DetailTabViewXRankingClRefetchQuery', 'node', ({
         __typename: string;
         id: XRankingSeason['id'];
     }) & (/** XRankingSeason */ {
-        weaponTopsAr: /** XRankingHolderConnection */ LinkedFieldType<XRankingSeason, 'weaponTopsAr', {
+        xRankingCl: /** XRankingHolderConnection */ LinkedFieldType<XRankingSeason, 'xRankingCl', {
             edges: /** XRankingHolderEdge */ LinkedFieldType<XRankingHolderConnection, 'edges', {
                 cursor: XRankingHolderEdge['cursor'];
                 node: /** XRankingHolder */ LinkedFieldType<XRankingHolderEdge, 'node', ({
@@ -22,6 +22,7 @@ interface DetailTabViewWeaponTopsArRefetchQuery_a6782a0 {
                     name: XRankingHolder['name'];
                     nameId: XRankingHolder['nameId'];
                     rank: XRankingHolder['rank'];
+                    rankDiff: XRankingHolder['rankDiff'];
                     weapon: /** Weapon */ LinkedFieldType<XRankingHolder, 'weapon', {
                         id: Weapon['id'];
                         image: /** Image */ LinkedFieldType<Weapon, 'image', {
@@ -53,11 +54,6 @@ interface DetailTabViewWeaponTopsArRefetchQuery_a6782a0 {
                                 url: Image['url'];
                             }, false>;
                             name: SubWeapon['name'];
-                        }, false>;
-                        weaponCategory: /** WeaponCategory */ LinkedFieldType<Weapon, 'weaponCategory', {
-                            id: WeaponCategory['id'];
-                            name: WeaponCategory['name'];
-                            weaponCategoryId: WeaponCategory['weaponCategoryId'];
                         }, false>;
                     }, false>;
                     weaponTop: XRankingHolder['weaponTop'];
@@ -99,5 +95,5 @@ interface DetailTabViewWeaponTopsArRefetchQuery_a6782a0 {
     })>;
 }
 
-export default DetailTabViewWeaponTopsArRefetchQuery_a6782a0;
-export { DetailTabViewWeaponTopsArRefetchQuery_a6782a0 };
+export default DetailTabViewXRankingClRefetchQuery_3ab25d7;
+export { DetailTabViewXRankingClRefetchQuery_3ab25d7 };

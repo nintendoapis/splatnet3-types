@@ -6,7 +6,7 @@ import { CoopBigRunRecord, CoopBigRunRecordItem, CoopBigRunRecordItemConnection,
  *
  * query CoopRecordQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface CoopRecordQuery_b2f05c6 {
     coopRecord: /** CoopRecord */ OperationFieldType<'CoopRecordQuery', 'coopRecord', {

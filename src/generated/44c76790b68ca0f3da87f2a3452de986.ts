@@ -6,7 +6,7 @@ import { Color, CurrentPlayer, Fest, FestConnection, FestPlayerResult, FestTeam,
  *
  * query FestRecordQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface FestRecordQuery_44c7679 {
     currentPlayer: /** CurrentPlayer */ OperationFieldType<'FestRecordQuery', 'currentPlayer', {

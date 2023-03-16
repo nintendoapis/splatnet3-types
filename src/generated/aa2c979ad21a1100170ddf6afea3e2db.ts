@@ -6,7 +6,7 @@ import { Color, Fest, FestTeam, Friend, FriendConnection, Image, VsMode } from '
  *
  * query FriendListRefetchQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface FriendListRefetchQuery_aa2c979 {
     currentFest: /** Fest */ OperationFieldType<'FriendListRefetchQuery', 'currentFest', {

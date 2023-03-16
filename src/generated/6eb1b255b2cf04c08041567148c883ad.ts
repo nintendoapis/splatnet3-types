@@ -6,7 +6,7 @@ import { Brand, GearPower, Image, SaleGear } from '../types.js';
  *
  * query SaleGearDetailQuery
  *
- * Generated 27/02/2023 from SplatNet 3 3.0.0-2857bc50.
+ * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
  */
 interface SaleGearDetailQuery_6eb1b25 {
     saleGear: /** unknown type */ OperationFieldType<'SaleGearDetailQuery', 'node', ({
