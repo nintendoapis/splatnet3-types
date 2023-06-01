@@ -1,7 +1,7 @@
 import generated_types from './generated/types.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
-import { BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchVariables_964c03e, BankaraBattleHistoriesRefetchVariables_d8a8662, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8d54e1c, CheckinWithQRCodeMutationVariables_8e3fecf, CoopHistoryDetailRefetchVariables, CoopHistoryDetailVariables, CoopHistoryDetailVariables_3cc5f82, CoopHistoryDetailVariables_9ade2aa, CoopHistoryDetailVariables_f3799a0, CoopRecordBigRunRecordContainerPaginationVariables, CreateMyOutfitVariables, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchVariables, DetailRankingVariables, DetailRankingVariables_4869de1, DetailRankingVariables_58bdd28, DetailVotingStatusVariables, DownloadSearchReplayVariables, DownloadSearchReplayVariables_43a5f23, DownloadSearchReplayVariables_b461048, DownloadSearchReplayVariables_cde4fe7, HomeVariables, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailRefetchVariables_8dc2469, JourneyChallengeDetailVariables, JourneyChallengeDetailVariables_38e58b8, JourneyRefetchVariables, JourneyVariables, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchVariables_047c1ff, LatestBattleHistoriesRefetchVariables_80585ad, MyOutfitDetailVariables, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeVariables_7297ae4, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_4835a28, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchVariables_b304e70, RankingHoldersFestTeamRankingHoldersPaginationVariables, RankingHoldersFestTeamRankingHoldersPaginationVariables_be2eb9e, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_04e5d83, RegularBattleHistoriesRefetchVariables_333d0a4, RegularBattleHistoriesRefetchVariables_fed6e75, ReplayModalReserveReplayDownloadVariables, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b, SettingVariables, ShareMyOutfitVariables, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeVariables_30aa261, UpdateMyOutfitVariables, VotesUpdateFestVoteVariables, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailVariables, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a, XBattleHistoriesRefetchVariables, XBattleHistoriesRefetchVariables_ba35dce } from './variable-types.js';
+import { BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchVariables_964c03e, BankaraBattleHistoriesRefetchVariables_d8a8662, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8d54e1c, CheckinWithQRCodeMutationVariables_8e3fecf, CoopHistoryDetailRefetchVariables, CoopHistoryDetailVariables, CoopHistoryDetailVariables_3cc5f82, CoopHistoryDetailVariables_9ade2aa, CoopHistoryDetailVariables_f3799a0, CoopRecordBigRunRecordContainerPaginationVariables, CreateMyOutfitVariables, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchVariables, DetailRankingVariables, DetailRankingVariables_4869de1, DetailRankingVariables_58bdd28, DetailVotingStatusVariables, DownloadSearchReplayVariables, DownloadSearchReplayVariables_43a5f23, DownloadSearchReplayVariables_8e904b5, DownloadSearchReplayVariables_b461048, DownloadSearchReplayVariables_cde4fe7, EventBattleHistoriesRefetchVariables, EventMatchRankingPeriodVariables, EventMatchRankingSeasonRefetchVariables, HomeVariables, HomeVariables_22e2fa8, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailRefetchVariables_8dc2469, JourneyChallengeDetailVariables, JourneyChallengeDetailVariables_38e58b8, JourneyRefetchVariables, JourneyVariables, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchVariables_047c1ff, LatestBattleHistoriesRefetchVariables_7161210, LatestBattleHistoriesRefetchVariables_80585ad, MyOutfitDetailVariables, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_094a9b4, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeVariables_7297ae4, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_4835a28, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchVariables_b304e70, RankingHoldersFestTeamRankingHoldersPaginationVariables, RankingHoldersFestTeamRankingHoldersPaginationVariables_be2eb9e, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_04e5d83, RegularBattleHistoriesRefetchVariables_333d0a4, RegularBattleHistoriesRefetchVariables_fed6e75, ReplayModalReserveReplayDownloadVariables, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b, SettingVariables, ShareMyOutfitVariables, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeVariables_30aa261, UpdateMyOutfitVariables, VotesUpdateFestVoteVariables, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailVariables, VsHistoryDetailVariables_291295a, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a, XBattleHistoriesRefetchVariables, XBattleHistoriesRefetchVariables_ba35dce } from './variable-types.js';
 
 export enum RequestId {
     SupportButton_SupportChallengeMutation = '991bace9e8c52d63084cd1570a97a5b4',
@@ -11,17 +11,19 @@ export enum RequestId {
     VotesUpdateFestVoteMutation = 'a2c742c840718f37488e0394cd6e1e08',
     CreateMyOutfitMutation = '31ff008ea218ffbe11d958a52c6f959f',
     UpdateMyOutfitMutation = 'bb809066282e7d659d3b9e9d4e46b43b',
-    DownloadSearchReplayQuery = '8e904b52b5080b6f4b4448a50762362c',
+    DownloadSearchReplayQuery = 'd1841381ec4972f1bfc4742d162de0b3',
     ReplayModalReserveReplayDownloadMutation = '87bff2b854168b496c2da8c0e7f3e5bc',
     PagerLatestVsDetailQuery = '0329c535a32f914fd44251be1f489e24',
-    PagerUpdateBattleHistoriesByVsModeQuery = '094a9b44ff21e8c409d6046fc1af9dfe',
+    PagerUpdateBattleHistoriesByVsModeQuery = 'eef75ef7ce1964dfe9006bf5facde61e',
     ConfigureAnalyticsQuery = 'f8ae00773cc412a50dd41a6d9a159ddd',
     CurrentFestQuery = 'c0429fd738d829445e994d3370999764',
     ShareMyOutfitQuery = '3ba5572efce5bebbd859fc2d269d223c',
     BankaraBattleHistoriesQuery = '0438ea6978ae8bd77c5d1250f4f84803',
     BankaraBattleHistoriesRefetchQuery = '92b56403c0d9b1e63566ec98fef52eb3',
-    LatestBattleHistoriesQuery = '0176a47218d830ee447e10af4a287b3f',
-    LatestBattleHistoriesRefetchQuery = '7161210aad0793e58e76f20e0443855e',
+    EventBattleHistoriesQuery = '9744fcf676441873c7c8a51285b6aa4d',
+    EventBattleHistoriesRefetchQuery = '8083b0c7f34a4bd0ef4a06ff86fc3e18',
+    LatestBattleHistoriesQuery = '0d90c7576f1916469b2ae69f64292c02',
+    LatestBattleHistoriesRefetchQuery = '6b74405ca9b43ee77eb8c327c3c1a317',
     PrivateBattleHistoriesQuery = '8e5ae78b194264a6c230e262d069bd28',
     PrivateBattleHistoriesRefetchQuery = '89bc61012dcf170d9253f406ebebee67',
     RegularBattleHistoriesQuery = '3baef04b095ad8975ea679d722bc17de',
@@ -43,6 +45,10 @@ export enum RequestId {
     CoopRecordBigRunRecordContainerPaginationQuery = '2b83817b6e88b202d25939fe04658d33',
     CoopRecordQuery = 'b2f05c682ed2aeb669a86a3265ceb713',
     CoopRecordRefetchQuery = '15035e6c4308b32d1a77e87398be5cd4',
+    EventMatchRankingPeriodQuery = 'cdf4ffe56864817014e59c569ec8630f',
+    EventMatchRankingQuery = '2acc36b477328ebb281fa91a07110e2d',
+    EventMatchRankingRefetchQuery = '3cfc123fe1add3c924518c1550b2936c',
+    EventMatchRankingSeasonRefetchQuery = 'e39d7ce9875a9d6940b4b449ed5b358b',
     DetailFestRecordDetailQuery = '96c3a7fd484b8d3be08e0a3c99eb2a3d',
     DetailFestRefethQuery = '18c7c465b18de5829347b7a7f1e571a1',
     DetailFestVotingStatusRefethQuery = '92f51ed1ab462bbf1ab64cad49d36f79',
@@ -58,8 +64,8 @@ export enum RequestId {
     SaleGearDetailQuery = '6eb1b255b2cf04c08041567148c883ad',
     HeroHistoryQuery = 'fbee1a882371d4e3becec345636d7d1c',
     HeroHistoryRefetchQuery = '4f9ae2b8f1d209a5f20302111b28f975',
-    HistoryRecordQuery = 'f09da9d24d888797fdfb2f060dbdf4ed',
-    HistoryRecordRefetchQuery = 'd997d8e3875d50d3a1dc7e8a756e9e07',
+    HistoryRecordQuery = 'd9246baf077b2a29b5f7aac321810a77',
+    HistoryRecordRefetchQuery = '67921048c4af8e2b201a12f13ad0ddae',
     MyOutfitDetailQuery = 'd935d9e9ba7a5b6b5d6ece7f253304fc',
     MyOutfitsQuery = '81d9a6849467d2aa6b1603ebcedbddbe',
     MyOutfitsRefetchQuery = '10db4e349f3123c56df14e3adec2ee6f',
@@ -67,12 +73,12 @@ export enum RequestId {
     MyOutfitCommonDataFilteringConditionQuery = 'd02ab22c9dccc440076055c8baa0fa7a',
     PhotoAlbumQuery = '7e950e4f69a5f50013bba8a8fb6a3807',
     PhotoAlbumRefetchQuery = '53fb0ad32c13dd9a6e617b1158cc2d41',
-    ReplayQuery = 'e9cbaa835977b6c6de77ca7a4be15b24',
-    ReplayUploadedReplayListRefetchQuery = '3bd200163e63bfff42ab60a244cac042',
+    ReplayQuery = 'c8d9828642f6eac6894876026d3db450',
+    ReplayUploadedReplayListRefetchQuery = '4e83edd3d0964716c6ab27b9d6acf17f',
     SettingQuery = '73bd677ed986ad2cb7004ceabfff4d38',
     StageRecordQuery = 'f08a932d533845dde86e674e03bbb7d3',
     StageRecordsRefetchQuery = '2fb1b3fa2d40c9b5953ea1ae263e54c1',
-    StageScheduleQuery = '011e394c0e384d77a0701474c8c11a20',
+    StageScheduleQuery = 'd1f062c14f74f758658b2703a5799002',
     WeaponRecordQuery = '5f279779e7081f2d14ae1ddca0db2b6e',
     WeaponRecordsRefetchQuery = '6961f618fcef440c81509b205465eeec',
     DetailTabViewWeaponTopsArRefetchQuery = 'a6782a0c692e8076656f9b4ab613fd82',
@@ -89,9 +95,9 @@ export enum RequestId {
     XRankingRefetchQuery = '5149402597bd2531b4eea04692d8bfd5',
     CatalogQuery = 'ff12098bad4989a813201b00ff22ac4e',
     CatalogRefetchQuery = '60a6592c6ee8e47245020ae0d314d378',
-    HomeQuery = '22e2fa8294168003c21b00c333c35384',
+    HomeQuery = '7dcc64ea27a08e70919893a0d3f70871',
     VsHistoryDetailPagerRefetchQuery = '994cf141e55213e6923426caf37a1934',
-    VsHistoryDetailQuery = '291295ad311b99a6288fc95a5c4cb2d2',
+    VsHistoryDetailQuery = '9ee0099fbe3d8db2a838a75cf42856dd',
 }
 
 export enum CoralWidgetExtensioniOSRequestId {
@@ -126,18 +132,22 @@ type request_variables_app = {
     'b461048f9ffc414b3967a3cdad0805dd': DownloadSearchReplayVariables_b461048;
     'cde4fe7d6467b32d5a06279492aa21dc': DownloadSearchReplayVariables_cde4fe7;
     '43a5f23eec238d7ee827cc87f47f050c': DownloadSearchReplayVariables_43a5f23;
+    '8e904b52b5080b6f4b4448a50762362c': DownloadSearchReplayVariables_8e904b5;
     [RequestId.DownloadSearchReplayQuery]: DownloadSearchReplayVariables;
     [RequestId.ReplayModalReserveReplayDownloadMutation]: ReplayModalReserveReplayDownloadVariables;
     '67224c25f7b2e605205d152009f593c9': PagerUpdateBattleHistoriesByVsModeVariables_67224c2;
     '000afbc113f5653d2c2cee42ff6cdeab': PagerUpdateBattleHistoriesByVsModeVariables_000afbc;
     '7297ae42bbb1958cfe438736865d304e': PagerUpdateBattleHistoriesByVsModeVariables_7297ae4;
+    '094a9b44ff21e8c409d6046fc1af9dfe': PagerUpdateBattleHistoriesByVsModeVariables_094a9b4;
     [RequestId.PagerUpdateBattleHistoriesByVsModeQuery]: PagerUpdateBattleHistoriesByVsModeVariables;
     [RequestId.ShareMyOutfitQuery]: ShareMyOutfitVariables;
     'd8a8662345593bbbcd63841c91d4c6f5': BankaraBattleHistoriesRefetchVariables_d8a8662;
     '964c03ed28eb640438d8113534de2fe4': BankaraBattleHistoriesRefetchVariables_964c03e;
     [RequestId.BankaraBattleHistoriesRefetchQuery]: BankaraBattleHistoriesRefetchVariables;
+    [RequestId.EventBattleHistoriesRefetchQuery]: EventBattleHistoriesRefetchVariables;
     '80585ad4e4ecb674c3d8cd278adb1d21': LatestBattleHistoriesRefetchVariables_80585ad;
     '047c1ff4d6b9f03b082aa6ffdb200a6a': LatestBattleHistoriesRefetchVariables_047c1ff;
+    '7161210aad0793e58e76f20e0443855e': LatestBattleHistoriesRefetchVariables_7161210;
     [RequestId.LatestBattleHistoriesRefetchQuery]: LatestBattleHistoriesRefetchVariables;
     '9ef974f2686a88f24e0dbff6f63a83c4': PrivateBattleHistoriesRefetchVariables_9ef974f;
     'b304e707648f0669a939943d46febce1': PrivateBattleHistoriesRefetchVariables_b304e70;
@@ -161,6 +171,8 @@ type request_variables_app = {
     [RequestId.CoopHistoryDetailQuery]: CoopHistoryDetailVariables;
     [RequestId.CoopHistoryDetailRefetchQuery]: CoopHistoryDetailRefetchVariables;
     [RequestId.CoopRecordBigRunRecordContainerPaginationQuery]: CoopRecordBigRunRecordContainerPaginationVariables;
+    [RequestId.EventMatchRankingPeriodQuery]: EventMatchRankingPeriodVariables;
+    [RequestId.EventMatchRankingSeasonRefetchQuery]: EventMatchRankingSeasonRefetchVariables;
     '2d661988c055d843b3be290f04fb0db9': DetailFestRecordDetailVariables_2d66198;
     [RequestId.DetailFestRecordDetailQuery]: DetailFestRecordDetailVariables;
     '0eb7bac3d8aabcad0e9d663ee5b90846': DetailFestRefetchVariables_0eb7bac;
@@ -176,10 +188,12 @@ type request_variables_app = {
     [RequestId.SaleGearDetailQuery]: SaleGearDetailVariables;
     [RequestId.MyOutfitDetailQuery]: MyOutfitDetailVariables;
     [RequestId.SettingQuery]: SettingVariables;
+    '22e2fa8294168003c21b00c333c35384': HomeVariables_22e2fa8;
     [RequestId.HomeQuery]: HomeVariables;
     [RequestId.VsHistoryDetailPagerRefetchQuery]: VsHistoryDetailPagerRefetchVariables;
     'cd82f2ade8aca7687947c5f3210805a6': VsHistoryDetailVariables_cd82f2a;
     '2b085984f729cd51938fc069ceef784a': VsHistoryDetailVariables_2b08598;
+    '291295ad311b99a6288fc95a5c4cb2d2': VsHistoryDetailVariables_291295a;
     [RequestId.VsHistoryDetailQuery]: VsHistoryDetailVariables;
 };
 

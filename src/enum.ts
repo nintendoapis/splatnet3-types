@@ -131,3 +131,9 @@ export enum HeroSupplyWeaponCategory {
     SPECIAL = 'SPECIAL',
     NONE = 'NONE',
 }
+
+export enum LeagueMatchTeamComposition {
+    TEAM = 'TEAM',
+    PAIR = 'PAIR',
+    SOLO = 'SOLO',
+}

@@ -50,8 +50,22 @@ export type CheckinWithQRCodeMutationVariables_8e3fecf = CheckinWithQRCodeMutati
 // VsHistory
 //
 
-/** 094a9b44ff21e8c409d6046fc1af9dfe PagerUpdateBattleHistoriesByVsModeQuery variables */
+/** eef75ef7ce1964dfe9006bf5facde61e PagerUpdateBattleHistoriesByVsModeQuery variables */
 export interface PagerUpdateBattleHistoriesByVsModeVariables {
+    /** Always false in the official app */
+    isBankara: boolean;
+    /** Always false in the official app */
+    isEvent: boolean;
+    /** Always false in the official app */
+    isPrivate: boolean;
+    /** Always false in the official app */
+    isRegular: boolean;
+    /** Always false in the official app */
+    isXBattle: boolean;
+}
+
+/** 094a9b44ff21e8c409d6046fc1af9dfe PagerUpdateBattleHistoriesByVsModeQuery variables */
+export interface PagerUpdateBattleHistoriesByVsModeVariables_094a9b4 {
     /** Always false in the official app */
     isBankara: boolean;
     /** Always false in the official app */
@@ -65,13 +79,13 @@ export interface PagerUpdateBattleHistoriesByVsModeVariables {
 }
 
 /** 7297ae42bbb1958cfe438736865d304e PagerUpdateBattleHistoriesByVsModeQuery */
-export type PagerUpdateBattleHistoriesByVsModeVariables_7297ae4 = PagerUpdateBattleHistoriesByVsModeVariables;
+export type PagerUpdateBattleHistoriesByVsModeVariables_7297ae4 = PagerUpdateBattleHistoriesByVsModeVariables_094a9b4;
 
 /** 000afbc113f5653d2c2cee42ff6cdeab PagerUpdateBattleHistoriesByVsModeQuery */
-export type PagerUpdateBattleHistoriesByVsModeVariables_000afbc = PagerUpdateBattleHistoriesByVsModeVariables;
+export type PagerUpdateBattleHistoriesByVsModeVariables_000afbc = PagerUpdateBattleHistoriesByVsModeVariables_094a9b4;
 
 /** 67224c25f7b2e605205d152009f593c9 PagerUpdateBattleHistoriesByVsModeQuery variables */
-export type PagerUpdateBattleHistoriesByVsModeVariables_67224c2 = PagerUpdateBattleHistoriesByVsModeVariables;
+export type PagerUpdateBattleHistoriesByVsModeVariables_67224c2 = PagerUpdateBattleHistoriesByVsModeVariables_094a9b4;
 
 /** 92b56403c0d9b1e63566ec98fef52eb3 BankaraBattleHistoriesRefetchQuery variables */
 export interface BankaraBattleHistoriesRefetchVariables {
@@ -85,11 +99,20 @@ export type BankaraBattleHistoriesRefetchVariables_964c03e = BankaraBattleHistor
 /** d8a8662345593bbbcd63841c91d4c6f5 BankaraBattleHistoriesRefetchQuery variables */
 export type BankaraBattleHistoriesRefetchVariables_d8a8662 = BankaraBattleHistoriesRefetchVariables;
 
-/** 7161210aad0793e58e76f20e0443855e LatestBattleHistoriesRefetchQuery variables */
+/** 8083b0c7f34a4bd0ef4a06ff86fc3e18 EventBattleHistoriesRefetchQuery variables */
+export interface EventBattleHistoriesRefetchVariables {
+    /** Always true in the official app */
+    fetchCurrentPlayer: boolean;
+}
+
+/** 6b74405ca9b43ee77eb8c327c3c1a317 LatestBattleHistoriesRefetchQuery variables */
 export interface LatestBattleHistoriesRefetchVariables {
     /** Always true in the official app */
     fetchCurrentPlayer: boolean;
 }
+
+/** 7161210aad0793e58e76f20e0443855e LatestBattleHistoriesRefetchQuery variables */
+export type LatestBattleHistoriesRefetchVariables_7161210 = LatestBattleHistoriesRefetchVariables;
 
 /** 047c1ff4d6b9f03b082aa6ffdb200a6a LatestBattleHistoriesRefetchQuery variables */
 export type LatestBattleHistoriesRefetchVariables_047c1ff = LatestBattleHistoriesRefetchVariables;
@@ -136,10 +159,13 @@ export interface XBattleHistoriesRefetchVariables {
 /** ba35dcea6d5666463e86273e1756d9ed XBattleHistoriesRefetchQuery variables */
 export type XBattleHistoriesRefetchVariables_ba35dce = XBattleHistoriesRefetchVariables;
 
-/** 291295ad311b99a6288fc95a5c4cb2d2 VsHistoryDetailQuery variables */
+/** 9ee0099fbe3d8db2a838a75cf42856dd VsHistoryDetailQuery variables */
 export interface VsHistoryDetailVariables {
     vsResultId: string;
 }
+
+/** 291295ad311b99a6288fc95a5c4cb2d2 VsHistoryDetailQuery variables */
+export type VsHistoryDetailVariables_291295a = VsHistoryDetailVariables;
 
 /** 2b085984f729cd51938fc069ceef784a VsHistoryDetailQuery variables */
 export type VsHistoryDetailVariables_2b08598 = VsHistoryDetailVariables;
@@ -305,10 +331,13 @@ export interface ShareMyOutfitVariables {
 // Replay
 //
 
-/** 8e904b52b5080b6f4b4448a50762362c DownloadSearchReplayQuery variables */
+/** d1841381ec4972f1bfc4742d162de0b3 DownloadSearchReplayQuery variables */
 export interface DownloadSearchReplayVariables {
     code: string;
 }
+
+/** 8e904b52b5080b6f4b4448a50762362c DownloadSearchReplayQuery variables */
+export type DownloadSearchReplayVariables_8e904b5 = DownloadSearchReplayVariables;
 
 /** 43a5f23eec238d7ee827cc87f47f050c DownloadSearchReplayQuery variables */
 export type DownloadSearchReplayVariables_43a5f23 = DownloadSearchReplayVariables;
@@ -330,12 +359,34 @@ export interface ReplayModalReserveReplayDownloadVariables {
 // Home/Settings
 //
 
-/** 22e2fa8294168003c21b00c333c35384 HomeQuery variables */
+/** 7dcc64ea27a08e70919893a0d3f70871 HomeQuery variables */
 export interface HomeVariables {
     naCountry: string;
 }
+
+/** 22e2fa8294168003c21b00c333c35384 HomeQuery variables */
+export type HomeVariables_22e2fa8 = HomeVariables;
 
 /** 73bd677ed986ad2cb7004ceabfff4d38 SettingQuery variables */
 export interface SettingVariables {
     naCountry: string;
 }
+
+//
+// Event
+//
+
+/** cdf4ffe56864817014e59c569ec8630f EventMatchRankingPeriodQuery */
+export interface EventMatchRankingPeriodVariables {
+    eventMatchRankingPeriodId: string;
+}
+
+/** e39d7ce9875a9d6940b4b449ed5b358b EventMatchRankingSeasonRefetchQuery */
+export type EventMatchRankingSeasonRefetchVariables = unknown & {
+    /** PageInfo.endCursor */
+    cursor: string;
+    /** Always 5 in the app? */
+    first: number;
+    /** LeagueMatchRankingTimePeriodGroup ID */
+    id: string;
+};

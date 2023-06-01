@@ -1,4 +1,4 @@
-import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, CoopTrophy, DragonMatchType, FestDragonCert, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
+import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, CoopTrophy, DragonMatchType, FestDragonCert, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, LeagueMatchTeamComposition, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
 import { UnknownScalarType } from './generated-type-helpers.js';
 
 export interface Connection<T> {
@@ -708,6 +708,8 @@ export interface PlayHistory {
     recentBadges: Badge[];
     allBadges: Badge[];
     xMatchSeasonHistory: XMatchSeasonHistoryConnection;
+    bankaraMatchOpenPlayHistory: PlayHistoryTrophyRecord;
+    leagueMatchPlayHistory: PlayHistoryTrophyRecord;
 }
 
 export interface XMatchMax {
@@ -754,15 +756,25 @@ export interface XMatchSeasonHistory {
 export type XMatchSeasonHistoryConnection = Connection<XMatchSeasonHistory>;
 export type XMatchSeasonHistoryEdge = Edge<XMatchSeasonHistory>;
 
+export interface PlayHistoryTrophyRecord {
+    attend: number;
+    bronze: number;
+    gold: number;
+    silver: number;
+}
+
 export interface Banner {
     image: Image;
     message: string;
     jumpTo: string;
 }
 
-export type HomeFooterMessage = FooterBigRunMessage | FooterFestMessage | FooterSeasonMessage | {
-    __typename: string & never;
-};
+export type HomeFooterMessage =
+    FooterBigRunMessage |
+    FooterFestMessage |
+    FooterSeasonMessage |
+    FooterLeagueMatchMessage |
+    {__typename: string & never;};
 
 export interface FooterBigRunMessage {
     __typename: 'FooterBigRunMessage';
@@ -776,6 +788,10 @@ export interface FooterFestMessage {
 export interface FooterSeasonMessage {
     __typename: 'FooterSeasonMessage';
     seasonName: string;
+}
+export interface FooterLeagueMatchMessage {
+    leagueMatchName: string;
+    __typename: 'FooterLeagueMatchMessage';
 }
 
 export interface MyOutfit {
@@ -863,6 +879,7 @@ export interface XMatchSetting extends VsSetting {
 }
 export interface LeagueMatchSetting extends VsSetting {
     __typename: 'LeagueMatchSetting';
+    leagueMatchEvent: LeagueMatchEvent;
     vsStages: VsStage[];
     vsRule: VsRule;
 }
@@ -894,6 +911,18 @@ export interface CoopSetting {
     coopStage: CoopStage;
     weapons: CoopSupplyWeapon[];
     rule: CoopRule | keyof typeof CoopRule;
+}
+
+export interface LeagueMatchSchedule {
+    leagueMatchSetting: LeagueMatchSetting;
+    timePeriods: TimePeriod[];
+}
+
+export type LeagueMatchScheduleConnection = Connection<LeagueMatchSchedule>;
+
+export interface TimePeriod {
+    startTime: string;
+    endTime: string;
 }
 
 export interface Weapon {
@@ -1001,6 +1030,7 @@ export interface VsHistoryGroup {
     historyDetails: VsHistoryDetailConnection;
     regularMatchLastPlayedTime: string | null;
     privateMatchLastPlayedTime: string | null;
+    leagueMatchHistoryGroup: LeagueMatchHistoryGroup;
 }
 
 export interface BankaraMatchChallenge {
@@ -1023,6 +1053,12 @@ export interface XMatchMeasurement {
     maxInitialBattleCount: number;
     maxWinCount: number;
     maxLoseCount: number;
+    vsRule: VsRule;
+}
+export interface LeagueMatchHistoryGroup {
+    leagueMatchEvent: LeagueMatchEvent;
+    myLeaguePower: unknown;
+    teamComposition: LeagueMatchTeamComposition;
     vsRule: VsRule;
 }
 
@@ -1108,6 +1144,10 @@ export interface VsTeamResult {
 export interface BankaraMatchHistory {
     earnedUdemaePoint: number | null;
     mode: BankaraMatchMode | keyof typeof BankaraMatchMode;
+    bankaraPower: BankaraMatchPower;
+}
+export interface BankaraMatchPower {
+    power: unknown;
 }
 export interface XMatchHistory {
     lastXPower: number | null;
@@ -1120,8 +1160,11 @@ export interface LeagueMatchHistory {
 }
 export interface LeagueMatchEvent {
     id: string;
+    leagueMatchEventId: string;
     name: string;
     desc: string;
+    regulation: string;
+    regulationUrl: string | null;
 }
 export interface FestMatchHistory {
     dragonMatchType: DragonMatchType | keyof typeof DragonMatchType;
@@ -1163,3 +1206,46 @@ export type XRankingPlayer = any;
 export type XRankingPlayerStats = any;
 
 export type UpdateFestVotePayload = any;
+
+export interface LeagueMatchRankingSeason {
+    id: string;
+    leagueMatchRankingTimePeriodGroups: LeagueMatchRankingTimePeriodGroupConnection;
+    seasonName: string;
+}
+
+export type LeagueMatchRankingSeasonConnection = Connection<LeagueMatchRankingSeason>;
+export type LeagueMatchRankingSeasonEdge = Edge<LeagueMatchRankingSeason>;
+
+export interface LeagueMatchRankingTimePeriodGroup {
+    id: string;
+    leagueMatchSetting: LeagueMatchSetting;
+    timePeriods: LeagueMatchRankingTimePeriod;
+}
+
+export type LeagueMatchRankingTimePeriodGroupConnection = Connection<LeagueMatchRankingTimePeriodGroup>;
+export type LeagueMatchRankingTimePeriodGroupEdge = Edge<LeagueMatchRankingTimePeriodGroup>;
+
+export interface LeagueMatchRankingTimePeriod {
+    id: string;
+    endTime: string;
+    startTime: string;
+    leagueMatchSetting: LeagueMatchSetting;
+    teams: LeagueMatchRankingTeam;
+}
+
+export interface LeagueMatchRankingTeam {
+    id: string;
+    details: LeagueMatchRankingDetailConnection;
+    teamComposition: LeagueMatchTeamComposition;
+}
+
+export interface LeagueMatchRankingDetail {
+    id: string;
+    players: LeagueMatchRankingPlayer[];
+    power: unknown;
+    rank: unknown;
+}
+
+export type LeagueMatchRankingDetailConnection = Connection<LeagueMatchRankingDetail>;
+
+export interface LeagueMatchRankingPlayer extends Player {}
