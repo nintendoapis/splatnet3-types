@@ -6,7 +6,7 @@ import { CheckinHistory, ConsumingReward, CreateCheckinHistoryPayload, Image, Na
  *
  * mutation CheckinWithQRCodeMutation
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 interface CheckinWithQRCodeMutation_daffd96 {
     createCheckinHistory: /** CreateCheckinHistoryPayload */ OperationFieldType<'CheckinWithQRCodeMutation', 'createCheckinHistory', {

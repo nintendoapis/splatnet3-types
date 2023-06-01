@@ -6,7 +6,7 @@ import { BankaraMatchChallenge, BankaraMatchHistory, Image, MaskingImage, Specia
  *
  * query BankaraBattleHistoriesQuery
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 interface BankaraBattleHistoriesQuery_0438ea6 {
     bankaraBattleHistories: /** VsResult */ OperationFieldType<'BankaraBattleHistoriesQuery', 'vsResult', {

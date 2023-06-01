@@ -6,7 +6,7 @@ import { Brand, GearPower, Gesotown, Image, PickupBrand, SaleGear } from '../typ
  *
  * query GesotownRefetchQuery
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 interface GesotownRefetchQuery_951cab2 {
     gesotown: /** Gesotown */ OperationFieldType<'GesotownRefetchQuery', 'gesotown', {

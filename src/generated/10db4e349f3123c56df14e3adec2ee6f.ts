@@ -6,7 +6,7 @@ import { Brand, ClothingGear, ClothingGearConnection, CurrentPlayer, Gear, GearP
  *
  * query MyOutfitsRefetchQuery
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 type MyOutfitsRefetchQuery_10db4e3<
     fetchEquipments extends boolean = boolean,

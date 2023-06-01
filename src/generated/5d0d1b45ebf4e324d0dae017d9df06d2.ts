@@ -6,7 +6,7 @@ import { CheckinHistory, ConsumingReward, Image, NameplateBackground, NameplateB
  *
  * query CheckinQuery
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 interface CheckinQuery_5d0d1b4 {
     checkinHistories: /** CheckinHistory */ OperationFieldType<'CheckinQuery', 'checkinHistories', {

@@ -6,7 +6,7 @@ import { Badge, Color, Fest, FestRankingHolder, FestRankingHolderConnection, Fes
  *
  * query DetailRankingQuery
  *
- * Generated 16/03/2023 from SplatNet 3 3.0.0-6049221b.
+ * Generated 01/06/2023 from SplatNet 3 4.0.0-e2ee936d.
  */
 interface DetailRankingQuery_cc38f38 {
     fest: /** unknown type */ OperationFieldType<'DetailRankingQuery', 'node', ({
