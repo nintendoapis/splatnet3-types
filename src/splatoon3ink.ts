@@ -1,8 +1,8 @@
-import CoopHistoryQuery_2fd21f2 from './generated/2fd21f270d381ecf894eb975c5f6a716.js';
-import FestRecordQuery_44c7679 from './generated/44c76790b68ca0f3da87f2a3452de986.js';
-import StageScheduleQuery_730cd98 from './generated/730cd98e84f1030d3e9ac86b6f1aae13.js';
-import DetailFestRecordDetailQuery_96c3a7f from './generated/96c3a7fd484b8d3be08e0a3c99eb2a3d.js';
-import GesotownQuery_a43dd44 from './generated/a43dd44899a09013bcfd29b4b13314ff.js';
+import CoopHistoryQuery_2fd21f2 from './generated/queries/2fd21f270d381ecf894eb975c5f6a716.js';
+import FestRecordQuery_44c7679 from './generated/queries/44c76790b68ca0f3da87f2a3452de986.js';
+import StageScheduleQuery_730cd98 from './generated/queries/730cd98e84f1030d3e9ac86b6f1aae13.js';
+import DetailFestRecordDetailQuery_96c3a7f from './generated/queries/96c3a7fd484b8d3be08e0a3c99eb2a3d.js';
+import GesotownQuery_a43dd44 from './generated/queries/a43dd44899a09013bcfd29b4b13314ff.js';
 import { CoopSchedule_schedule, CoopSetting_schedule } from './partial-types.js';
 import { Brand, ClothingGear, Connection, CoopSupplyWeapon, HeadGear, SaleGear, ShoesGear } from './types.js';
 

@@ -103,6 +103,9 @@ export {
 
     VariablesTypes,
     ResultTypes,
+
+    RequestNames,
+    RequestIds,
 } from './graphql.js';
 
 export interface GraphQLRequest<Variables extends unknown> {

@@ -1,4 +1,5 @@
 import generated_types from './generated/types.js';
+import * as generated_named_types from './generated/named.js';
 import { CoralAndroidWidgetExtensionLatestAlbumPhotoResult, CoralAndroidWidgetExtensionLatestVsResultsResult, CoralAndroidWidgetExtensionStageSchedulesResult } from './types/coral-android-widget-extension.js';
 import { CoralWidgetExtensionCurrentEquipmentResult, CoralWidgetExtensionLatestAlbumPhotoResult, CoralWidgetExtensionLatestVsResultsResult, CoralWidgetExtensionVsSchedulesResult, CoralWidgetExtensionVsSchedulesVariables } from './types/coral-ios-widget-extension.js';
 import { BankaraBattleHistoriesRefetchVariables, BankaraBattleHistoriesRefetchVariables_964c03e, BankaraBattleHistoriesRefetchVariables_d8a8662, CheckinWithQRCodeMutationVariables, CheckinWithQRCodeMutationVariables_8d54e1c, CheckinWithQRCodeMutationVariables_8e3fecf, CoopHistoryDetailRefetchVariables, CoopHistoryDetailVariables, CoopHistoryDetailVariables_3cc5f82, CoopHistoryDetailVariables_9ade2aa, CoopHistoryDetailVariables_f3799a0, CoopRecordBigRunRecordContainerPaginationVariables, CreateMyOutfitVariables, DetailFestRecordDetailVariables, DetailFestRecordDetailVariables_2d66198, DetailFestRefetchVariables, DetailFestRefetchVariables_0eb7bac, DetailFestVotingStatusRefetchVariables, DetailRankingVariables, DetailRankingVariables_4869de1, DetailRankingVariables_58bdd28, DetailVotingStatusVariables, DownloadSearchReplayVariables, DownloadSearchReplayVariables_43a5f23, DownloadSearchReplayVariables_8e904b5, DownloadSearchReplayVariables_b461048, DownloadSearchReplayVariables_cde4fe7, EventBattleHistoriesRefetchVariables, EventMatchRankingPeriodVariables, EventMatchRankingSeasonRefetchVariables, HomeVariables, HomeVariables_22e2fa8, JourneyChallengeDetailRefetchVariables, JourneyChallengeDetailRefetchVariables_8dc2469, JourneyChallengeDetailVariables, JourneyChallengeDetailVariables_38e58b8, JourneyRefetchVariables, JourneyVariables, LatestBattleHistoriesRefetchVariables, LatestBattleHistoriesRefetchVariables_047c1ff, LatestBattleHistoriesRefetchVariables_7161210, LatestBattleHistoriesRefetchVariables_80585ad, MyOutfitDetailVariables, PagerUpdateBattleHistoriesByVsModeVariables, PagerUpdateBattleHistoriesByVsModeVariables_000afbc, PagerUpdateBattleHistoriesByVsModeVariables_094a9b4, PagerUpdateBattleHistoriesByVsModeVariables_67224c2, PagerUpdateBattleHistoriesByVsModeVariables_7297ae4, PrivateBattleHistoriesRefetchVariables, PrivateBattleHistoriesRefetchVariables_4835a28, PrivateBattleHistoriesRefetchVariables_9ef974f, PrivateBattleHistoriesRefetchVariables_b304e70, RankingHoldersFestTeamRankingHoldersPaginationVariables, RankingHoldersFestTeamRankingHoldersPaginationVariables_be2eb9e, RegularBattleHistoriesRefetchVariables, RegularBattleHistoriesRefetchVariables_04e5d83, RegularBattleHistoriesRefetchVariables_333d0a4, RegularBattleHistoriesRefetchVariables_fed6e75, ReplayModalReserveReplayDownloadVariables, SaleGearDetailOrderGesotownGearVariables, SaleGearDetailOrderGesotownGearVariables_aebd822, SaleGearDetailVariables, SaleGearDetailVariables_7c4173b, SettingVariables, ShareMyOutfitVariables, SupportButtonSupportChallengeVariables, SupportButtonSupportChallengeVariables_30aa261, UpdateMyOutfitVariables, VotesUpdateFestVoteVariables, VsHistoryDetailPagerRefetchVariables, VsHistoryDetailVariables, VsHistoryDetailVariables_291295a, VsHistoryDetailVariables_2b08598, VsHistoryDetailVariables_cd82f2a, XBattleHistoriesRefetchVariables, XBattleHistoriesRefetchVariables_ba35dce } from './variable-types.js';
@@ -217,6 +218,19 @@ type requests_widgetextension_android = {
 };
 
 type requests = requests_app & requests_widgetextension_ios & requests_widgetextension_android;
+
+type KnownRequestName = keyof typeof generated_named_types;
+type NamedRequest<T extends KnownRequestName> = typeof generated_named_types[T][keyof typeof generated_named_types[T]];
+
+export type RequestName<T extends RequestId | keyof RequestNames> = RequestNames[T];
+export type RequestNames = {
+    [R in NamedRequest<KnownRequestName> as R['id']]: R['name'];
+};
+
+export type RequestIds<T extends RequestId | KnownRequestName> =
+    T extends RequestId ? RequestIds<RequestName<T>> :
+    T extends KnownRequestName ? NamedRequest<T> extends {id: RequestId | KnownRequestId} ? NamedRequest<T>['id'] : never :
+    never;
 
 export type KnownRequestId = keyof requests;
 export type VariablesType<T extends KnownRequestId> = requests[T][1];

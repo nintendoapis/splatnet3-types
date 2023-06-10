@@ -414,8 +414,8 @@ const conditions = new Set<string>();
 
 const result_type = generateTypeForOperation(data.operation, '_' + data.params.id.substr(0, 7), type_imports, conditions);
 
-const output = `import { LinkedFieldType, OperationFieldType, UnknownScalarType } from '../generated-type-helpers.js';
-import { ${[...type_imports].sort().join(', ')} } from '../types.js';
+const output = `import { LinkedFieldType, OperationFieldType, UnknownScalarType } from '../../generated-type-helpers.js';
+import { ${[...type_imports].sort().join(', ')} } from '../../types.js';
 
 /**
  * ${data.params.id} ${data.params.name}
