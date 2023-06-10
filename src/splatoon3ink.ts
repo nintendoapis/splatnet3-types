@@ -1,8 +1,4 @@
-import CoopHistoryQuery_2fd21f2 from './generated/queries/2fd21f270d381ecf894eb975c5f6a716.js';
-import FestRecordQuery_44c7679 from './generated/queries/44c76790b68ca0f3da87f2a3452de986.js';
-import StageScheduleQuery_730cd98 from './generated/queries/730cd98e84f1030d3e9ac86b6f1aae13.js';
-import DetailFestRecordDetailQuery_96c3a7f from './generated/queries/96c3a7fd484b8d3be08e0a3c99eb2a3d.js';
-import GesotownQuery_a43dd44 from './generated/queries/a43dd44899a09013bcfd29b4b13314ff.js';
+import { CoopHistoryQuery_91b917b, DetailFestRecordDetailQuery_96c3a7f, FestRecordQuery_44c7679, GesotownQuery_a43dd44, StageScheduleQuery_d1f062c } from './generated/types.js';
 import { CoopSchedule_schedule, CoopSetting_schedule } from './partial-types.js';
 import { Brand, ClothingGear, Connection, CoopSupplyWeapon, HeadGear, SaleGear, ShoesGear } from './types.js';
 
@@ -14,10 +10,10 @@ export interface Schedules {
     data: StageScheduleResult_splatoon3ink;
 }
 
-type StageScheduleResult_splatoon3ink = Omit<StageScheduleQuery_730cd98, 'coopGroupingSchedule'> & {
+type StageScheduleResult_splatoon3ink = Omit<StageScheduleQuery_d1f062c, 'coopGroupingSchedule'> & {
     coopGroupingSchedule: CoopGroupingSchedule_splatoon3ink;
 };
-type CoopGroupingSchedule_splatoon3ink = Omit<StageScheduleQuery_730cd98['coopGroupingSchedule'], 'regularSchedules' | 'bigRunSchedules'> & {
+type CoopGroupingSchedule_splatoon3ink = Omit<StageScheduleQuery_d1f062c['coopGroupingSchedule'], 'regularSchedules' | 'bigRunSchedules'> & {
     regularSchedules: Pick<Connection<CoopSchedule_splatoon3ink>, 'nodes'>;
     bigRunSchedules: Pick<Connection<CoopSchedule_splatoon3ink>, 'nodes'>;
 };
@@ -64,8 +60,8 @@ export interface Coop {
     data: CoopHistoryResult_splatoon3ink;
 }
 
-type CoopHistoryResult_splatoon3ink = ReplaceProperty<CoopHistoryQuery_2fd21f2, 'coopResult', CoopResult_splatoon3ink>;
-type CoopResult_splatoon3ink = ReplaceProperty<CoopHistoryQuery_2fd21f2['coopResult'], 'monthlyGear', HeadGear_splatoon3inkcoop | ClothingGear_splatoon3inkcoop | ShoesGear_splatoon3inkcoop>;
+type CoopHistoryResult_splatoon3ink = ReplaceProperty<CoopHistoryQuery_91b917b, 'coopResult', CoopResult_splatoon3ink>;
+type CoopResult_splatoon3ink = ReplaceProperty<CoopHistoryQuery_91b917b['coopResult'], 'monthlyGear', HeadGear_splatoon3inkcoop | ClothingGear_splatoon3inkcoop | ShoesGear_splatoon3inkcoop>;
 
 type HeadGear_splatoon3inkcoop = Pick<HeadGear, '__typename' | 'name' | 'image'>;
 type ClothingGear_splatoon3inkcoop = Pick<ClothingGear, '__typename' | 'name' | 'image'>;
