@@ -84,4 +84,6 @@ export interface Festivals {
 }
 
 type FestRecordResult_splatoon3ink = ReplaceProperty<FestRecordQuery_44c7679, 'festRecords', Pick<Connection<Fest_splatoon3ink>, 'nodes'>>;
-type Fest_splatoon3ink = DetailFestRecordDetailQuery_96c3a7f['fest'];
+type Fest_splatoon3ink = DetailFestRecordDetailQuery_96c3a7f['fest'] & {
+    __splatoon3ink_id: string;
+};
