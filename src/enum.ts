@@ -98,6 +98,11 @@ export enum BankaraMatchChallengeState {
     ABORTED_BY_UDEMAE_RESET = 'ABORTED_BY_UDEMAE_RESET',
 }
 
+export enum FestMatchMode {
+    CHALLENGE = 'CHALLENGE',
+    OPEN = 'OPEN',
+}
+
 export enum XMatchMeasurementState {
     COMPLETED = 'COMPLETED',
     INPROGRESS = 'INPROGRESS',

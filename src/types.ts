@@ -1,4 +1,4 @@
-import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, CoopTrophy, DragonMatchType, FestDragonCert, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, LeagueMatchTeamComposition, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
+import { AwardRank, BankaraMatchChallengeState, BankaraMatchMode, CatalogRewardState, ChallengeState, CoopBigRunState, CoopGradePointDiff, CoopMode, CoopRule, CoopTrophy, DragonMatchType, FestDragonCert, FestMatchMode, FestState, FestTeamRole, FestVoteState, FriendOnlineState, HeroProgressCommentSpeaker, HeroSupplyWeaponCategory, Judgement, JudgementKnockout, LeagueMatchTeamComposition, Species, TricolourRole, XMatchMeasurementState } from './enum.js';
 import { UnknownScalarType } from './generated-type-helpers.js';
 
 export interface Connection<T> {
@@ -144,6 +144,9 @@ export interface CatalogItem {
     name: string;
     amount: number;
     image: Image;
+    headGear: HeadGear;
+    clothingGear: ClothingGear;
+    shoesGear: ShoesGear;
     primaryGearPower: GearPower | null;
 }
 
@@ -409,6 +412,7 @@ export interface CoopHistoryGroup {
     endTime: string;
     mode: CoopMode | keyof typeof CoopMode;
     rule: CoopRule | keyof typeof CoopRule;
+    playCount: unknown;
     highestResult: CoopGroupHighestResult;
     historyDetails: CoopHistoryDetailConnection;
 }
@@ -619,6 +623,7 @@ export interface SaleGear {
     price: number;
     isAlreadyOrdered: boolean;
     gear: Gear;
+    ownedGear: Gear;
     nextGear: SaleGear | null;
     previousGear: SaleGear | null;
 }
@@ -852,6 +857,7 @@ export interface VsSchedule {
     xMatchSetting: XMatchSetting | null;
     leagueMatchSetting: LeagueMatchSetting | null;
     festMatchSetting: FestMatchSetting | null;
+    festMatchSettings: FestMatchSetting[] | null;
 }
 
 export type VsScheduleConnection = Connection<VsSchedule>;
@@ -887,6 +893,7 @@ export interface FestMatchSetting extends VsSetting {
     __typename: 'FestMatchSetting';
     vsStages: VsStage[];
     vsRule: VsRule;
+    mode: FestMatchMode;
 }
 
 export interface CoopGroupingSchedule {
@@ -992,6 +999,7 @@ export type VsStageConnection = Connection<VsStage>;
 
 export interface VsStageRecordStats {
     lastPlayedTime: string;
+    winRateTw: number | null;
     winRateAr: number | null;
     winRateCl: number | null;
     winRateGl: number | null;
@@ -1058,6 +1066,7 @@ export interface XMatchMeasurement {
 export interface LeagueMatchHistoryGroup {
     leagueMatchEvent: LeagueMatchEvent;
     myLeaguePower: unknown;
+    measurementState: unknown;
     teamComposition: LeagueMatchTeamComposition;
     vsRule: VsRule;
 }

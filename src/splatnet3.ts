@@ -1,6 +1,6 @@
 export * from './types.js';
 export * from './partial-types.js';
-export * from './variable-types.js';
+export * from './variable-types/index.js';
 export * from './enum.js';
 
 export {
