@@ -6,7 +6,7 @@ import { VsHistoryDetail, VsHistoryDetailConnection, VsHistoryGroup, VsHistoryGr
  *
  * query PagerLatestVsDetailQuery
  *
- * Generated 10/06/2023 from SplatNet 3 4.0.0-d5178440.
+ * Generated 30/08/2023 from SplatNet 3 4.0.0-22ddb0fd.
  */
 interface PagerLatestVsDetailQuery_0329c53 {
     vsResult: /** VsResult */ OperationFieldType<'PagerLatestVsDetailQuery', 'vsResult', {

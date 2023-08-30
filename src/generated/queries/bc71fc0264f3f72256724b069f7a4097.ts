@@ -6,7 +6,7 @@ import { Challenge, ChallengeHome, ChallengeJourney, GearReward, Image } from '.
  *
  * query JourneyQuery
  *
- * Generated 10/06/2023 from SplatNet 3 4.0.0-d5178440.
+ * Generated 30/08/2023 from SplatNet 3 4.0.0-22ddb0fd.
  */
 interface JourneyQuery_bc71fc0 {
     challengeInfo: /** ChallengeHome */ OperationFieldType<'JourneyQuery', 'challenge', ({

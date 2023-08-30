@@ -6,7 +6,7 @@ import { Brand, ClothingGear, Gear, GearPower, GearRecordStats, HeadGear, Image,
  *
  * mutation UpdateMyOutfitMutation
  *
- * Generated 10/06/2023 from SplatNet 3 4.0.0-d5178440.
+ * Generated 30/08/2023 from SplatNet 3 4.0.0-22ddb0fd.
  */
 interface UpdateMyOutfitMutation_bb80906 {
     updateMyOutfit: /** UpdateMyOutfitPayload */ OperationFieldType<'UpdateMyOutfitMutation', 'updateMyOutfit', {

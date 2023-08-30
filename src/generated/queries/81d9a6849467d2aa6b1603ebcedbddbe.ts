@@ -6,7 +6,7 @@ import { Brand, ClothingGear, CurrentPlayer, Gear, GearPower, GearRecordStats, H
  *
  * query MyOutfitsQuery
  *
- * Generated 10/06/2023 from SplatNet 3 4.0.0-d5178440.
+ * Generated 30/08/2023 from SplatNet 3 4.0.0-22ddb0fd.
  */
 type MyOutfitsQuery_81d9a68 = ({
     currentPlayer: /** CurrentPlayer */ OperationFieldType<'MyOutfitsQuery', 'currentPlayer', {

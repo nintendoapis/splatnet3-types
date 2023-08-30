@@ -6,7 +6,7 @@ import { Image, PhotoAlbum, PhotoAlbumItem, PhotoAlbumItemConnection } from '../
  *
  * query PhotoAlbumQuery
  *
- * Generated 10/06/2023 from SplatNet 3 4.0.0-d5178440.
+ * Generated 30/08/2023 from SplatNet 3 4.0.0-22ddb0fd.
  */
 interface PhotoAlbumQuery_7e950e4 {
     photoAlbum: /** PhotoAlbum */ OperationFieldType<'PhotoAlbumQuery', 'photoAlbum', {
