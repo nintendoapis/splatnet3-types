@@ -181,7 +181,7 @@ export type RegularMatchSetting_schedule = Exclude<VsSchedule_regular['regularMa
 export type BankaraMatchSetting_schedule = VsSchedule_bankara['bankaraMatchSettings'][0];
 export type XMatchSetting_schedule = Exclude<VsSchedule_xMatch['xMatchSetting'], null>;
 export type LeagueMatchSetting_schedule = Exclude<VsSchedule_league['leagueMatchSetting'], null>;
-export type FestMatchSetting_schedule = Exclude<VsSchedule_fest['festMatchSetting'], null>;
+export type FestMatchSetting_schedule = Exclude<VsSchedule_fest['festMatchSettings'], null>[0];
 
 export type CoopSchedule_schedule = ResultType<RequestId.StageScheduleQuery>['coopGroupingSchedule']['regularSchedules']['nodes'][0];
 export type CoopSetting_schedule = CoopSchedule_schedule['setting'];

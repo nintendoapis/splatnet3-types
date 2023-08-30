@@ -101,6 +101,19 @@ export enum RequestId {
     VsHistoryDetailQuery = 'f893e1ddcfb8a4fd645fd75ced173f18b2750e5cfba41d2669b9814f6ceaec46',
 }
 
+export enum UsagiRequestId {
+    IfTournamentManagerIsAvailableQuery = '8892ce4157248506f51735e2c9eb300c6c980c67ff8c317b927b05e8d35852d9',
+    ReserveRoomMutation = '7dd691a19092b4df99b67c2157e6b836ab8bafdf65f9e46ccf848c543459ca9d',
+    CancelReservationMutation = '963e7a0e2c37f54df3316e5d170584d3b96f9c2102823fb5788ec0e8d3372eba',
+    OverwriteReservedRoomMutation = '5fd71f88970f80a456d826061a78f1c0b287b5d3daadc6c7c64db50aae9694ee',
+    CreateRoomMutation = '4e664b99a438ae0bb3466fe7df0f6f8e2c36fab2288e2c602cb3339e9ab01325',
+    TournamentNotificationMainQuery = '93d0a1ccf461da6d23faea6340806f1b6b563f1c375b4a6a0ad35bc5f759f4b4',
+    UseShowTournamentSupportNotificationBadgeQuery = '8f40ba6c690211fa2d261a20be7accc063481d377146f7cfb793664ac056df5a',
+    RoomCreatorInvitationQuery = 'f7cb0e797b3f51dc4ac8f0cce1bdfafe4407e25dc483998290fc3d187bd6007e',
+    RoomCreatorQuery = '0cdb5030fe7e59ef56e71b0a669bdca29993aebca785b11b99e89076886064cc',
+    CloseRoomMutation = '60fcc66077357ca266610d035d877845de83aebd8dd67e366c2dcb7756b3f80b',
+}
+
 export enum CoralWidgetExtensioniOSRequestId {
     LatestAlbumPhoto = '0a6c7ae9561aa05559ab66f4a8c0399b79c134bba682451e8180b895b92b0698',
     VsSchedules = 'f5131603b235edce2218e71c27ed0d35610cb78c48bb44aa88e98fb37ab08cd0',
@@ -123,6 +136,10 @@ type requests_app = {
     [K in keyof generated_types]: [RequestType, K extends keyof request_variables ? request_variables[K] : {}, generated_types[K]];
 };
 
+type requests_app_usagi = {
+    [K in UsagiRequestId]: [RequestType, K extends keyof request_variables ? request_variables[K] : {}, unknown];
+};
+
 type requests_widgetextension_ios = {
     // Coral 2.3.0 iOS
     [CoralWidgetExtensioniOSRequestId.LatestAlbumPhoto]: [RequestType.QUERY, null, CoralWidgetExtensionLatestAlbumPhotoResult];
@@ -138,7 +155,7 @@ type requests_widgetextension_android = {
     [CoralWidgetExtensionAndroidRequestId.StageSchedules]: [RequestType.QUERY, null, CoralAndroidWidgetExtensionStageSchedulesResult];
 };
 
-type requests = requests_app & requests_widgetextension_ios & requests_widgetextension_android;
+type requests = requests_app & requests_app_usagi & requests_widgetextension_ios & requests_widgetextension_android;
 
 type KnownRequestName = keyof typeof generated_named_types;
 type NamedRequest<T extends KnownRequestName> = typeof generated_named_types[T][keyof typeof generated_named_types[T]];

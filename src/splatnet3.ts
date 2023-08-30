@@ -98,6 +98,7 @@ export {
 
     /** Current persisted queries */
     RequestId,
+    UsagiRequestId,
     /** All known persisted query IDs */
     KnownRequestId,
 
