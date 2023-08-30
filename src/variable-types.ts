@@ -50,7 +50,7 @@ export type CheckinWithQRCodeMutationVariables_8e3fecf = CheckinWithQRCodeMutati
 // VsHistory
 //
 
-/** eef75ef7ce1964dfe9006bf5facde61e PagerUpdateBattleHistoriesByVsModeQuery variables */
+/** dd7f147589cf3bb45a08f53c3477056c PagerUpdateBattleHistoriesByVsModeQuery variables */
 export interface PagerUpdateBattleHistoriesByVsModeVariables {
     /** Always false in the official app */
     isBankara: boolean;
@@ -63,6 +63,9 @@ export interface PagerUpdateBattleHistoriesByVsModeVariables {
     /** Always false in the official app */
     isXBattle: boolean;
 }
+
+/** eef75ef7ce1964dfe9006bf5facde61e PagerUpdateBattleHistoriesByVsModeQuery variables */
+export type PagerUpdateBattleHistoriesByVsModeVariables_eef75ef = PagerUpdateBattleHistoriesByVsModeVariables;
 
 /** 094a9b44ff21e8c409d6046fc1af9dfe PagerUpdateBattleHistoriesByVsModeQuery variables */
 export interface PagerUpdateBattleHistoriesByVsModeVariables_094a9b4 {
@@ -99,11 +102,14 @@ export type BankaraBattleHistoriesRefetchVariables_964c03e = BankaraBattleHistor
 /** d8a8662345593bbbcd63841c91d4c6f5 BankaraBattleHistoriesRefetchQuery variables */
 export type BankaraBattleHistoriesRefetchVariables_d8a8662 = BankaraBattleHistoriesRefetchVariables;
 
-/** 8083b0c7f34a4bd0ef4a06ff86fc3e18 EventBattleHistoriesRefetchQuery variables */
+/** 5650c7abd4e377e74f95e30031864208 EventBattleHistoriesRefetchQuery variables */
 export interface EventBattleHistoriesRefetchVariables {
     /** Always true in the official app */
     fetchCurrentPlayer: boolean;
 }
+
+/** 8083b0c7f34a4bd0ef4a06ff86fc3e18 EventBattleHistoriesRefetchQuery variables */
+export type EventBattleHistoriesRefetchVariables_8083b0c = EventBattleHistoriesRefetchVariables;
 
 /** 6b74405ca9b43ee77eb8c327c3c1a317 LatestBattleHistoriesRefetchQuery variables */
 export interface LatestBattleHistoriesRefetchVariables {
