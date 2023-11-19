@@ -99,8 +99,11 @@ export enum BankaraMatchChallengeState {
 }
 
 export enum FestMatchMode {
+    REGULAR = 'REGULAR',
     CHALLENGE = 'CHALLENGE',
-    OPEN = 'OPEN',
+
+    /** @internal */
+    OPEN = 'REGULAR',
 }
 
 export enum XMatchMeasurementState {
